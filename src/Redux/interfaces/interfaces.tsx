@@ -1,3 +1,5 @@
+import { TinkoffPay } from "../../Interfaces/TinkoffPay";
+
 export interface AppState {
   loading: boolean
   error: string
@@ -14,4 +16,11 @@ export interface ModalState {
   modalRequestForm: {
     isActive: boolean
   }
+  modalPayment: {
+    isActive: boolean,
+  }
+}
+
+export interface OrderState {
+  payment: TinkoffPay
 }
