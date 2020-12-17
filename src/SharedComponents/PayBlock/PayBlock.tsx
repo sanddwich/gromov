@@ -169,6 +169,7 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
             <small className="RequestFormModal__inputErrorMessage">Введите корректный email.</small>
           ) : null}
         </div>
+        
       </Container>
     )
   }
