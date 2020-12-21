@@ -1,0 +1,22 @@
+.Block2 {
+  margin-top: 100px !important;
+  border-radius: 20px;
+  overflow: hidden;
+
+  .Block2__card {
+    overflow: hidden;
+    font-family: 'Druk Cyr';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 54px;
+    line-height: 135%;
+    /* or 73px */
+
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    color: #ffffff;
+  }
+}

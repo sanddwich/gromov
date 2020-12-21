@@ -3,6 +3,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,700;1,200;1,300;1,400;1,500;1,700&display=swap');
 @import 'animate.css/animate.min.css';
 
+@font-face {
+  font-family: 'Druk Cyr';
+
+  src: url('./fonts/DrukCyr-Medium.eot');
+
+  src: url('./fonts/DrukCyr-Medium.eot?iefix') format('eot'), url('./fonts/DrukCyr-Medium.woff') format('woff'),
+    url('./fonts/DrukCyr-Medium.ttf') format('truetype'), url('./fonts/DrukCyr-Medium.woff2') format('woff2');
+
+  font-weight: normal;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Druk Cyr';
+
+  src: url('./fonts/DrukCyr-Bold.eot');
+
+  src: url('./fonts/DrukCyr-Bold.eot?iefix') format('eot'), url('./fonts/DrukCyr-Bold.woff') format('woff'),
+    url('./fonts/DrukCyr-Bold.ttf') format('truetype'), url('./fonts/DrukCyr-Bold.woff2') format('woff2');
+
+  font-weight: bold;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Druk Cyr';
+
+  src: url('./fonts/DrukCyr-BoldItalic.eot');
+
+  src: url('./fonts/DrukCyr-BoldItalic.eot?iefix') format('eot'), url('./fonts/DrukCyr-BoldItalic.woff') format('woff'),
+    url('./fonts/DrukCyr-BoldItalic.ttf') format('truetype'), url('./fonts/DrukCyr-BoldItalic.woff2') format('woff2');
+
+  font-weight: bold;
+
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Druk Cyr';
+
+  src: url('./fonts/DrukCyr-MediumItalic.eot');
+
+  src: url('./fonts/DrukCyr-MediumItalic.eot?iefix') format('eot'), url('./fonts/DrukCyr-MediumItalic.woff') format('woff'),
+    url('./fonts/DrukCyr-MediumItalic.ttf') format('truetype'), url('./fonts/DrukCyr-MediumItalic.woff2') format('woff2');
+
+  font-weight: normal;
+
+  font-style: italic;
+}
+
 html,
 body {
   height: 100%;

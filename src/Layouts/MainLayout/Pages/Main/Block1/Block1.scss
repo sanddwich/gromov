@@ -1,0 +1,236 @@
+.Block1 {
+  height: 1080px;
+  overflow: hidden;
+
+  .Block1__Row1 {
+    position: relative;
+    height: 120px;
+    margin-bottom: -120px !important;
+    z-index: 100;
+
+    .Block1__logoRow {
+      .Block1__callback {
+        .Block1__callbackTitle {
+          font-family: 'Raleway';
+          font-style: normal;
+          font-weight: 600;
+          font-size: 22px;
+          line-height: 135%;
+          color: #c5c6c6;
+          display: flex;
+          align-items: center;
+        }
+
+        .Block1__callbackButton {
+          margin-left: 60px;
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  .Block1__Row2 {
+    .Block1__img {
+      img {
+        margin-left: -20%;
+        margin-top: 50px;
+        height: 1500px;
+      }
+    }
+
+    .Block1__Row2Title {
+      color: #ffffff;
+      font-family: 'Druk Cyr';
+      font-style: normal;
+      font-weight: 900;
+      font-size: 100px;
+      line-height: 110%;
+
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+
+      padding-bottom: 550px;
+
+      span {
+        background-color: #8ebe2d;
+      }
+
+      .Block1__Row2DescrBlock {
+        width: 1280px;
+        position: absolute;
+        z-index: 150;
+        padding-top: 100px;
+
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 145%;
+
+        color: #c5c6c6;
+        letter-spacing: normal;
+
+        text-transform: none;
+
+        .Block1__Row2DescrLeft {
+          padding: 50px;
+          background-color: #2e2e2e;
+          border-bottom: 10px solid #414141;
+          border-radius: 10px 0px 0px 0px;
+          display: flex;
+          align-items: center;
+
+          span {
+            background-color: transparent;
+            color: #00a0e3;
+          }
+        }
+
+        .Block1__Row2DescrRight {
+          padding: 50px;
+          background-color: #3e3e3e;
+          border-bottom: 10px solid #515151;
+          border-radius: 0px 10px 0px 0px;
+          color: #ffffff;
+          margin-left: -2px;
+
+          p {
+            color: #c5c6c6;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and(max-width: 1600px) {
+    height: 900px;
+    .Block1__Row2 {
+      .Block1__img {
+        img {
+          margin-left: -50%;
+          height: 1250px;
+        }
+      }
+    }
+
+    .Block1__Row2DescrBlock {
+      width: 1100px !important;
+
+      .Block1__Row2DescrRight,
+      .Block1__Row2DescrLeft {
+        padding: 30px !important;
+      }
+    }
+  }
+
+  @media screen and(max-width: 1366px) {
+    height: 768px;
+    .Block1__Row2 {
+      .Block1__img {
+        img {
+          // margin-left: -60%;
+          height: 1100px;
+        }
+      }
+
+      .Block1__Row2Title {
+        padding-bottom: 400px;
+      }
+    }
+    
+    .Block1__Row2DescrBlock {
+      padding-top: 50px !important;
+    }
+  }
+
+  @media screen and(max-width: 1200px) {
+    .Block1__Row2Title {
+      font-size: 72px !important;
+    }
+
+    .Block1__Row2DescrBlock {
+      width: 900px !important;
+
+      .Block1__Row2DescrRight,
+      .Block1__Row2DescrLeft {
+        font-size: 16px;
+        padding: 20px !important;
+      }
+    }
+  }
+
+  @media screen and(max-width: 992px) {
+    height: 768px;
+    .Block1__Row2 {
+      .Block1__img {
+        img {
+          margin-left: -90% !important;
+        }
+      }
+    }
+
+    .Block1__Row2Title {
+      font-size: 52px !important;
+    }
+
+    .Block1__Row2DescrBlock {
+      width: 768px !important;
+
+      .Block1__Row2DescrRight,
+      .Block1__Row2DescrLeft {
+        font-size: 16px;
+        padding: 20px !important;
+      }
+    }
+  }
+
+  @media screen and(max-width: 768px) {
+    .Block1__callbackButton {
+      margin-left: 20px !important;
+    }
+
+    .Block1__Row2Cont {
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      .Block1__Row2Title {
+        padding: 10px;
+      }
+    }
+
+    .Block1__Row2DescrBlock {
+      width:100% !important;
+      padding: 10px;
+
+      .Block1__Row2DescrRight,
+      .Block1__Row2DescrLeft {
+        font-size: 16px;
+        padding: 20px !important;
+        border-bottom: none !important;
+        border-radius: 0px !important;
+        margin-left: 0px !important;
+      }
+    }
+  }
+
+  @media screen and(max-width: 576px) {
+    .Block1__callbackButton {
+      margin-left: 10px !important;
+      img {
+        width: 40px !important;
+      }
+    }
+
+    .Block1__Row2Title {
+      font-size: 36px !important;
+      margin-top: -250px !important;
+    }
+
+    .Block1__logo {
+      width: 190px !important;
+    }
+  }
+}
