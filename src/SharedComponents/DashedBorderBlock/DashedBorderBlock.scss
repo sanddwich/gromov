@@ -1,0 +1,26 @@
+.DashedBorderBlock {
+  .DashedBorderBlock__content {
+    min-height: 100px;
+    padding: 20px !important;
+  }
+
+  .DashedBorderBlock__pluseLeft {
+    position: relative;
+    z-index: 10;
+    font-size: 30px;
+    font-weight: 300;
+
+    margin-left: -8px !important;
+    margin-bottom: -22px !important;
+  }
+
+  .DashedBorderBlock__pluseRight {
+    position: relative;    
+    z-index: 10;
+    font-size: 30px;
+    font-weight: 300;
+
+    margin-right: -8px !important;
+    margin-top: -23px !important;
+  }
+}

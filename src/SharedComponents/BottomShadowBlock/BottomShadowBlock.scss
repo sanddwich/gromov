@@ -1,0 +1,33 @@
+.BottomShadowBlock {
+  .BottomShadowBlock__Button {    
+    border-radius: 20px 20px 0px 20px;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+  }
+
+  .BottomShadowBlock__text {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #ffffff;
+  }
+
+  .BottomShadowBlock__Shadow {
+    width: 100%;
+    border-radius: 0px 0px 0px 20px;
+    height: 20px;
+    position: relative;
+    z-index: 5;
+    margin-top: -13px !important;
+  }
+
+  .BottomShadowBlock__img {
+    img {
+      height: 100%;
+    }
+  }
+}

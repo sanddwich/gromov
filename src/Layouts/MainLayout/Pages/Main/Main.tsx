@@ -2,6 +2,7 @@ import React from 'react'
 import { Container } from 'react-bootstrap'
 import Block1 from './Block1/Block1'
 import Block2 from './Block2/Block2'
+import Block3 from './Block3/Block3'
 import './Main.scss'
 
 interface MainProps {}
@@ -14,6 +15,7 @@ class Main extends React.Component<MainProps, MainState> {
       <Container fluid className="Main p-0">
         <Block1 />
         <Block2 />
+        <Block3 />
       </Container>
     )
   }
