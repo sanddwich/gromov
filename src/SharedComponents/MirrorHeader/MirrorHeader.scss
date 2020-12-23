@@ -1,0 +1,22 @@
+.MirrorHeader {
+  font-family: 'Druk Cyr';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 64px;
+  line-height: 120%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  .MirrorHeader__Left {
+    color: #313131;
+  }
+
+  .MirrorHeader__Right {
+    color: #d6d4d0;
+    text-align: right;
+  }
+
+  @media screen and(max-width: 972px){
+    font-size: 52px;
+  }
+}

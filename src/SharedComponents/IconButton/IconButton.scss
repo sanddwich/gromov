@@ -1,0 +1,14 @@
+.IconButton {
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+
+  .IconButton__text {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 145%;
+  }
+}
