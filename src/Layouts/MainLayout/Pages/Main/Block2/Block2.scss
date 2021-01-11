@@ -31,6 +31,7 @@
     .Block2__cardImg {
       img {
         height: 70%;
+        // margin-right: -30px;
       }
 
       .gromovImg {
@@ -77,12 +78,12 @@
       }
 
       .Block2__cardContent {
-        font-size: 46px;
+        font-size: 42px;
       }
     }
   }
 
-  @media screen and(max-width:576px) {
+  @media screen and(max-width:768px) {
     .Block2__card {
       .Block2__cardImg {
         .fullHeight {
@@ -96,6 +97,28 @@
 
       .Block2__cardContent {
         font-size: 42px;
+      }
+    }
+  }
+
+  @media screen and(max-width:576px) {
+    margin-top: 50px !important;
+    border-radius: 0px;
+    .Block2__card {
+      height: 158px;
+      .Block2__cardImg {
+        .fullHeight {
+          height: 158px;
+          margin-right: 0;
+        }
+
+        .bottomEnd {
+          margin-right: 0;
+        }
+      }
+
+      .Block2__cardContent {
+        font-size: 20px;
       }
     }
   }

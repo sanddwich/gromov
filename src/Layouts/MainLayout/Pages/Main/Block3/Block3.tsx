@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container } from 'react-bootstrap'
+import { Col, Container, Row } from 'react-bootstrap'
 import BeforeAfterBlock from '../../../../../SharedComponents/BeforeAfterBlock/BeforeAfterBlock'
 import BottomShadowBlock from '../../../../../SharedComponents/BottomShadowBlock/BottomShadowBlock'
 import DashedBorderBlock from '../../../../../SharedComponents/DashedBorderBlock/DashedBorderBlock'
@@ -14,32 +14,44 @@ interface Block3State {}
 class Block3 extends React.Component<Block3Props, Block3State> {
   render() {
     return (
-      <Container fluid className="Block3 p-0 d-flex align-items-center justify-content-center">
-        {/* <BottomShadowBlock bgColor="#FF8585" shadowColor="#F45959" width="120px" image="img/defaultImg.png" /> */}
-        {/* <DashedBorderBlock
-          bgColor="#99CA35"
-          border="none"
-          color="#ffffff"
-          padding="20px"
-          borderRadius="15px"
-          width="500px"
-          height="300px"
-          justifyContent="justify-content-center"
-          boxShadow="0px 8px 10px #000000"
-          // pluses={true}
-        >
-          Никаких диет, голоданий и ограни- чений провоцирующих срывы
-          Никаких диет, голоданий и ограни- чений провоцирующих срывы
-          Никаких диет, голоданий и ограни- чений провоцирующих срывы
-          Никаких диет, голоданий и ограни- чений провоцирующих срывы
-          Никаких диет, голоданий и ограни- чений провоцирующих срывы
-          Никаких диет, голоданий и ограни- чений провоцирующих срывы
-        </DashedBorderBlock> */}
-        {/* <Container className="p-0">
-          <MirrorHeader headerLeft="Каждый день одно и тоже" headerRight="вы находитесь в замкнутом кругу" />
-        </Container> */}
-        {/* <BeforeAfterBlock imgBefore="img/911.png" imgAfter="img/912.png" textVisible={true} /> */}
-        <IconButton text="Whatsapp" textColor="#00B2FD" icon="img/whatsapp.png" width="300px" bold={true} borderRadius="8px" shadow="0px 8px 10px #000000" bgColor="#ffffff" />
+      <Container className="Block3 p-0">
+        <MirrorHeader headerLeft="Каждый день одно и тоже" headerRight="Вы находитесь в замкнутом кругу" />
+
+        <Row className="Block3__img m-0 p-0">
+          <Col md={7} className="m-0 p-0 d-none d-md-flex justify-content-center align-items-center">
+            <img className="img-fluid" src="img/sircle_bigman.png" alt="" />
+          </Col>
+          <Col md={5} className="m-0 p-0 d-flex justify-content-center align-items-center">
+            <div>
+              <Row className="m-0 p-0 pb-3 pl-3 pr-3">
+                <BottomShadowBlock bgColor="#FF8585" shadowColor="#F45959" image="img/battery_icon3.png">
+                  Нет сил, энергии и мотивации
+                </BottomShadowBlock>
+              </Row>
+              <Row className="m-0 p-0 pb-3 pl-3 pr-3">
+                <BottomShadowBlock bgColor="#FF8585" shadowColor="#F45959" image="img/girla_icon.png">
+                  Плохое состояние здоровья
+                </BottomShadowBlock>
+              </Row>
+              <Row className="m-0 p-0 pb-3 pl-3 pr-3">
+                <BottomShadowBlock bgColor="#FF8585" shadowColor="#F45959" image="img/puzan_icon.png">
+                  Лишний вес
+                </BottomShadowBlock>
+              </Row>
+              <Row className="m-0 p-0 pb-3 pl-3 pr-3">
+                <BottomShadowBlock bgColor="#FF8585" shadowColor="#F45959" image="img/mirror_icon.png">
+                  Комплексы из-за внешнего вида
+                </BottomShadowBlock>
+              </Row>
+            </div>
+          </Col>
+        </Row>
+
+        <Row className="Block3__imgMob m-0 mt-4 p-0 d-flex d-sm-none">
+          <Col md={7} className="m-0 p-0 d-flex justify-content-center align-items-center">
+            <img className="img-fluid" src="img/sircle_bigman.png" alt="" />
+          </Col>
+        </Row>
       </Container>
     )
   }

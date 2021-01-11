@@ -16,7 +16,20 @@
     text-align: right;
   }
 
-  @media screen and(max-width: 972px){
+  @media screen and(max-width: 972px) {
     font-size: 52px;
+  }
+
+  @media screen and(max-width:768px) {
+    font-size: 30px;
+
+    .MirrorHeader__Left {
+      padding-bottom: 20px !important;
+    }
+
+    .MirrorHeader__Right {
+      justify-content: start !important;
+      text-align: left !important;
+    }
   }
 }

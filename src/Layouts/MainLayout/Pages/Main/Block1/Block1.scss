@@ -33,9 +33,9 @@
   .Block1__Row2 {
     .Block1__img {
       img {
-        margin-left: -20%;
-        margin-top: 50px;
-        height: 1500px;
+        margin-left: -120%;
+        // margin-top: 50px;
+        // height: 1500px;
       }
     }
 
@@ -50,7 +50,7 @@
       letter-spacing: 0.05em;
       text-transform: uppercase;
 
-      padding-bottom: 550px;
+      padding-bottom: 150px;
 
       span {
         background-color: #8ebe2d;
@@ -109,8 +109,8 @@
     .Block1__Row2 {
       .Block1__img {
         img {
-          margin-left: -50%;
-          height: 1250px;
+          margin-left: -140%;
+          // height: 1250px;
         }
       }
     }
@@ -126,17 +126,17 @@
   }
 
   @media screen and(max-width: 1366px) {
-    height: 768px;
+    // height: 768px;
     .Block1__Row2 {
       .Block1__img {
         img {
           // margin-left: -60%;
-          height: 1100px;
+          // height: 1100px;
         }
       }
 
       .Block1__Row2Title {
-        padding-bottom: 400px;
+        // padding-bottom: 400px;
       }
     }
     
@@ -145,7 +145,8 @@
     }
   }
 
-  @media screen and(max-width: 1200px) {
+  @media screen and(max-width: 1200px) {    
+    height: 650px;
     .Block1__Row2Title {
       font-size: 72px !important;
     }
@@ -159,14 +160,25 @@
         padding: 20px !important;
       }
     }
-  }
 
-  @media screen and(max-width: 992px) {
-    height: 768px;
     .Block1__Row2 {
       .Block1__img {
         img {
-          margin-left: -90% !important;
+          margin-left: -120%;
+          height: 768px;
+        }
+      }
+    }
+
+    
+  }
+
+  @media screen and(max-width: 992px) {
+    .Block1__Row2 {
+      .Block1__img {
+        img {
+          margin-left: -150%;
+          height: 700px;
         }
       }
     }

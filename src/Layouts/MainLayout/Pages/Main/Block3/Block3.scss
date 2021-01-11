@@ -1,5 +1,17 @@
 .Block3 {
-  padding: 50px !important;
-  background-color: #99CA35;
-  min-height: 300px;
+  padding-top: 100px !important;
+  overflow: hidden;
+
+  .Block3__img {
+    padding-top: 50px !important;
+  }
+
+  .Block3__imgMob {
+    width: 140% !important;
+    margin-left: -20% !important;
+  }
+
+  @media screen and(max-width: 576px) {
+    padding-top: 50px !important;
+  }
 }
