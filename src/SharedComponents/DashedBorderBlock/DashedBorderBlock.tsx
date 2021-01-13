@@ -25,10 +25,11 @@ class DashedBorderBlock extends React.Component<DashedBorderBlockProps, DashedBo
         className="DashedBorderBlock d-flex justify-content-center"
         style={{
           color: this.props.color,
+          width: this.props.width ? this.props.width : '',
           padding: this.props.padding ? this.props.padding : '0',
         }}
       >
-        <div>
+        <div style={{width: '100%',}}>
           {this.props.pluses ? (
             <Row className="DashedBorderBlock__pluseLeft p-0 m-0 d-flex justify-content-start">+</Row>
           ) : null}
@@ -38,7 +39,6 @@ class DashedBorderBlock extends React.Component<DashedBorderBlockProps, DashedBo
               this.props.justifyContent ? this.props.justifyContent : 'justify-content-start'
             }`}
             style={{
-              width: this.props.width ? this.props.width : '',
               height: this.props.height ? this.props.height : '',
               overflow: this.props.height ? 'hidden' : '',
               borderRadius: this.props.borderRadius ? this.props.borderRadius : '',

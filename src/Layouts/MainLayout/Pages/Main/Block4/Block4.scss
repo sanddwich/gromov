@@ -1,0 +1,86 @@
+.Block4 {
+  margin-top: 40px;
+  padding: 110px;
+  background-color: #668e15;
+  border-radius: 20px;
+  overflow: hidden;
+
+  .MirrorHeader__Left {
+    color: #ffffff;
+  }
+
+  .MirrorHeader__Right {
+    color: #80b21c;
+  }
+
+  .Block4__content {
+    padding-top: 50px;
+    .Block4__LeftColumn {
+    }
+
+    .Block4__RightColumn {
+      .DashedBorderBlock__content {
+        position: relative;
+        z-index: 10;
+      }
+
+      .Block4__Img {
+        margin-top: -120%;
+        position: absolute;
+
+        img {
+          width:75%;
+          margin-left: -50px;
+        }
+      }
+    }
+  }
+
+  .DashedBorderBlock__content {
+    padding: 35px 55px !important;
+  }
+
+  .Block4__ImgMob {
+    margin: 0;
+
+    img {
+      width: 100%;
+      margin-bottom: -50px;
+    }
+  }
+
+  @media screen and(max-width: 1200px) {
+    .MirrorHeader__Left, .MirrorHeader__Right {
+      font-size: 52px;
+    }
+  }
+
+  @media screen and(max-width: 992px) {
+    .DashedBorderBlock__content {
+      padding: 25px 15px !important;
+    }
+
+    .MirrorHeader__Left, .MirrorHeader__Right {
+      font-size: 44px;
+      line-height: 120%;
+    }
+  }
+
+  @media screen and(max-width: 576px) {
+    padding: 30px;
+    padding-top: 40px;
+    padding-bottom: 0;
+
+    .Block4__content {
+      padding-top: 30px;
+    }
+
+    .DashedBorderBlock {
+      margin-top: -20px;
+    }
+
+    .MirrorHeader__Left, .MirrorHeader__Right {
+      font-size: 30px;
+    }
+  }
+}
