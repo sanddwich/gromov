@@ -1,2 +1,73 @@
 .AdditionalServices {
+  &__card {
+    height: 615px;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.13);
+    border-radius: 20px 20px 0px 20px;
+    margin-bottom: 60px;
+    padding: 55px;
+    max-width: 530px;
+
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+
+    &__text {
+      width: 60%;
+      p {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 135%;
+      }
+    }
+  }
+  &__card.gray {
+    background: #f6f6f6;
+  }
+  &__card.green {
+    background: #8ebe2d;
+    align-items: center;
+    align-content: center;
+    justify-content: start;
+    color: #ffffff;
+    // background-image: url('/images/contacts_photo.png');
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
+  }
+
+  &__iconButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    margin-top: 10px;
+
+    background: #ffffff;
+    border-radius: 8px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 145%;
+    color: #058dc7;
+    width: 190px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 520px) {
+  .AdditionalServices {
+    &__card {
+      padding: 10px;
+    }
+
+    &__card.green {
+      // background-image: url(//contacts_photo_sm.png);
+    }
+  }
 }

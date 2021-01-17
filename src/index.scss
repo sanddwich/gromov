@@ -47,8 +47,9 @@
 
   src: url('./fonts/DrukCyr-MediumItalic.eot');
 
-  src: url('./fonts/DrukCyr-MediumItalic.eot?iefix') format('eot'), url('./fonts/DrukCyr-MediumItalic.woff') format('woff'),
-    url('./fonts/DrukCyr-MediumItalic.ttf') format('truetype'), url('./fonts/DrukCyr-MediumItalic.woff2') format('woff2');
+  src: url('./fonts/DrukCyr-MediumItalic.eot?iefix') format('eot'),
+    url('./fonts/DrukCyr-MediumItalic.woff') format('woff'), url('./fonts/DrukCyr-MediumItalic.ttf') format('truetype'),
+    url('./fonts/DrukCyr-MediumItalic.woff2') format('woff2');
 
   font-weight: normal;
 
@@ -62,9 +63,28 @@ body {
   font-family: 'Roboto';
   font-size: 14px;
 }
+h1 {
+  font-family: 'Druk Cyr';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 56px;
+  line-height: 120%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #313131;
+}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+h2 {
+  font-family: 'Druk Cyr';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 120%;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #313131;
 }
 
 #root {

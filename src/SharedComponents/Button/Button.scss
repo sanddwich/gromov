@@ -1,0 +1,21 @@
+.Button {
+  background: #80b21c;
+  border-radius: 8px 8px 0px 8px;
+  height: 100px;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  font-family: 'Druk Cyr';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 120%;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
