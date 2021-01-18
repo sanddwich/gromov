@@ -18,11 +18,26 @@
   border-top: 1px dashed #058dc7;
   border-bottom: 1px dashed #058dc7;
 
+  margin: 15px 0;
+
   &__title {
     color: #757575;
   }
 
   &__price {
     color: #058dc7;
+  }
+}
+
+.PriceBlock.dark {
+  border-top: 1px dashed #ffffff;
+  border-bottom: 1px dashed #ffffff;
+  background-color: #00a4e9;
+  .PriceBlock__title {
+    color: #ffffff;
+  }
+
+  .PriceBlock__price {
+    color: #ffffff;
   }
 }
