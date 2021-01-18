@@ -8,6 +8,8 @@ import Block4 from './Block4/Block4'
 import Block5 from './Block5/Block5'
 import Block6 from './Block6/Block6'
 import Block7 from './Block7/block7'
+import ComplexBlock from './ComplexBlock/ComplexBlock'
+
 import './Main.scss'
 
 interface MainProps {}
@@ -24,7 +26,10 @@ class Main extends React.Component<MainProps, MainState> {
         <Block4 />
         <Block5 />
         <Block6 />
+
         <Block7 />
+        <ComplexBlock />
+
         <AdditionalServices />
       </Container>
     )

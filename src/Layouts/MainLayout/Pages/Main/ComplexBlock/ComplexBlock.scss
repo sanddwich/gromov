@@ -1,0 +1,21 @@
+.ComplexBlock {
+  color: #ffffff;
+  background: #668e15;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.13);
+  border-radius: 20px 20px 0px 20px;
+
+  padding: 80px;
+
+  text-align: center;
+
+  h1,
+  h4 {
+    color: #ffffff;
+  }
+}
+
+@media (max-width: 520px) {
+  .ComplexBlock {
+    padding: 10px;
+  }
+}
