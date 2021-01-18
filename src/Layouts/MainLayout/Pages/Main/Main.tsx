@@ -7,7 +7,7 @@ import Block3 from './Block3/Block3'
 import Block4 from './Block4/Block4'
 import Block5 from './Block5/Block5'
 import Block6 from './Block6/Block6'
-import Block7 from './Block7/block7'
+import Block7 from './Block7/Block7'
 import ComplexBlock from './ComplexBlock/ComplexBlock'
 
 import './Main.scss'
