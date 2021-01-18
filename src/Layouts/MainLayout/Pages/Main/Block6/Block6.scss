@@ -1,0 +1,70 @@
+.Block6 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  .DashedBorderBlock__content {
+    padding: 30px 50px !important;
+    font-weight: 600;
+  }
+
+  .Block6__body {
+    border-radius: 20px 20px 0 20px;
+    overflow: hidden;
+
+    .Block6__Left {
+      padding: 100px 30px 100px 110px;
+      background-color: #668e15;
+
+      h1 {
+        text-align: left;
+        font-family: 'Druk Cyr';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 64px;
+        line-height: 120%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+
+        color: #ffffff;
+
+        margin-bottom: 70px;
+      }
+    }
+
+    .Block6__Right {
+      padding-top: 40px !important;
+      background-color: #618714;
+    }
+  }
+
+  @media screen and(max-width: 992px) {
+    .Block6__Left {
+      padding: 30px !important;
+      padding-top: 50px !important;
+      background-color: #668e15;
+    }
+  }
+
+  @media screen and(max-width: 768px) {
+    .Block6__Left {
+      padding: 30px !important;
+      padding-top: 50px !important;
+      background-color: #668e15;
+
+      .DashedBorderBlock__content {
+        padding: 15px 25px !important;
+        border-radius: 0px !important;
+        font-size: 14px;
+      }
+
+      h1 {
+        font-size: 40px !important;
+        margin-bottom: 30px !important;
+      }
+    }
+
+    .Block6__Right {
+      background-color: #618714;
+    }
+  }
+}

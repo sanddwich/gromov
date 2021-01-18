@@ -62,6 +62,10 @@
 
 @media (max-width: 520px) {
   .AdditionalServices {
+    h1 {
+      font-size: 48px;
+    }
+
     &__card {
       padding: 10px;
     }
