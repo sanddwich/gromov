@@ -1,0 +1,85 @@
+.Block7 {
+  padding-top: 50px !important;
+  margin-bottom: 50px;
+
+  .Block7__Left {
+    // overflow-x: hidden;
+    img {
+      width: 700px;
+      margin-bottom: -90px;
+    }
+  }
+
+  .Block7__Right {
+    .Block7__RightContent {
+      .Block7__RightEl {
+        margin-bottom: 20px;
+        .BottomShadowBlock__text {
+          padding: 25px 50px !important;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .Block7__MobImg {
+    overflow: hidden;
+    img {
+      padding-top: 30px !important;
+      margin-bottom: -75px !important;
+    }
+  }
+
+  .Block7__Bottom {
+    padding: 90px;
+    background-color: #668e15;
+    border-radius: 20px;
+    position: relative;
+    z-index: 10;
+  }
+
+  .DashedBorderBlock {
+    height: 100%;
+  }
+
+  .DashedBorderBlock__content {
+    height: 100%;
+    padding: 45px !important;
+  }
+
+  .Block7__Bottom {
+    .MirrorHeader__Left {
+      color: #ffffff;
+    }
+
+    .MirrorHeader__Right {
+      color: #80b21c;
+    }
+  }
+
+  @media screen and(max-width: 768px) {
+    padding-top: 0 !important;
+    .MirrorHeader {
+      margin-bottom: 40px;
+    }
+  }
+
+  @media screen and(max-width: 576px) {
+    .DashedBorderBlock {
+      .DashedBorderBlock__content {
+        height: 100%;
+        padding: 20px !important;
+      }
+    }
+
+    .Block7__Bottom {
+      padding: 50px;
+      padding-left: 20px;
+      padding-right: 20px;
+
+      .MirrorHeader {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
