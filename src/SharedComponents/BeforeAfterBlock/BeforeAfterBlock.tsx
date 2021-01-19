@@ -10,6 +10,7 @@ interface BeforeAfterBlockProps {
   textAfter?: string
   colorBefore?: string
   colorAfter?: string
+  width?: string
 }
 
 interface BeforeAfterBlockState {}
@@ -18,7 +19,7 @@ class BeforeAfterBlock extends React.Component<BeforeAfterBlockProps, BeforeAfte
   render() {
     return (
       <Container fluid className="BeforeAfterBlock p-0 d-flex justify-content-center align-items-center">
-        <div style={{width: '400px'}}>
+        <div style={{width: this.props.width ? this.props.width : '100%'}}>
           <Row className="BeforeAfterBlock__images m-0 p-0">
             <Col xs={6} className="BeforeAfterBlock__imgBefore m-0 p-0">
               <img className="img-fluid" src={this.props.imgBefore} alt="" />
