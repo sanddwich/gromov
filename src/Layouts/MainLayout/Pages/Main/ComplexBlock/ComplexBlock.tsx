@@ -172,6 +172,18 @@ class ComplexBlock extends React.Component<ComplexBlockProps, ComplexBlockState>
 
         <div className="ComplexBlock__purchase">
           <h4>как приобрести?</h4>
+          <p>Выберите удобный канал связи и напишите “Комплексное ведение”</p>
+          <div className="ComplexBlock__purchase__buttons">
+            <div className="ComplexBlock__iconButton">
+              <img src="/img/whatsapp_blue.svg" alt="whatsapp" />
+              Whatsapp
+            </div>
+
+            <div className="ComplexBlock__iconButton">
+              <img src="/img/insta_blue.svg" alt="instagram" />
+              Instagram
+            </div>
+          </div>
         </div>
       </div>
     )

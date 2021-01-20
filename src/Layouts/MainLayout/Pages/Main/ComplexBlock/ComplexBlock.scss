@@ -18,6 +18,42 @@
     padding: 80px;
     background-color: #80b21c;
     border-radius: 0px 0px 0px 21px;
+    &__buttons {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__iconButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    margin-top: 10px;
+    background: #ffffff;
+    border-radius: 8px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 145%;
+    color: #058dc7;
+    width: 190px;
+    height: 60px;
+    margin: 0px 20px;
+
+    img {
+      margin-right: 15px;
+    }
+  }
+  p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 145%;
+    text-align: center;
   }
 }
 
