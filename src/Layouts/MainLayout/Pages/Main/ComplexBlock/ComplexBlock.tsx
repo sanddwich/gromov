@@ -10,7 +10,7 @@ interface ComplexBlockState {}
 class ComplexBlock extends React.Component<ComplexBlockProps, ComplexBlockState> {
   render() {
     return (
-      <div className="ComplexBlock container-lg m-md-auto m-0 p-0">
+      <div className="ComplexBlock container-lg ml-md-auto mr-md-auto p-0">
         <div className="ComplexBlock__stages">
           <h1>Эксклюзивный вариант «Комплексное ведение»</h1>
           <h4>1. Постановка целей</h4>

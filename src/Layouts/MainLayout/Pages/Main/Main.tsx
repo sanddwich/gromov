@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
+import Achivements from './Achivements/Achivements'
 import AdditionalServices from './AdditionalServices/AdditionalServices'
 import Block1 from './Block1/Block1'
 import Block2 from './Block2/Block2'
@@ -9,6 +10,7 @@ import Block5 from './Block5/Block5'
 import Block6 from './Block6/Block6'
 import Block7 from './Block7/Block7'
 import Block8 from './Block8/Block8'
+import Certificates from './Certificates/Certificates'
 import ComplexBlock from './ComplexBlock/ComplexBlock'
 
 import './Main.scss'
@@ -29,6 +31,8 @@ class Main extends React.Component<MainProps, MainState> {
         <Block6 />
         <Block7 />
         <Block8 />
+        <Achivements />
+        <Certificates />
 
         <ComplexBlock />
 
