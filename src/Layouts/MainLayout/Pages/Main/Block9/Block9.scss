@@ -1,0 +1,31 @@
+.Block9 {
+  padding-bottom: 50px !important;
+  h1 {
+    font-family: 'Druk Cyr';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 64px;
+    line-height: 120%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding-bottom: 50px;
+
+    color: #313131;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .Block9__slideItem {
+    height: 400px;
+    background-color: #313131;
+    
+    h1 {
+      color: #ffffff !important;
+      padding: 0;
+    }
+  }
+}

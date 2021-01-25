@@ -1,0 +1,54 @@
+.Block10 {
+  background-color: #668e15;
+  padding-top: 100px !important;
+  padding-bottom: 100px !important;
+  margin-bottom: 50px;
+
+  .Block10__container {
+    h1 {
+      font-family: 'Druk Cyr';
+      font-style: normal;
+      font-weight: 900;
+      font-size: 64px;
+      line-height: 120%;
+      text-align: center;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: 20px;
+
+      p {
+        margin: 0 !important;
+      }
+    }
+  }
+
+  .Block10__contentLeft {
+    h2 {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 44px;
+      text-align: left;
+      color: #ffffff;
+      letter-spacing: 0;
+      text-transform: none;
+      margin-bottom: 30px;
+    }
+
+    p {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 135%;
+      color: #ffffff;
+    }
+  }
+
+  .Block10__contentRight {
+    background-color: #313131;
+    height: 432px;
+  }
+}
