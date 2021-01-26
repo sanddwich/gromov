@@ -51,4 +51,32 @@
     background-color: #313131;
     height: 432px;
   }
+
+  @media screen and(max-width:576px) {
+    .Block10__contentLeft {
+      h2 {
+        margin-top: 40px;
+        font-size: 18px;
+        line-height: 22px;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 135%;
+        margin-bottom: 40px;
+      }
+    }
+
+    .Block10__container {
+      h1 {
+        font-size: 30px;
+        line-height: 120%;
+        margin-bottom: 60px;
+      }
+    }
+
+    .Block10__contentRight {
+      height: 300px;
+    }
+  }
 }
