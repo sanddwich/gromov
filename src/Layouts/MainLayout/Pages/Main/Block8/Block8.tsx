@@ -14,7 +14,7 @@ class Block8 extends React.Component<Block8Props, Block8State> {
       <Container className="Block8 p-0">
         <MirrorHeader headerLeft="Результаты моих учеников" headerRight="Вы сможете так же как они" />
         <Row className="Block8__Content m-0">
-          <Col md={6} xs={12} className="Block8__card p-0">
+          <Col md={6} xs={12} className="Block8__card">
             <BeforeAfterBlock
               imgBefore="img/81_1.png"
               imgAfter="img/81_2.png"
