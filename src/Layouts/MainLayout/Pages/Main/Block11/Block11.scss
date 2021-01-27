@@ -12,4 +12,44 @@
     text-transform: uppercase;
     color: #313131;
   }
+
+  .Block11__Row {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+
+  .DashedBorderBlock__content {
+    justify-content: center !important;
+    text-align: center !important;
+    margin-bottom: 20px !important;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 145%;
+  }
+
+  .Block11__Left {
+    position: relative;
+    z-index: 10;
+  }
+
+  .Block11__Right {
+    img {
+      width: 130%;
+      margin-left: -20%;
+    }
+  }
+
+  @media screen and(max-width: 576px) {
+    .Block11__Left {
+      padding: 10px !important;
+    }
+
+    .DashedBorderBlock__content {
+      font-size: 14px;
+      margin-bottom: 10px !important;
+    }
+  }
 }
