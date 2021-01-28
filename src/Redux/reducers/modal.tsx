@@ -1,4 +1,4 @@
-import { HIDE_REQUESTFORM_MODAL, SET_SHOWPAYMENT_MODAL, SHOW_REQUESTFORM_MODAL } from '../constants/ActionTypes'
+import { HIDE_REQUESTFORM_MODAL, SET_MOBILEMENU_MODAL, SET_SHOWPAYMENT_MODAL, SHOW_REQUESTFORM_MODAL } from '../constants/ActionTypes'
 import { ModalState } from '../interfaces/interfaces'
 import { ModalActionType } from '../interfaces/modal'
 
@@ -7,6 +7,9 @@ const initialState: ModalState = {
     isActive: false,
   },
   modalPayment: {
+    isActive: false,
+  },
+  mobileMenu: {
     isActive: false,
   },
 }
@@ -31,6 +34,13 @@ const modal = (state: ModalState = initialState, action: ModalActionType) => {
       return {
         ...state,
         modalPayment: {
+          isActive: action.isActive,
+        },
+      }
+    case SET_MOBILEMENU_MODAL:
+      return {
+        ...state,
+        mobileMenu: {
           isActive: action.isActive,
         },
       }

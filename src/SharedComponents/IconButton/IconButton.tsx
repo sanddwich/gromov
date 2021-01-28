@@ -3,7 +3,8 @@ import { Col, Container, Row } from 'react-bootstrap'
 import './IconButton.scss'
 
 interface IconButtonProps {
-  width: string
+  width?: string
+  height?: string
   icon: string
   textColor: string
   text: string
@@ -20,9 +21,10 @@ class IconButton extends React.Component<IconButtonProps, IconButtonState> {
     return (
       <Container
         fluid
-        className="IconButton p-0"
+        className="IconButton p-0 d-flex justify-content-center align-items-center"
         style={{
-          width: this.props.width,
+          width: this.props.width ? this.props.width : '',
+          height: this.props.height ? this.props.height : '',
           backgroundColor: this.props.bgColor ? this.props.bgColor : '#ffffff',
           boxShadow: this.props.shadow ? this.props.shadow : 'none',
           borderRadius: this.props.borderRadius ? this.props.borderRadius : '0px',

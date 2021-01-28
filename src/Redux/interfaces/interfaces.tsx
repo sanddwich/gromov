@@ -19,6 +19,9 @@ export interface ModalState {
   modalPayment: {
     isActive: boolean,
   }
+  mobileMenu: {
+    isActive: boolean,
+  }
 }
 
 export interface OrderState {
