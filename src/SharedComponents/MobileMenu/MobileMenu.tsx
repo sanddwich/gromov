@@ -24,15 +24,20 @@ class MobileMenu extends React.Component<MobileMenuProps, MobileMenuState> {
     document.querySelector('body')?.classList.remove('modal-open')
   }
 
+  closeButton = (): void => {
+    this.bodyUnBlock()
+    this.props.setMobileMenuModal(false)
+  }
+
   render() {
-    this.props.modal.modalPayment.isActive ? this.bodyBlock() : this.bodyUnBlock()
+    this.props.modal.mobileMenu.isActive ? this.bodyBlock() : this.bodyUnBlock()
 
     return (
       <Container
         fluid
-        className="MobileMenu p-0"
+        className="MobileMenu p-0 animated animate__fadeInDownBig"
         style={{
-          background: `url(img/bg1.png)`,
+          background: `url(/img/bg1.png)`,
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
@@ -40,10 +45,10 @@ class MobileMenu extends React.Component<MobileMenuProps, MobileMenuState> {
       >
         <Row className="MobileMenu__oneRow m-0 d-flex justify-content-between align-items-center">
           <div className="MobileMenu__logo p-2">
-            <img className="img-fluid" src="img/logo.png" alt="" />
+            <img className="img-fluid" src="/img/logo.png" alt="" />
           </div>
           <div className="MobileMenu__closeButton">
-            <img src="img/exitMobile.svg" alt="" onClick={() => this.props.setMobileMenuModal(false)} />
+            <img src="/img/exitMobile.svg" alt="" onClick={() => this.closeButton()} />
           </div>
         </Row>
 

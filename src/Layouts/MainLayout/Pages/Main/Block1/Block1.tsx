@@ -1,9 +1,16 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
+import { connect } from 'react-redux'
+import { RootState } from '../../../../../Redux'
+import { ModalState } from '../../../../../Redux/interfaces/interfaces'
 import RoundButton from '../../../../../SharedComponents/RoundButton/RoundButton'
+import {setMobileMenuModal} from '../../../../../Redux/actions/modal'
 import './Block1.scss'
 
-interface Block1Props {}
+interface Block1Props {
+  setMobileMenuModal: (isActive: boolean) => void
+  modal: ModalState
+}
 
 interface Block1State {
   whats: string
@@ -27,6 +34,10 @@ class Block1 extends React.Component<Block1Props, Block1State> {
     window.open(this.state.whats)
   }
 
+  openMobileMenu = (): void => {
+    this.props.setMobileMenuModal(true)
+  }
+
   render() {
     return (
       <Container
@@ -39,9 +50,9 @@ class Block1 extends React.Component<Block1Props, Block1State> {
           backgroundSize: 'cover',
         }}
       >
-        <Row className="Block1__Row1 m-0 p-0 d-flex align-items-center">
+        <Row className="Block1__Row1 m-0 p-0 align-items-center">
           <Container className="p-0">
-            <Row className="Block1__logoRow m-0 p-0 d-flex justify-content-between">
+            <Row className="Block1__logoRow m-0 p-0 d-none d-sm-flex justify-content-between">
               <div className="Block1__logo">
                 <img className="img-fluid" src="img/logo.png" alt="" />
               </div>
@@ -55,11 +66,20 @@ class Block1 extends React.Component<Block1Props, Block1State> {
                 </div>
               </div>
             </Row>
+
+            <Row className="MobileMenu__oneRow m-0 d-flex d-sm-none justify-content-between align-items-center">
+              <div className="MobileMenu__logo p-2">
+                <img className="img-fluid" src="/img/logo.png" alt="" />
+              </div>
+              <div className="MobileMenu__closeButton">
+                <img src="/img/burger.svg" alt="" onClick={() => this.openMobileMenu()} />
+              </div>
+            </Row>
           </Container>
         </Row>
 
-        <Container className="Block1__Row2Cont p-0">
-          <Row className="Block1__Row2 w-100 m-0 p-0">
+        <Container className="Block1__Row2Cont d-none d-sm-flex p-0">
+          <Row className="Block1__Row2 d-none d-sm-flex w-100 m-0 p-0">
             <Col md={5} className="p-0 p-0 d-flex align-items-center">
               <div className="Block1__Row2Title">
                 <p>Приведу вас в форму за</p>
@@ -79,7 +99,6 @@ class Block1 extends React.Component<Block1Props, Block1State> {
                     </div>
                   </Col>
                 </Row>
-
               </div>
             </Col>
             <Col md={7} className="Block1__img p-0 p-0 d-none d-md-block">
@@ -87,9 +106,50 @@ class Block1 extends React.Component<Block1Props, Block1State> {
             </Col>
           </Row>
         </Container>
+
+        <Container className="Block1__Row2ContMobile w-100 h-100 d-flex d-sm-none p-0 align-items-end">
+          <div>
+            <Row className="w-100 h-100 m-0">
+              <Col xs={8} className="Block1__Row2Title d-flex align-items-end">
+                <div>
+                  <p>Приведу вас в</p>
+                  <p>форму за</p>
+                  <span>4 месяца</span>
+                </div>
+              </Col>
+
+              <Col xs={4}><img className="Block1__mobileImg" src="/img/gromov1_mobile.png" alt=""/></Col>
+            </Row>
+
+            <Row className="Block1__Row2DescrBlock p-0 m-0">
+              <Col xs={12} className="Block1__Row2DescrLeft">
+                <div>
+                  В основе метода - <span>нутрициология</span>, <span>психология</span> и{' '}
+                  <span>физические нагрузки</span>
+                </div>
+              </Col>
+              <Col xs={12} className="Block1__Row2DescrRight">
+                <div>
+                  <p>Учитывая эти факторы, на пути к желаемой фигуре</p> вы не потеряете заинтересованность и мотивацию
+                </div>
+              </Col>
+            </Row>
+          </div>
+        </Container>
       </Container>
     )
   }
 }
 
-export default Block1
+const mapDispatchToProps = {
+  setMobileMenuModal,
+}
+
+const mapStateToProps = (state: RootState) => {
+  const modal = state.modal
+  return {
+    modal,
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Block1)
