@@ -22,10 +22,10 @@ class BeforeAfterBlock extends React.Component<BeforeAfterBlockProps, BeforeAfte
         <div style={{width: this.props.width ? this.props.width : '100%'}}>
           <Row className="BeforeAfterBlock__images m-0 p-0">
             <Col xs={6} className="BeforeAfterBlock__imgBefore m-0 p-0">
-              <img className="img-fluid" src={this.props.imgBefore} alt="" />
+              <img className="img-fluid hvr-grow-shadow" src={this.props.imgBefore} alt="" />
             </Col>
             <Col xs={6} className="BeforeAfterBlock__imgAfter m-0 p-0">
-              <img className="img-fluid" src={this.props.imgAfter} alt="" />
+              <img className="img-fluid hvr-grow-shadow" src={this.props.imgAfter} alt="" />
             </Col>
           </Row>
           {this.props.textVisible ? (

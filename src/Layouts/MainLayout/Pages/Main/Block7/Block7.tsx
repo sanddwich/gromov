@@ -5,6 +5,7 @@ import DashedBorderBlock from '../../../../../SharedComponents/DashedBorderBlock
 import MirrorHeader from '../../../../../SharedComponents/MirrorHeader/MirrorHeader'
 import './Block7.scss'
 import { Element } from 'react-scroll'
+import ScrollAnimation from 'react-animate-on-scroll'
 
 interface Block7Props {}
 
@@ -18,40 +19,56 @@ class Block7 extends React.Component<Block7Props, Block7State> {
           <MirrorHeader headerLeft="Насколько все индивидуально?" headerRight="или будет одна большая группа?" />
           <Row className="Block7__Content m-0 p-0">
             <Col md={8} className="Block7__Left m-0 p-0 d-none d-md-flex align-items-end justify-content-center">
-              <img src="img/block7__1.png" alt="" />
+              <ScrollAnimation animateOnce={true} offset={150} delay={0} animateIn="animate__fadeInUp">
+                <div>
+                  <img src="img/block7__1.png" alt="" />
+                </div>
+              </ScrollAnimation>
             </Col>
 
             <Col md={4} xs={12} className="Block7__Right m-0 p-0 d-flex align-items-center justify-content-center">
               <div className="Block7__RightContent">
                 <div className="Block7__RightEl">
-                  <BottomShadowBlock bgColor="#F45959" shadowColor="#DB3030" height="100px">
-                    Нет возможности пойти в зал
-                  </BottomShadowBlock>
+                  <ScrollAnimation animateOnce={true} offset={150} delay={0} animateIn="animate__fadeInUp">
+                    <BottomShadowBlock bgColor="#F45959" shadowColor="#DB3030" height="100px">
+                      Нет возможности пойти в зал
+                    </BottomShadowBlock>
+                  </ScrollAnimation>
                 </div>
 
                 <div className="Block7__RightEl">
-                  <BottomShadowBlock bgColor="#F45959" shadowColor="#DB3030" height="100px">
-                    Нет времени заняться собой
-                  </BottomShadowBlock>
+                  <ScrollAnimation animateOnce={true} offset={150} delay={200} animateIn="animate__fadeInUp">
+                    <BottomShadowBlock bgColor="#F45959" shadowColor="#DB3030" height="100px">
+                      Нет времени заняться собой
+                    </BottomShadowBlock>
+                  </ScrollAnimation>
                 </div>
 
                 <div className="Block7__RightEl">
-                  <BottomShadowBlock bgColor="#F45959" shadowColor="#DB3030" height="100px">
-                    А что если у вас все как у всех?
-                  </BottomShadowBlock>
+                  <ScrollAnimation animateOnce={true} offset={150} delay={400} animateIn="animate__fadeInUp">
+                    <BottomShadowBlock bgColor="#F45959" shadowColor="#DB3030" height="100px">
+                      А что если у вас все как у всех?
+                    </BottomShadowBlock>
+                  </ScrollAnimation>
                 </div>
 
                 <div className="Block7__RightEl">
-                  <BottomShadowBlock bgColor="#F45959" shadowColor="#DB3030" height="100px">
-                    Это марафон?
-                  </BottomShadowBlock>
+                  <ScrollAnimation animateOnce={true} offset={150} delay={600} animateIn="animate__fadeInUp">
+                    <BottomShadowBlock bgColor="#F45959" shadowColor="#DB3030" height="100px">
+                      Это марафон?
+                    </BottomShadowBlock>
+                  </ScrollAnimation>
                 </div>
               </div>
             </Col>
           </Row>
 
           <Row className="Block7__MobImg m-0 p-0 d-flex d-md-none">
-            <img className="img-fluid" src="img/block7__1.png" alt="" />
+            <ScrollAnimation animateOnce={true} offset={150} delay={500} animateIn="animate__fadeInUp">
+              <div>
+                <img className="img-fluid" src="img/block7__1.png" alt="" />
+              </div>
+            </ScrollAnimation>
           </Row>
 
           <Container fluid className="Block7__Bottom m-0">

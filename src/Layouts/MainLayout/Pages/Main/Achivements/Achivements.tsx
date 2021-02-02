@@ -3,6 +3,7 @@ import BeforeAfterBlock from '../../../../../SharedComponents/BeforeAfterBlock/B
 import { Element } from 'react-scroll'
 
 import './Achivements.scss'
+import ScrollAnimation from 'react-animate-on-scroll'
 
 interface AchivementsProps {}
 
@@ -34,19 +35,21 @@ class Achivements extends React.Component<AchivementsProps, AchivementsState> {
                 </div>
               </div> */}
 
-                <div>
-                  <BeforeAfterBlock
-                    imgBefore="img/gromov_before.jpg"
-                    imgAfter="img/gromov_after.jpg"
-                    textVisible={false}
-                  />
-                  <div className="Achivements__text">
-                    <div className="w-100">
-                      <p>Цель: Соревнования</p>
-                      <p>Разница во времени фото 14 месяцев</p>
+                <ScrollAnimation animateOnce={true} offset={150} delay={0} animateIn="animate__flipInY">
+                  <div>
+                    <BeforeAfterBlock
+                      imgBefore="img/gromov_before.jpg"
+                      imgAfter="img/gromov_after.jpg"
+                      textVisible={false}
+                    />
+                    <div className="Achivements__text">
+                      <div className="w-100">
+                        <p>Цель: Соревнования</p>
+                        <p>Разница во времени фото 14 месяцев</p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </ScrollAnimation>
               </div>
             </div>
           </div>

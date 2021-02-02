@@ -4,8 +4,9 @@ import { connect } from 'react-redux'
 import { RootState } from '../../../../../Redux'
 import { ModalState } from '../../../../../Redux/interfaces/interfaces'
 import RoundButton from '../../../../../SharedComponents/RoundButton/RoundButton'
-import {setMobileMenuModal} from '../../../../../Redux/actions/modal'
+import { setMobileMenuModal } from '../../../../../Redux/actions/modal'
 import './Block1.scss'
+import ScrollAnimation from 'react-animate-on-scroll'
 
 interface Block1Props {
   setMobileMenuModal: (isActive: boolean) => void
@@ -52,20 +53,22 @@ class Block1 extends React.Component<Block1Props, Block1State> {
       >
         <Row className="Block1__Row1 m-0 p-0 align-items-center">
           <Container className="p-0">
-            <Row className="Block1__logoRow m-0 p-0 d-none d-sm-flex justify-content-between">
-              <div className="Block1__logo">
-                <img className="img-fluid" src="img/logo.png" alt="" />
-              </div>
-              <div className="Block1__callback d-flex justify-content-end">
-                <div className="Block1__callbackTitle d-none d-md-flex">Связаться со мной</div>
-                <div className="Block1__callbackButton">
-                  <RoundButton icon="img/whats.svg" width="50px" buttonHandler={this.whatsAppClick} />
+            <ScrollAnimation animateOnce={true} offset={0} animateIn="animate__fadeInDown">
+              <Row className="Block1__logoRow m-0 p-0 d-none d-sm-flex justify-content-between">
+                <div className="Block1__logo">
+                  <img className="img-fluid" src="img/logo.png" alt="" />
                 </div>
-                <div className="Block1__callbackButton">
-                  <RoundButton icon="img/insta.svg" width="50px" buttonHandler={this.instaClick} />
+                <div className="Block1__callback d-flex justify-content-end">
+                  <div className="Block1__callbackTitle d-none d-md-flex">Связаться со мной</div>
+                  <div className="Block1__callbackButton">
+                    <RoundButton icon="img/whats.svg" width="50px" buttonHandler={this.whatsAppClick} />
+                  </div>
+                  <div className="Block1__callbackButton">
+                    <RoundButton icon="img/insta.svg" width="50px" buttonHandler={this.instaClick} />
+                  </div>
                 </div>
-              </div>
-            </Row>
+              </Row>
+            </ScrollAnimation>
 
             <Row className="MobileMenu__oneRow m-0 d-flex d-sm-none justify-content-between align-items-center">
               <div className="MobileMenu__logo p-2">
@@ -82,8 +85,10 @@ class Block1 extends React.Component<Block1Props, Block1State> {
           <Row className="Block1__Row2 d-none d-sm-flex w-100 m-0 p-0">
             <Col md={5} className="p-0 p-0 d-flex align-items-center">
               <div className="Block1__Row2Title">
-                <p>Приведу вас в форму за</p>
-                <span>4 месяца</span>
+                <ScrollAnimation animateOnce={true} offset={0} delay={1000} animateIn="animate__fadeIn">
+                  <p>Приведу вас в форму за</p>
+                  <span>4 месяца</span>
+                </ScrollAnimation>
 
                 <Row className="Block1__Row2DescrBlock">
                   <Col md={5} className="Block1__Row2DescrLeft">
@@ -102,7 +107,9 @@ class Block1 extends React.Component<Block1Props, Block1State> {
               </div>
             </Col>
             <Col md={7} className="Block1__img p-0 p-0 d-none d-md-block">
-              <img src="img/gromov1.png" alt="" />
+              <ScrollAnimation animateOnce={true} offset={0} delay={500} animateIn="animate__fadeInRightBig">
+                <img src="img/gromov1.png" alt="" />
+              </ScrollAnimation>
             </Col>
           </Row>
         </Container>
@@ -118,7 +125,9 @@ class Block1 extends React.Component<Block1Props, Block1State> {
                 </div>
               </Col>
 
-              <Col xs={4}><img className="Block1__mobileImg" src="/img/gromov1_mobile.png" alt=""/></Col>
+              <Col xs={4}>
+                <img className="Block1__mobileImg" src="/img/gromov1_mobile.png" alt="" />
+              </Col>
             </Row>
 
             <Row className="Block1__Row2DescrBlock p-0 m-0">

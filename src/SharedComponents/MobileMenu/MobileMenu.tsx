@@ -14,9 +14,18 @@ interface MobileMenuProps {
   modal: ModalState
 }
 
-interface MobileMenuState {}
+interface MobileMenuState {
+  messangers: string[]
+}
 
 class MobileMenu extends React.Component<MobileMenuProps, MobileMenuState> {
+  constructor(props: MobileMenuProps) {
+    super(props)
+    this.state = {
+      messangers: ['https://www.instagram.com/victor__gromov/', 'https://api.whatsapp.com/send?phone=+79171874086'],
+    }
+  }
+
   bodyBlock = (): void => {
     document.querySelector('body')?.classList.add('modal-open')
   }
@@ -30,12 +39,18 @@ class MobileMenu extends React.Component<MobileMenuProps, MobileMenuState> {
     this.props.setMobileMenuModal(false)
   }
 
+  onClickHandler = (element: number): void => {
+    if (this.state.messangers[element]) {
+      window.open(this.state.messangers[element])
+    }
+  }
+
   scrollTo = (ankorName: string, offset: number): void => {
     scroller.scrollTo(ankorName, {
       duration: 1500,
       delay: 100,
       smooth: true,
-      offset, 
+      offset,
     })
 
     this.closeButton()
@@ -68,10 +83,10 @@ class MobileMenu extends React.Component<MobileMenuProps, MobileMenuState> {
           <Col className="MobileMenu__menuBlock p-2">
             <ul style={{ listStyleType: 'none' }}>
               <li onClick={() => this.scrollTo('Block2', -150)}>Преимущества</li>
-              <li>Чем мы можем помочь</li>
-              <li>Отзывы</li>
-              <li>Обо мне</li>
-              <li>Тарифы и цены</li>
+              <li onClick={() => this.scrollTo('Block4', -150)}>Чем мы можем помочь</li>
+              <li onClick={() => this.scrollTo('Block9', -80)}>Отзывы</li>
+              <li onClick={() => this.scrollTo('Block11', -80)}>Обо мне</li>
+              <li onClick={() => this.scrollTo('AdditionalServices', -140)}>Тарифы и цены</li>
             </ul>
           </Col>
         </Row>
@@ -91,6 +106,8 @@ class MobileMenu extends React.Component<MobileMenuProps, MobileMenuState> {
                     height="60px"
                     borderRadius="8px"
                     bold="600"
+                    element={1}
+                    clickHandler={this.onClickHandler}
                   />
                   <IconButton
                     icon="/img/insta_blue.svg"
@@ -100,11 +117,15 @@ class MobileMenu extends React.Component<MobileMenuProps, MobileMenuState> {
                     height="60px"
                     borderRadius="8px"
                     bold="600"
+                    element={0}
+                    clickHandler={this.onClickHandler}
                   />
                 </div>
               </Col>
 
-              <Col className="MobileMenu__photo p-0 d-flex align-items-end justify-content-end" xs={4}><img src="/img/contacts_photo.png" alt=""/></Col>
+              <Col className="MobileMenu__photo p-0 d-flex align-items-end justify-content-end" xs={4}>
+                <img src="/img/contacts_photo.png" alt="" />
+              </Col>
             </Row>
           </Container>
         </Container>

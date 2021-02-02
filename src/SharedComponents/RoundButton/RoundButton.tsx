@@ -15,7 +15,7 @@ class RoundButton extends React.Component<RoundButtonProps, RoundButtonState> {
     return (
       <Container fluid className="RoundButton p-0 d-flex justify-content-center align-items-center">
         <div
-          className="RoundButton__cont"
+          className="RoundButton__cont hvr-pop"
           onClick={() => this.props.buttonHandler()}
           style={{
             width: `${this.props.width}`,

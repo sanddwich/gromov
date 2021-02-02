@@ -3,6 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap'
 import DashedBorderBlock from '../../../../../SharedComponents/DashedBorderBlock/DashedBorderBlock'
 import './Block11.scss'
 import { Element } from 'react-scroll'
+import ScrollAnimation from 'react-animate-on-scroll'
 
 interface Block11Props {}
 
@@ -100,10 +101,18 @@ class Block11 extends React.Component<Block11Props, Block11State> {
             </Col>
 
             <Col md={6} className="Block11__Right p-0 d-none d-md-flex align-items-center">
-              <img src="img/block11_1.png" alt="" />
+              <ScrollAnimation animateOnce={true} offset={0} delay={0} animateIn="animate__fadeInLeftBig">
+                <div>
+                  <img src="img/block11_1.png" alt="" />
+                </div>
+              </ScrollAnimation>
             </Col>
             <Col xs={12} className="Block11__RightMob p-0 d-flex d-md-none">
-              <img className="img-fluid" src="img/block11_1.png" alt="" />
+              <ScrollAnimation animateOnce={true} offset={0} delay={0} animateIn="animate__fadeInLeftBig">
+                <div>
+                  <img className="img-fluid" src="img/block11_1.png" alt="" />
+                </div>
+              </ScrollAnimation>
             </Col>
           </Row>
         </Container>

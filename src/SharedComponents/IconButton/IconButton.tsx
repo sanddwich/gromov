@@ -12,6 +12,8 @@ interface IconButtonProps {
   shadow?: string
   bold?: any
   borderRadius?: string
+  element: number
+  clickHandler: (element: number) => void
 }
 
 interface IconButtonState {}
@@ -29,6 +31,7 @@ class IconButton extends React.Component<IconButtonProps, IconButtonState> {
           boxShadow: this.props.shadow ? this.props.shadow : 'none',
           borderRadius: this.props.borderRadius ? this.props.borderRadius : '0px',
         }}
+        onClick={() => this.props.clickHandler(this.props.element)}
       >
           <div className="p-4 m-0 d-flex align-items-center justify-content-center">
             <div className="m-0 p-0 pr-2 d-flex align-items-center justify-content-center">

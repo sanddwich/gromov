@@ -4,6 +4,7 @@ import BeforeAfterBlock from '../../../../../SharedComponents/BeforeAfterBlock/B
 import MirrorHeader from '../../../../../SharedComponents/MirrorHeader/MirrorHeader'
 import './Block8.scss'
 import { Element } from 'react-scroll'
+import ScrollAnimation from 'react-animate-on-scroll'
 
 interface Block8Props {}
 
@@ -17,13 +18,15 @@ class Block8 extends React.Component<Block8Props, Block8State> {
           <MirrorHeader headerLeft="Результаты моих учеников" headerRight="Вы сможете так же как они" />
           <Row className="Block8__Content m-0">
             <Col md={6} xs={12} className="Block8__card">
-              <BeforeAfterBlock
-                imgBefore="img/81_1.png"
-                imgAfter="img/81_2.png"
-                textBefore="ДО"
-                textAfter="После"
-                textVisible={true}
-              />
+              <ScrollAnimation animateOnce={true} offset={150} delay={0} animateIn="animate__flipInY">
+                <BeforeAfterBlock
+                  imgBefore="img/81_1.png"
+                  imgAfter="img/81_2.png"
+                  textBefore="ДО"
+                  textAfter="После"
+                  textVisible={true}
+                />
+              </ScrollAnimation>
 
               <div className="Block8__cardDescr">
                 <div className="Block8__cardDescrLine">
@@ -55,13 +58,15 @@ class Block8 extends React.Component<Block8Props, Block8State> {
             </Col>
 
             <Col md={6} xs={12} className="Block8__card">
-              <BeforeAfterBlock
-                imgBefore="img/82_1.png"
-                imgAfter="img/82_2.png"
-                textBefore="ДО"
-                textAfter="После"
-                textVisible={true}
-              />
+              <ScrollAnimation animateOnce={true} offset={150} delay={0} animateIn="animate__flipInY">
+                <BeforeAfterBlock
+                  imgBefore="img/82_1.png"
+                  imgAfter="img/82_2.png"
+                  textBefore="ДО"
+                  textAfter="После"
+                  textVisible={true}
+                />
+              </ScrollAnimation>
 
               <div className="Block8__cardDescr">
                 <div className="Block8__cardDescrLine">
@@ -83,13 +88,15 @@ class Block8 extends React.Component<Block8Props, Block8State> {
             </Col>
 
             <Col md={6} xs={12} className="Block8__card">
-              <BeforeAfterBlock
-                imgBefore="img/83_1.png"
-                imgAfter="img/83_2.png"
-                textBefore="ДО"
-                textAfter="После"
-                textVisible={true}
-              />
+              <ScrollAnimation animateOnce={true} offset={150} delay={0} animateIn="animate__flipInY">
+                <BeforeAfterBlock
+                  imgBefore="img/83_1.png"
+                  imgAfter="img/83_2.png"
+                  textBefore="ДО"
+                  textAfter="После"
+                  textVisible={true}
+                />
+              </ScrollAnimation>
 
               <div className="Block8__cardDescr">
                 <div className="Block8__cardDescrLine">
@@ -115,13 +122,15 @@ class Block8 extends React.Component<Block8Props, Block8State> {
             </Col>
 
             <Col md={6} xs={12} className="Block8__card">
-              <BeforeAfterBlock
-                imgBefore="img/84_1.png"
-                imgAfter="img/84_2.png"
-                textBefore="ДО"
-                textAfter="После"
-                textVisible={true}
-              />
+              <ScrollAnimation animateOnce={true} offset={150} delay={0} animateIn="animate__flipInY">
+                <BeforeAfterBlock
+                  imgBefore="img/84_1.png"
+                  imgAfter="img/84_2.png"
+                  textBefore="ДО"
+                  textAfter="После"
+                  textVisible={true}
+                />
+              </ScrollAnimation>
 
               <div className="Block8__cardDescr">
                 <div className="Block8__cardDescrLine">
@@ -141,13 +150,15 @@ class Block8 extends React.Component<Block8Props, Block8State> {
             </Col>
 
             <Col md={6} xs={12} className="Block8__card">
-              <BeforeAfterBlock
-                imgBefore="img/85_1.png"
-                imgAfter="img/85_2.png"
-                textBefore="ДО"
-                textAfter="После"
-                textVisible={true}
-              />
+              <ScrollAnimation animateOnce={true} offset={150} delay={0} animateIn="animate__flipInY">
+                <BeforeAfterBlock
+                  imgBefore="img/85_1.png"
+                  imgAfter="img/85_2.png"
+                  textBefore="ДО"
+                  textAfter="После"
+                  textVisible={true}
+                />
+              </ScrollAnimation>
 
               <div className="Block8__cardDescr">
                 <div className="Block8__cardDescrLine">
@@ -170,13 +181,15 @@ class Block8 extends React.Component<Block8Props, Block8State> {
             </Col>
 
             <Col md={6} xs={12} className="Block8__card">
-              <BeforeAfterBlock
-                imgBefore="img/86_1.png"
-                imgAfter="img/86_2.png"
-                textBefore="ДО"
-                textAfter="После"
-                textVisible={true}
-              />
+              <ScrollAnimation animateOnce={true} offset={150} delay={0} animateIn="animate__flipInY">
+                <BeforeAfterBlock
+                  imgBefore="img/86_1.png"
+                  imgAfter="img/86_2.png"
+                  textBefore="ДО"
+                  textAfter="После"
+                  textVisible={true}
+                />
+              </ScrollAnimation>
 
               <div className="Block8__cardDescr">
                 <div className="Block8__cardDescrLine">
