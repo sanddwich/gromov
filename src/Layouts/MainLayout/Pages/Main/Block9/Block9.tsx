@@ -2,6 +2,7 @@ import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import _ from 'lodash'
 import './Block9.scss'
+import { Element } from 'react-scroll'
 
 // Import Swiper React components
 import SwiperCore, { Autoplay, Navigation, Pagination } from 'swiper'
@@ -68,21 +69,23 @@ class Block9 extends React.Component<Block9Props, Block9State> {
 
   render() {
     return (
-      <Container className="Block9 p-0">
-        <h1>
-          <p>Отзывы моих</p>учеников
-        </h1>
-        <Swiper
-          loop={true}
-          navigation={{
-            nextEl: '#NextArrow',
-            prevEl: '#PrewArrow',
-          }}
-          slidesPerView={1}
-        >
-          {this.slideGeneretor()}
-        </Swiper>
-      </Container>
+      <Element name="Block9">
+        <Container className="Block9 p-0">
+          <h1>
+            <p>Отзывы моих</p>учеников
+          </h1>
+          <Swiper
+            loop={true}
+            navigation={{
+              nextEl: '#NextArrow',
+              prevEl: '#PrewArrow',
+            }}
+            slidesPerView={1}
+          >
+            {this.slideGeneretor()}
+          </Swiper>
+        </Container>
+      </Element>
     )
   }
 }

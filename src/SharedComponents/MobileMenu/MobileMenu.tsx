@@ -6,6 +6,7 @@ import { setShowPaymentModal, setMobileMenuModal } from '../../Redux/actions/mod
 import './MobileMenu.scss'
 import { connect } from 'react-redux'
 import IconButton from '../IconButton/IconButton'
+import { scroller } from 'react-scroll'
 
 interface MobileMenuProps {
   setShowPaymentModal: (isActive: boolean) => void
@@ -27,6 +28,17 @@ class MobileMenu extends React.Component<MobileMenuProps, MobileMenuState> {
   closeButton = (): void => {
     this.bodyUnBlock()
     this.props.setMobileMenuModal(false)
+  }
+
+  scrollTo = (ankorName: string, offset: number): void => {
+    scroller.scrollTo(ankorName, {
+      duration: 1500,
+      delay: 100,
+      smooth: true,
+      offset, 
+    })
+
+    this.closeButton()
   }
 
   render() {
@@ -55,7 +67,7 @@ class MobileMenu extends React.Component<MobileMenuProps, MobileMenuState> {
         <Row className="MobileMenu__twoRow m-0">
           <Col className="MobileMenu__menuBlock p-2">
             <ul style={{ listStyleType: 'none' }}>
-              <li>Преимущества</li>
+              <li onClick={() => this.scrollTo('Block2', -150)}>Преимущества</li>
               <li>Чем мы можем помочь</li>
               <li>Отзывы</li>
               <li>Обо мне</li>
