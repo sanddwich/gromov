@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Container } from 'react-bootstrap'
+import { Col, Container, Row } from 'react-bootstrap'
 import ReactInputMask from 'react-input-mask'
 import { Items } from '../../Interfaces/Items'
 import { Receipt } from '../../Interfaces/Receipt'
@@ -135,41 +135,68 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
   render() {
     return (
       <Container fluid className="PayBlock m-0 p-0">
-        <h1>Заполните поля формы:</h1>
-        <div className="PayBlock__inputCont">
-          <ReactInputMask
-            mask="+7 (999) 999-99-99"
-            className={`PayBlock__input ${
-              this.state.formData.inputPhoneTouched ? (this.state.formData.phoneValid ? 'inputValid' : 'inputInvalid') : null
-            } `}
-            type="tel"
-            name="phone"
-            placeholder="+7 (___) ___-__-__"
-            value={this.state.formData.phone}
-            onChange={(event) => this.onPhoneChange(event)}
-          />
+        <Row className="PayBlock__formHeader m-0">
+          <h1>«персональная тренировочная программа»</h1>
+        </Row>
+        <Row className="PayBlock__fieldsList m-0">
+          <Col className="PayBlock__fieldsListCont">
+            <div className="PayBlock__inputCont">
+              <h3>Ваш E-mail</h3>
+              <input
+                type="email"
+                className={`PayBlock__input ${
+                  this.state.formData.inputEmailTouched
+                    ? this.state.formData.emailValid
+                      ? 'inputValid'
+                      : 'inputInvalid'
+                    : null
+                } `}
+                value={this.state.formData.email}
+                placeholder="example@domain.com"
+                name="email"
+                onChange={(event) => this.onEmailChange(event)}
+              />
+              {this.state.formData.inputEmailTouched && !this.state.formData.emailValid ? (
+                <small className="RequestFormModal__inputErrorMessage">Введите корректный email.</small>
+              ) : null}
+            </div>
 
-          {this.state.formData.inputPhoneTouched && !this.state.formData.phoneValid ? (
-            <small className="RequestFormModal__inputErrorMessage">Введите корректный телефонный номер.</small>
-          ) : null}
-        </div>
+            <div className="PayBlock__inputCont">
+              <h3>Номер телефона</h3>
+              <ReactInputMask
+                mask="+7 (999) 999-99-99"
+                className={`PayBlock__input ${
+                  this.state.formData.inputPhoneTouched
+                    ? this.state.formData.phoneValid
+                      ? 'inputValid'
+                      : 'inputInvalid'
+                    : null
+                } `}
+                type="tel"
+                name="phone"
+                placeholder="+7 (___) ___-__-__"
+                value={this.state.formData.phone}
+                onChange={(event) => this.onPhoneChange(event)}
+              />
 
-        <div className="PayBlock__inputCont">
-          <input
-            type="email"
-            className={`PayBlock__input ${
-              this.state.formData.inputEmailTouched ? (this.state.formData.emailValid ? 'inputValid' : 'inputInvalid') : null
-            } `}
-            value={this.state.formData.email}
-            placeholder="example@domain.com"
-            name="email"
-            onChange={(event) => this.onEmailChange(event)}
-          />
-          {this.state.formData.inputEmailTouched && !this.state.formData.emailValid ? (
-            <small className="RequestFormModal__inputErrorMessage">Введите корректный email.</small>
-          ) : null}
-        </div>
-        
+              {this.state.formData.inputPhoneTouched && !this.state.formData.phoneValid ? (
+                <small className="RequestFormModal__inputErrorMessage">Введите корректный телефонный номер.</small>
+              ) : null}
+            </div>
+          </Col>
+        </Row>
+        <Row className="PayBlock__checkboxRow m-0">
+          <Col xs={2} className="PayBlock__checkbox d-flex justify-content-center pt-2">
+            <input className="PayBlock__check" type="checkbox" name="agree"/>
+          </Col>
+          <Col xs={10} className="PayBlock__checkboxTitle">
+            Я ознакомился с{' '}
+            <a href="#" target="_blank">
+              политикой использования персональных данных
+            </a>{' '}
+            и с <a href="#" target="_blank">условиями договора на оказание услуг</a>
+          </Col>
+        </Row>
       </Container>
     )
   }

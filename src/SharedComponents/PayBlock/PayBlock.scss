@@ -1,30 +1,98 @@
 .PayBlock {
+  width: 420px;
   color: #ffffff;
 
-  h1 {
-    font-family: 'Montserrat';
-    margin: 0;
-    padding: 0;
-    font-size: 20px;
-    line-height: 28px;
-    margin-bottom: 30px;
+  background-color: #f6f6f6;
+  padding: 15px;
+
+  .PayBlock__formHeader {
+    background-color: #058dc7;
+    padding: 15px;
+    h1 {
+      font-family: 'Druk Cyr';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 36px;
+      line-height: 120%;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 0;
+
+      color: #ffffff;
+    }
   }
-  
+
+  .PayBlock__fieldsList {
+    background-color: #f6f6f6;
+    padding: 15px;
+  }
+
+  .PayBlock__checkboxRow {
+    padding: 15px;
+    padding-top: 0;
+
+    .PayBlock__checkbox {
+      input[type=checkbox] {
+        width: 30px;
+      }
+
+      .PayBlock__check {
+        background: #ffffff;
+        border: 1px solid #727271;
+        box-sizing: border-box;
+      }
+    }
+    .PayBlock__checkboxTitle {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 135%;
+
+      color: #727272;
+
+      a {
+        color: #058dc7;
+        text-decoration: none;
+      }
+    }
+  }
+
   .PayBlock__inputCont {
     padding-bottom: 20px;
 
-    .PayBlock__input {
-      border-radius: 3px;
-      width: 100%;
+    h3 {
+      font-family: 'Druk Cyr';
+      font-style: normal;
       font-weight: 500;
-      font-size: 16px;
-      line-height: 34px;
-      height: 40px;
-      text-align: center;
-      color: #1c1c1c;
-      outline: none;
+      font-size: 26px;
+      line-height: 135%;
+      /* or 35px */
+
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+
+      color: #058dc7;
+    }
+
+    .PayBlock__input {
+      width: 100%;
+      height: 60px;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 135%;
+      color: #727272;
+      padding-left: 20px;
+      padding-right: 20px;
+
       border: none;
-      background-color: #e2e2e2;
+      border-bottom: 1px solid #000000;
+      box-shadow: 0px 4px 4px rgba(126, 126, 126, 0.25);
     }
 
     .inputValid {
@@ -42,7 +110,7 @@
 
     .RequestFormModal__inputErrorMessage {
       font-weight: 300;
-      color:#fdafaf;
+      color: #fdafaf;
     }
   }
 }
