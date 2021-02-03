@@ -7,7 +7,7 @@ const initialState: ModalState = {
     isActive: false,
   },
   modalPayment: {
-    isActive: false,
+    isActive: true,
   },
   mobileMenu: {
     isActive: false,
