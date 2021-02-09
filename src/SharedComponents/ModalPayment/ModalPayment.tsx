@@ -32,7 +32,7 @@ class ModalPayment extends React.Component<ModalPaymentProps, ModalPaymentState>
     this.props.modal.modalPayment.isActive ? this.bodyBlock() : this.bodyUnBlock()
     return (
       <Container fluid className="ModalPayment p-0 d-flex align-items-center justify-content-center">
-        <div>
+        <div className="ModalPayment__modal">
           <div className="ModalPayment__closeCont d-flex justify-content-end position-relative">
             <div className="ModalPayment__closeButton position-absolute" onClick={() => this.closeModal()}>
               <img src="img/close.svg" alt="" />

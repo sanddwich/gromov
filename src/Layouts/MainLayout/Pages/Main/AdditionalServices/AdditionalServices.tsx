@@ -52,6 +52,20 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                 >
                   Данная программа является стандартной и универсальной, без учета индивидуальных параметров
                 </DashedBorderBlock>
+
+                <Container className="AdditionalServices__propsCont">
+                  <Row className="AdditionalServices__sex m-0 d-flex justify-content-around">
+                    <div className="AdditionalServices__sexType d-flex align-items-center">
+                      <img src="/img/radio__true.svg" alt="" />
+                      <span>Мужчине</span>
+                    </div>
+                    <div className="AdditionalServices__sexType d-flex align-items-center">
+                      <img src="/img/radio__false.svg" alt="" />
+                      <span>Женщине</span>
+                    </div>
+                  </Row>
+                </Container>
+
                 <PriceBlock theme="light" price={'900 р'} />
                 <Button text="Купить сейчас" buttonHandler={() => console.log(111)} />
               </div>

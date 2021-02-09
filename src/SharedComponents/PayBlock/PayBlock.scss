@@ -28,6 +28,7 @@
   .PayBlock__fieldsList {
     background-color: #f6f6f6;
     padding: 15px;
+    padding-bottom: 0;
   }
 
   .PayBlock__checkboxRow {
@@ -35,8 +36,9 @@
     padding-top: 0;
 
     .PayBlock__checkbox {
-      input[type=checkbox] {
+      input[type='checkbox'] {
         width: 30px;
+        height: 30px;
       }
 
       .PayBlock__check {
@@ -50,7 +52,8 @@
       font-style: normal;
       font-weight: 500;
       font-size: 14px;
-      line-height: 135%;
+      line-height: 120%;
+      padding-left: 0;
 
       color: #727272;
 
@@ -62,7 +65,7 @@
   }
 
   .PayBlock__inputCont {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 
     h3 {
       font-family: 'Druk Cyr';
@@ -111,6 +114,126 @@
     .RequestFormModal__inputErrorMessage {
       font-weight: 300;
       color: #fdafaf;
+    }
+  }
+
+  .PayBlock__descr {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 14px;
+    line-height: 120%;
+    color: #00a0e3;
+    text-align: center;
+    padding: 15px;
+    padding-top: 10px;
+    padding-bottom: 0;
+
+    span {
+      // font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+
+  .PayBlock__finalPriceCont {
+    margin-top: 0;
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+    padding: 10px;
+    border-top: 1px dashed #058dc7;
+    border-bottom: 1px dashed #058dc7;
+    background-color: #ffffff;
+
+    .PayBlock__finalPriceTitle {
+      font-family: 'Druk Cyr';
+      font-style: normal;
+      font-weight: 900;
+      font-size: 26px;
+      line-height: 120%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+
+      color: #757575;
+    }
+
+    .PayBlock__finalPrice {
+      font-family: 'Druk Cyr';
+      font-style: normal;
+      font-weight: 900;
+      font-size: 30px;
+      line-height: 120%;
+      /* identical to box height, or 36px */
+
+      text-align: right;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+
+      color: #058dc7;
+    }
+  }
+
+  .PayBlock__buttonCont {
+    margin: 0;
+    padding: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    .PayBlock__button {
+      height: 80px;
+      background: #80b21c;
+      border-radius: 8px 8px 0px 8px;
+      font-family: 'Druk Cyr';
+      font-style: normal;
+      font-weight: 900;
+      font-size: 30px;
+      line-height: 120%;
+
+      text-align: center;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+
+      color: #ffffff;
+      cursor: pointer;
+    }
+    
+    .disabled {
+      background-color: #CDD8B6;
+      cursor: not-allowed;
+    }
+  }
+
+  @media screen and(max-width: 420px) {
+    width: 100%;
+
+    .PayBlock__formHeader {
+      // padding-top: 10px;
+      // padding-bottom: 10px;
+
+      h1 {
+        font-size: 26px;
+        line-height: 110%;
+      }
+    }
+
+    .PayBlock__inputCont {
+      h3 {
+        font-size: 20px;
+        line-height: 120%;
+      }
+
+      .PayBlock__input {
+        font-size: 16px;
+        height: 50px;
+      }
+    }
+
+    .PayBlock__buttonCont {
+      padding-top: 15px !important;
+      padding-bottom: 15px !important;
+      .PayBlock__button {
+        height: 60px;
+        font-size: 26px;
+      }
+
     }
   }
 }

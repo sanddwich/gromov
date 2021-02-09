@@ -20,6 +20,7 @@ interface PayBlockState {
     minPhoneNumbers: number
     checkbox: boolean
     formValid: boolean
+    agree: boolean
   }
 }
 
@@ -37,6 +38,7 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
         minPhoneNumbers: 11,
         checkbox: true,
         formValid: false,
+        agree: false,
       },
     }
   }
@@ -132,11 +134,20 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
     this.setState({ formData })
   }
 
+  checkboxHandler = (): void => {
+    const formData = this.state.formData
+    formData.agree = !formData.agree
+    this.setState({ formData })
+  }
+
   render() {
     return (
       <Container fluid className="PayBlock m-0 p-0">
-        <Row className="PayBlock__formHeader m-0">
+        <Row className="PayBlock__formHeader m-0 d-flex justify-content-center">
           <h1>«персональная тренировочная программа»</h1>
+        </Row>
+        <Row className="PayBlock__descr m-0 d-flex justify-content-center">
+          Мужская программа на похудение, для тренажерного зала
         </Row>
         <Row className="PayBlock__fieldsList m-0">
           <Col className="PayBlock__fieldsListCont">
@@ -186,16 +197,44 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
           </Col>
         </Row>
         <Row className="PayBlock__checkboxRow m-0">
-          <Col xs={2} className="PayBlock__checkbox d-flex justify-content-center pt-2">
-            <input className="PayBlock__check" type="checkbox" name="agree"/>
+          <Col
+            xs={2}
+            className="PayBlock__checkbox d-flex justify-content-center pt-2"
+            onClick={() => this.checkboxHandler()}
+          >
+            <input
+              key={this.state.formData.agree.toString()}
+              className="PayBlock__check"
+              type="checkbox"
+              name="agree"
+              checked={this.state.formData.agree}
+            />
           </Col>
           <Col xs={10} className="PayBlock__checkboxTitle">
             Я ознакомился с{' '}
             <a href="#" target="_blank">
               политикой использования персональных данных
             </a>{' '}
-            и с <a href="#" target="_blank">условиями договора на оказание услуг</a>
+            и с{' '}
+            <a href="#" target="_blank">
+              условиями договора на оказание услуг
+            </a>
           </Col>
+        </Row>
+        <Row className="PayBlock__finalPriceCont d-flex justify-content-between align-items-center">
+          <div className="PayBlock__finalPriceTitle">Стоимость</div>
+          <div className="PayBlock__finalPrice">
+            <span>900</span> Р
+          </div>
+        </Row>
+        <Row className="PayBlock__buttonCont">
+          <div
+            className={`PayBlock__button w-100 d-flex justify-content-center align-items-center ${
+              this.state.formData.agree ? 'active' : 'disabled'
+            }`}
+          >
+            Купить сейчас
+          </div>
         </Row>
       </Container>
     )
