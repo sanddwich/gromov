@@ -111,26 +111,27 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
 
   buyProgramBytton = (programId: number): void => {
     const program: Program = this.state.programs[programId]
-    console.log(program)
     // Items Массив позиций чека с информацией о товарах.
     const payment = this.props.order.payment
 
     const ItemsArray: Items[] = [
       {
-        Amount: program.price,
-        Name: `${program.male ? 'Мужская' : 'Женская'} ${
-          program.properties && (typeof program.activeProperty === 'number') ? program.properties[program.activeProperty] : 'программа'
+        Amount: program.price*100,
+        Name: `${typeof program.male !== 'undefined' ? (program.male ? 'Мужская ' : 'Женская ') : ''}${
+          program.properties && (typeof program.activeProperty === 'number') ? program.properties[program.activeProperty] : program.name
         }`,
-        Price: program.price,
+        Price: program.price*100 ,
         Quantity: 1,
         Tax: Config.Tax,
       },
     ]
 
     if(payment.Receipt) payment.Receipt.Items = ItemsArray
+    payment.Amount = program.price*100
+    payment.Description = program.name
     
     this.props.setOrderPayment(payment)
-
+    this.props.setShowPaymentModal(true)
   }
 
   render() {

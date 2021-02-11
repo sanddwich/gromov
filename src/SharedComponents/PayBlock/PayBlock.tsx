@@ -1,13 +1,21 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import ReactInputMask from 'react-input-mask'
+import { connect } from 'react-redux'
 import { Items } from '../../Interfaces/Items'
 import { Receipt } from '../../Interfaces/Receipt'
 import { TinkoffPay } from '../../Interfaces/TinkoffPay'
+import { RootState } from '../../Redux'
+import { setShowPaymentModal } from '../../Redux/actions/modal'
+import { ModalState, OrderState } from '../../Redux/interfaces/interfaces'
 
 import './PayBlock.scss'
 
-interface PayBlockProps {}
+interface PayBlockProps {
+  modal: ModalState
+  order: OrderState
+  setShowPaymentModal: (isActive: boolean) => void
+}
 
 interface PayBlockState {
   formData: {
@@ -144,10 +152,16 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
     return (
       <Container fluid className="PayBlock m-0 p-0">
         <Row className="PayBlock__formHeader m-0 d-flex justify-content-center">
-          <h1>«персональная тренировочная программа»</h1>
+          <h1>{this.props.order.payment.Description}</h1>
         </Row>
         <Row className="PayBlock__descr m-0 d-flex justify-content-center">
-          Мужская программа на похудение, для тренажерного зала
+          {this.props.order.payment.Receipt
+            ? this.props.order.payment.Receipt.Items.map((item, index) => {
+                if (this.props.order.payment.Description !== item.Name) {
+                  return <div key={index}>{item.Name}</div>
+                }
+              })
+            : null}
         </Row>
         <Row className="PayBlock__fieldsList m-0">
           <Col className="PayBlock__fieldsListCont">
@@ -224,7 +238,7 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
         <Row className="PayBlock__finalPriceCont d-flex justify-content-between align-items-center">
           <div className="PayBlock__finalPriceTitle">Стоимость</div>
           <div className="PayBlock__finalPrice">
-            <span>900</span> Р
+            <span>{this.props.order.payment.Amount / 100}</span> Р
           </div>
         </Row>
         <Row className="PayBlock__buttonCont">
@@ -241,4 +255,17 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
   }
 }
 
-export default PayBlock
+const mapDispatchToProps = {
+  setShowPaymentModal,
+}
+
+const mapStateToProps = (state: RootState) => {
+  const modal = state.modal
+  const order = state.order
+  return {
+    modal,
+    order,
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PayBlock)
