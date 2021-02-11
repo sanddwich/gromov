@@ -11,6 +11,9 @@ import { connect } from 'react-redux'
 import { RootState } from '../../../../../Redux'
 import { setOrderPayment } from '../../../../../Redux/actions/order'
 import { OrderState } from '../../../../../Redux/interfaces/interfaces'
+import { Items } from '../../../../../Interfaces/Items'
+import Config from '../../../../../Config/Config'
+import { setShowPaymentModal } from '../../../../../Redux/actions/modal'
 
 interface Program {
   name: string
@@ -18,11 +21,11 @@ interface Program {
   properties?: string[]
   propertiesSelectActive?: boolean
   activeProperty?: number
-  description?: string
   price: number
 }
 
 interface AdditionalServicesProps {
+  setShowPaymentModal: (isActive: boolean) => void
   setOrderPayment: (payment: TinkoffPay) => void
   order: OrderState
 }
@@ -40,7 +43,6 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
           name: '«Базовая тренировочная программа»',
           price: 900,
           male: true,
-          description: 'Данная программа является стандартной и универсальной, без учета индивидуальных параметров',
           properties: [
             'программа с акцентом на похудение, для тренажерного зала',
             'программа с акцентом на набор мышечной массы, для тренажерного зала',
@@ -109,11 +111,29 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
 
   buyProgramBytton = (programId: number): void => {
     const program: Program = this.state.programs[programId]
-    console.log(this.props.order)
+    console.log(program)
+    // Items Массив позиций чека с информацией о товарах.
+    const payment = this.props.order.payment
+
+    const ItemsArray: Items[] = [
+      {
+        Amount: program.price,
+        Name: `${program.male ? 'Мужская' : 'Женская'} ${
+          program.properties && (typeof program.activeProperty === 'number') ? program.properties[program.activeProperty] : 'программа'
+        }`,
+        Price: program.price,
+        Quantity: 1,
+        Tax: Config.Tax,
+      },
+    ]
+
+    if(payment.Receipt) payment.Receipt.Items = ItemsArray
+    
+    this.props.setOrderPayment(payment)
+
   }
 
   render() {
-    const activeProperty = this.state
     return (
       <Element name="AdditionalServices">
         <div className="AdditionalServices container-lg p-0 m-md-auto m-0">
@@ -553,6 +573,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
 
 const mapDispatchToProps = {
   setOrderPayment,
+  setShowPaymentModal,
 }
 
 const mapStateToProps = (state: RootState) => {
