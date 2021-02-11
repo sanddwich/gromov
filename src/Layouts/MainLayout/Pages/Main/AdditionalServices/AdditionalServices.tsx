@@ -6,6 +6,11 @@ import PriceBlock from '../../../../../SharedComponents/PriceBlock/PriceBlock'
 import RoundButton from '../../../../../SharedComponents/RoundButton/RoundButton'
 import './AdditionalServices.scss'
 import { Element } from 'react-scroll'
+import { TinkoffPay } from '../../../../../Interfaces/TinkoffPay'
+import { connect } from 'react-redux'
+import { RootState } from '../../../../../Redux'
+import { setOrderPayment } from '../../../../../Redux/actions/order'
+import { OrderState } from '../../../../../Redux/interfaces/interfaces'
 
 interface Program {
   name: string
@@ -17,7 +22,10 @@ interface Program {
   price: number
 }
 
-interface AdditionalServicesProps {}
+interface AdditionalServicesProps {
+  setOrderPayment: (payment: TinkoffPay) => void
+  order: OrderState
+}
 
 interface AdditionalServicesState {
   programs: Program[]
@@ -93,7 +101,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
     this.setPropertySelectActive(program, false)
   }
 
-  toggleProperties = (program: number, ): void => {
+  toggleProperties = (program: number): void => {
     const programs = this.state.programs
     programs[program].propertiesSelectActive = !programs[program].propertiesSelectActive
     this.setState({ programs })
@@ -101,7 +109,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
 
   buyProgramBytton = (programId: number): void => {
     const program: Program = this.state.programs[programId]
-    console.log(program)
+    console.log(this.props.order)
   }
 
   render() {
@@ -212,7 +220,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   </Row>
                 </Container>
 
-                <PriceBlock theme="light" price={this.state.programs[0].price+' р'} />
+                <PriceBlock theme="light" price={this.state.programs[0].price + ' р'} />
                 <Button text="Купить сейчас" buttonHandler={() => this.buyProgramBytton(0)} />
               </div>
             </div>
@@ -279,7 +287,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   техники выполнения
                 </DashedBorderBlock>
 
-                <PriceBlock theme="dark" price={this.state.programs[1].price+' р'} />
+                <PriceBlock theme="dark" price={this.state.programs[1].price + ' р'} />
                 <Button text="Купить сейчас" buttonHandler={() => this.buyProgramBytton(1)} />
               </div>
             </div>
@@ -333,7 +341,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   Данная программа является стандартной и универсальной без учета индивидуальных параметров
                 </DashedBorderBlock>
 
-                <Container className="AdditionalServices__propsCont p-0">                  
+                <Container className="AdditionalServices__propsCont p-0">
                   <Row className="AdditionalServices__select m-0">
                     <Container fluid className="AdditionalServices__styledSelect p-0">
                       <Row
@@ -377,7 +385,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   </Row>
                 </Container>
 
-                <PriceBlock theme="light" price={this.state.programs[2].price+' р'} />
+                <PriceBlock theme="light" price={this.state.programs[2].price + ' р'} />
                 <Button text="Купить сейчас" buttonHandler={() => this.buyProgramBytton(2)} />
               </div>
             </div>
@@ -456,7 +464,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   продуктов и примерами конкретных блюд
                 </DashedBorderBlock>
 
-                <PriceBlock theme="dark" price={this.state.programs[3].price+' р'} />
+                <PriceBlock theme="dark" price={this.state.programs[3].price + ' р'} />
                 <Button text="Купить сейчас" buttonHandler={() => this.buyProgramBytton(3)} />
               </div>
             </div>
@@ -477,7 +485,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   Ответы на интересующие вопросы, выявление потребностей, сопоставление желаемого результата с реалиями
                   жизнедеятельности
                 </DashedBorderBlock>
-                <PriceBlock theme="light" price={this.state.programs[4].price+' р/час'} />
+                <PriceBlock theme="light" price={this.state.programs[4].price + ' р/час'} />
                 <Button text="Купить сейчас" buttonHandler={() => this.buyProgramBytton(4)} />
               </div>
             </div>
@@ -493,7 +501,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                 >
                   Подбор бадов и способ их применения, учитывая ваши потребности и задачи
                 </DashedBorderBlock>
-                <PriceBlock theme="light" price={this.state.programs[5].price+' р'} />
+                <PriceBlock theme="light" price={this.state.programs[5].price + ' р'} />
                 <Button text="Купить сейчас" buttonHandler={() => this.buyProgramBytton(5)} />
               </div>
             </div>
@@ -511,7 +519,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                 >
                   Диагностика по анализам крови и рекомендации на основе полученного результата
                 </DashedBorderBlock>
-                <PriceBlock theme="light" price={this.state.programs[6].price+' р'} />
+                <PriceBlock theme="light" price={this.state.programs[6].price + ' р'} />
                 <Button text="Купить сейчас" buttonHandler={() => this.buyProgramBytton(6)} />
               </div>
             </div>
@@ -543,4 +551,15 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
   }
 }
 
-export default AdditionalServices
+const mapDispatchToProps = {
+  setOrderPayment,
+}
+
+const mapStateToProps = (state: RootState) => {
+  const order = state.order
+  return {
+    order,
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AdditionalServices)
