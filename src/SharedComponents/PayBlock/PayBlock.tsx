@@ -8,8 +8,10 @@ import { TinkoffPay } from '../../Interfaces/TinkoffPay'
 import { RootState } from '../../Redux'
 import { setShowPaymentModal } from '../../Redux/actions/modal'
 import { ModalState, OrderState } from '../../Redux/interfaces/interfaces'
+import { sha256 } from 'js-sha256'
 
 import './PayBlock.scss'
+import Config from '../../Config/Config'
 
 interface PayBlockProps {
   modal: ModalState
@@ -28,8 +30,18 @@ interface PayBlockState {
     minPhoneNumbers: number
     checkbox: boolean
     formValid: boolean
+    agreeTouched: boolean
     agree: boolean
+    showFormErrorMessage: boolean
+    loading: boolean
   }
+}
+
+interface OrderData {
+  email: string
+  phone: string
+  PaymentId: string
+  Token: string
 }
 
 class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
@@ -46,8 +58,62 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
         minPhoneNumbers: 11,
         checkbox: true,
         formValid: false,
+        agreeTouched: false,
         agree: false,
+        showFormErrorMessage: false,
+        loading: false,
       },
+    }
+  }
+
+  payTinkoff = async (): Promise<any> => {
+    const url: string = 'https://securepay.tinkoff.ru/v2/Init'
+    const headers = {
+      'Content-Type': 'application/json',
+    }
+
+    // console.log('PAY')
+
+    const payment: TinkoffPay = this.props.order.payment
+    if (payment.Receipt) {
+      payment.Receipt.Email = this.state.formData.email
+      payment.Receipt.Phone = this.state.formData.phone
+    }
+
+    // console.log(payment)
+
+    const res = await fetch(url, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify(payment),
+    })
+
+    const paymentResult = await res.json()
+
+    // console.log(paymentResult)
+
+    if (paymentResult.PaymentId) {
+      let Token: string = ''
+      Token = sha256(
+        Token.concat(
+          payment.Amount.toString(),
+          payment.Description,
+          payment.OrderId,
+          Config.TerminalPassword,
+          Config.TerminalKey
+        )
+      )
+      const orderData: OrderData = {
+        email: this.state.formData.email,
+        phone: this.state.formData.phone,
+        PaymentId: paymentResult.PaymentId,
+        Token: Token,
+      }
+      localStorage.setItem('orderData', JSON.stringify(orderData))
+      console.log(Token)
+      window.open(paymentResult.PaymentURL, '_self')
+    } else {
+      window.open(payment.FailURL, '_self')
     }
   }
 
@@ -102,7 +168,20 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
 
   formButtonClick = (): void => {
     const formData = this.state.formData
-    formData.formValid = this.phoneValidate(formData.phone)
+    formData.inputEmailTouched = true
+    formData.inputPhoneTouched = true
+    formData.agreeTouched = true
+    formData.emailValid = this.emailValidate(formData.email)
+    formData.phoneValid = this.phoneValidate(formData.phone)
+    formData.formValid = formData.emailValid && formData.phoneValid && formData.agree
+
+    if (formData.formValid) {
+      formData.loading = true
+      this.payTinkoff()
+    } else {
+      formData.showFormErrorMessage = true
+    }
+    this.setState({ formData })
   }
 
   phoneValidate = (phone: string): boolean => {
@@ -129,6 +208,7 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
     formData.email = event.target.value
     !formData.inputEmailTouched && (formData.inputEmailTouched = true)
     formData.emailValid = this.emailValidate(formData.email)
+    formData.showFormErrorMessage = false
 
     this.setState({ formData })
   }
@@ -138,6 +218,7 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
     formData.phone = event.target.value
     !formData.inputPhoneTouched && (formData.inputPhoneTouched = true)
     formData.phoneValid = this.phoneValidate(formData.phone)
+    formData.showFormErrorMessage = false
 
     this.setState({ formData })
   }
@@ -145,6 +226,8 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
   checkboxHandler = (): void => {
     const formData = this.state.formData
     formData.agree = !formData.agree
+    formData.agreeTouched = true
+    formData.showFormErrorMessage = false
     this.setState({ formData })
   }
 
@@ -210,7 +293,11 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
             </div>
           </Col>
         </Row>
-        <Row className="PayBlock__checkboxRow m-0">
+        <Row
+          className={`PayBlock__checkboxRow m-0 ${
+            this.state.formData.agreeTouched && !this.state.formData.agree ? 'checkBoxInvalid' : ''
+          }`}
+        >
           <Col
             xs={2}
             className="PayBlock__checkbox d-flex justify-content-center pt-2"
@@ -222,6 +309,7 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
               type="checkbox"
               name="agree"
               checked={this.state.formData.agree}
+              readOnly={true}
             />
           </Col>
           <Col xs={10} className="PayBlock__checkboxTitle">
@@ -241,15 +329,33 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
             <span>{this.props.order.payment.Amount / 100}</span> Р
           </div>
         </Row>
-        <Row className="PayBlock__buttonCont">
-          <div
-            className={`PayBlock__button w-100 d-flex justify-content-center align-items-center ${
-              this.state.formData.agree ? 'active' : 'disabled'
-            }`}
-          >
-            Купить сейчас
-          </div>
-        </Row>
+
+        {this.state.formData.showFormErrorMessage ? (
+          <Row className="PayBlock__formErrorMessage d-flex justify-content-center align-items-center">
+            Заполните корректно все поля формы!
+          </Row>
+        ) : null}
+
+        {this.state.formData.loading ? (
+          <Row className="PayBlock__loading d-flex justify-content-center">
+            <div className="lds-ellipsis">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </Row>
+        ) : (
+          <Row className="PayBlock__buttonCont" onClick={() => this.formButtonClick()}>
+            <div
+              className={`PayBlock__button w-100 d-flex justify-content-center align-items-center ${
+                this.state.formData.agree ? 'active' : 'disabled'
+              }`}
+            >
+              Купить сейчас
+            </div>
+          </Row>
+        )}
       </Container>
     )
   }

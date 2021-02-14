@@ -7,7 +7,7 @@ export interface TinkoffPay {
   Amount: number
   OrderId: string
   IP?: string
-  Description?: string   // Описание заказа
+  Description: string   // Описание заказа
   Token?: string
   Language?: string    //ru - русский, en - английский
   Recurrent?: string   //Идентификатор родительского платежа     Передается со значением Y

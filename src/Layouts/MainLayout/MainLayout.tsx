@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 import { Redirect, Route, Switch } from 'react-router-dom'
-import FailPay from '../../SharedComponents/FailPay/FailPay'
+import FailedPay from '../../SharedComponents/FailedPay/FailedPay'
 import SuccessPay from '../../SharedComponents/SuccessPay/SuccessPay'
 import MainBody from './MainBody/MainBody'
 import MainFooter from './MainFooter/MainFooter'
@@ -25,7 +25,7 @@ class MainLayout extends React.Component<MainLayoutProps, MainLayoutState> {
             <Route path="/second" exact component={Second} />
 
             <Route path="/successpay" exact component={SuccessPay} />
-            <Route path="/failpay" exact component={FailPay} />
+            <Route path="/failedpay" exact component={FailedPay} />
 
             <Redirect to="/" />
           </Switch>
