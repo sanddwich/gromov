@@ -60,7 +60,7 @@ class SuccessPay extends React.Component<SuccessPayProps, SuccessPayState> {
 
     const requestResult = await res.json()
 
-    console.log(requestResult)
+    // console.log(requestResult)
   }
 
   render() {

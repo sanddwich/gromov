@@ -72,9 +72,20 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
       'Content-Type': 'application/json',
     }
 
-    // console.log('PAY')
-
     const payment: TinkoffPay = this.props.order.payment
+
+    let Token: string = ''
+    Token = sha256(
+      Token.concat(
+        payment.Amount.toString(),
+        payment.Description,
+        payment.OrderId,
+        Config.TerminalPassword,
+        Config.TerminalKey
+      )
+    )
+    payment.Token = Token
+
     if (payment.Receipt) {
       payment.Receipt.Email = this.state.formData.email
       payment.Receipt.Phone = this.state.formData.phone
@@ -93,16 +104,6 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
     // console.log(paymentResult)
 
     if (paymentResult.PaymentId) {
-      let Token: string = ''
-      Token = sha256(
-        Token.concat(
-          payment.Amount.toString(),
-          payment.Description,
-          payment.OrderId,
-          Config.TerminalPassword,
-          Config.TerminalKey
-        )
-      )
       const orderData: OrderData = {
         email: this.state.formData.email,
         phone: this.state.formData.phone,
@@ -110,7 +111,7 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
         Token: Token,
       }
       localStorage.setItem('orderData', JSON.stringify(orderData))
-      console.log(Token)
+
       window.open(paymentResult.PaymentURL, '_self')
     } else {
       window.open(payment.FailURL, '_self')

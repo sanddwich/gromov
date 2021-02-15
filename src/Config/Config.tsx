@@ -15,6 +15,7 @@ interface ConfigParams {
 }
 
 const siteURL = 'http://localhost:3000'
+// const siteURL = 'http://gromov.top'
 
 const Config: ConfigParams =  {
   TerminalKey: 'TinkoffBankTest',
