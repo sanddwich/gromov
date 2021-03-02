@@ -81,7 +81,7 @@ class Certificates extends React.Component<CertificatesProps, CertificatesState>
               )
             })}
           </Swiper>
-          <Row className="Certificates__pagination d-flex justify-content-center pt-5">          
+          <Row className="Certificates__pagination m-0 d-flex justify-content-center pt-5">          
             <div className="swiper-paginationMobile"></div>  
           </Row>
         </Container>
