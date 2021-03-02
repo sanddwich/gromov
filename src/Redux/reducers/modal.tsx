@@ -19,7 +19,7 @@ const initialState: ModalState = {
     isActive: false,
   },
   giftModal: {
-    isActive: true,
+    isActive: false,
   },
 }
 
