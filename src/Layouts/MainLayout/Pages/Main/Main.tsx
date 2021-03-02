@@ -41,7 +41,7 @@ class Main extends React.Component<MainProps, MainState> {
         <Achivements />
         <Certificates />
 
-        {/* <ComplexBlock /> */}
+        <ComplexBlock />
 
         <AdditionalServices />
       </Container>
