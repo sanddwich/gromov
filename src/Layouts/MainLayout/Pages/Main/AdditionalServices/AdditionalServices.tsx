@@ -41,7 +41,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
       programs: [
         {
           name: '«Базовая тренировочная программа»',
-          price: 9,
+          price: 900,
           male: true,
           properties: [
             'программа с акцентом на похудение, для тренажерного зала',

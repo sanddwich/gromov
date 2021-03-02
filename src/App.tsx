@@ -10,6 +10,7 @@ import { ModalState } from './Redux/interfaces/interfaces'
 import { connect } from 'react-redux'
 import ModalPayment from './SharedComponents/ModalPayment/ModalPayment'
 import MobileMenu from './SharedComponents/MobileMenu/MobileMenu'
+import GiftModal from './SharedComponents/GiftModal/GiftModal'
 
 interface AppProps {
   setShowPaymentModal: (isActive: boolean) => void
@@ -26,6 +27,7 @@ class App extends React.Component<AppProps, AppState> {
         {/* Модалочки */}
         {this.props.modal.modalPayment.isActive ? (<ModalPayment />) : null}
         {this.props.modal.mobileMenu.isActive ? (<MobileMenu />) : null}
+        {this.props.modal.giftModal.isActive ? (<GiftModal />) : null}
 
         <Switch>
           <Route path="/admin" component={AdminLayout} />

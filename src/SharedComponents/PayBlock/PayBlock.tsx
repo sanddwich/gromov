@@ -91,31 +91,31 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
       payment.Receipt.Phone = this.state.formData.phone
     }
 
-    // console.log(payment)
+    console.log(payment)
 
-    const res = await fetch(url, {
-      method: 'POST',
-      headers,
-      body: JSON.stringify(payment),
-    })
+    // const res = await fetch(url, {
+    //   method: 'POST',
+    //   headers,
+    //   body: JSON.stringify(payment),
+    // })
 
-    const paymentResult = await res.json()
+    // const paymentResult = await res.json()
 
-    // console.log(paymentResult)
+    // // console.log(paymentResult)
 
-    if (paymentResult.PaymentId) {
-      const orderData: OrderData = {
-        email: this.state.formData.email,
-        phone: this.state.formData.phone,
-        PaymentId: paymentResult.PaymentId,
-        Token: Token,
-      }
-      localStorage.setItem('orderData', JSON.stringify(orderData))
+    // if (paymentResult.PaymentId) {
+    //   const orderData: OrderData = {
+    //     email: this.state.formData.email,
+    //     phone: this.state.formData.phone,
+    //     PaymentId: paymentResult.PaymentId,
+    //     Token: Token,
+    //   }
+    //   localStorage.setItem('orderData', JSON.stringify(orderData))
 
-      window.open(paymentResult.PaymentURL, '_self')
-    } else {
-      window.open(payment.FailURL, '_self')
-    }
+    //   window.open(paymentResult.PaymentURL, '_self')
+    // } else {
+    //   window.open(payment.FailURL, '_self')
+    // }
   }
 
   onClickHandler = async (): Promise<any> => {

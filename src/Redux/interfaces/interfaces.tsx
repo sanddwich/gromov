@@ -22,6 +22,9 @@ export interface ModalState {
   mobileMenu: {
     isActive: boolean,
   }
+  giftModal: {
+    isActive: boolean
+  }
 }
 
 export interface OrderState {

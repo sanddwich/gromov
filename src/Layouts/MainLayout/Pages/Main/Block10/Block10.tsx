@@ -34,7 +34,7 @@ class Block10 extends React.Component<Block10Props, Block10State> {
                     </Col>
                     <Col md={7} xs={12} className="Block10__contentRight p-0">
                       <ReactPlayer
-                        url="https://www.youtube.com/watch?v=5W12VyuD6Cw&ab_channel=PeteBellis%26Tommy"
+                        url="https://youtu.be/zNRvTl2gyaY"
                         width="100%"
                         height="100%"
                         controls={true}

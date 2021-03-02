@@ -4,11 +4,12 @@ import { connect } from 'react-redux'
 import { RootState } from '../../../../../Redux'
 import { ModalState } from '../../../../../Redux/interfaces/interfaces'
 import RoundButton from '../../../../../SharedComponents/RoundButton/RoundButton'
-import { setMobileMenuModal } from '../../../../../Redux/actions/modal'
+import { setMobileMenuModal, setGiftModal } from '../../../../../Redux/actions/modal'
 import './Block1.scss'
 import ScrollAnimation from 'react-animate-on-scroll'
 
 interface Block1Props {
+  setGiftModal: (isActive: boolean) => void
   setMobileMenuModal: (isActive: boolean) => void
   modal: ModalState
 }
@@ -51,6 +52,13 @@ class Block1 extends React.Component<Block1Props, Block1State> {
           backgroundSize: 'cover',
         }}
       >
+        <div className="Block1_gift" onClick={() => this.props.setGiftModal(true)}>
+          <img className="img-fluid" src="/img/gift.png" alt="" />
+        </div>
+        <div className="Block1_wa" onClick={() => this.whatsAppClick()}>
+          <img className="img-fluid" src="/img/whatsapp1.png" alt="" />
+        </div>
+
         <Row className="Block1__Row1 m-0 p-0 align-items-center">
           <Container className="p-0">
             <ScrollAnimation animateOnce={true} offset={0} animateIn="animate__fadeInDown">
@@ -152,6 +160,7 @@ class Block1 extends React.Component<Block1Props, Block1State> {
 
 const mapDispatchToProps = {
   setMobileMenuModal,
+  setGiftModal,
 }
 
 const mapStateToProps = (state: RootState) => {

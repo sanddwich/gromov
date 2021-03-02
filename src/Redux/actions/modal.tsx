@@ -1,4 +1,4 @@
-import { HIDE_REQUESTFORM_MODAL, SET_MOBILEMENU_MODAL, SET_SHOWPAYMENT_MODAL, SHOW_REQUESTFORM_MODAL } from "../constants/ActionTypes"
+import { HIDE_REQUESTFORM_MODAL, SET_GIFT_MODAL, SET_MOBILEMENU_MODAL, SET_SHOWPAYMENT_MODAL, SHOW_REQUESTFORM_MODAL } from "../constants/ActionTypes"
 
 export const showRequestModal = () => ({
   type: SHOW_REQUESTFORM_MODAL
@@ -15,5 +15,10 @@ export const setShowPaymentModal = (isActive: boolean) => ({
 
 export const setMobileMenuModal = (isActive: boolean) => ({
   type: SET_MOBILEMENU_MODAL,
+  isActive
+})
+
+export const setGiftModal = (isActive: boolean) => ({
+  type: SET_GIFT_MODAL,
   isActive
 })
