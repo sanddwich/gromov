@@ -15,6 +15,10 @@
         height: 12px;
       }
     }
+
+    .swiper-pagination-bullet-active {
+      background-color: #058dc7;
+    }
   }
 
   @media screen and(max-width: 576px) {

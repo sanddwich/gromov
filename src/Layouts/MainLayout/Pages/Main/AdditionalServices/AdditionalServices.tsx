@@ -14,15 +14,7 @@ import { OrderState } from '../../../../../Redux/interfaces/interfaces'
 import { Items } from '../../../../../Interfaces/Items'
 import Config from '../../../../../Config/Config'
 import { setShowPaymentModal } from '../../../../../Redux/actions/modal'
-
-interface Program {
-  name: string
-  male?: boolean
-  properties?: string[]
-  propertiesSelectActive?: boolean
-  activeProperty?: number
-  price: number
-}
+import { Program } from '../../../../../Interfaces/Program'
 
 interface AdditionalServicesProps {
   setShowPaymentModal: (isActive: boolean) => void
@@ -38,48 +30,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
   constructor(props: AdditionalServicesProps) {
     super(props)
     this.state = {
-      programs: [
-        {
-          name: '«Базовая тренировочная программа»',
-          price: 900,
-          male: true,
-          properties: [
-            'программа с акцентом на похудение, для тренажерного зала',
-            'программа с акцентом на набор мышечной массы, для тренажерного зала',
-            'программа для дома & улицы  с акцентом на похудение',
-            'программа для дома & улицы с акцентом на набор мышечной массы',
-          ],
-          propertiesSelectActive: false,
-          activeProperty: 0,
-        },
-        {
-          name: '«Персональная тренировочная программа»',
-          price: 2500,
-        },
-        {
-          name: '«Базовое питание»',
-          price: 900,
-          properties: ['Cнижения веса', 'Набор веса'],
-          propertiesSelectActive: false,
-          activeProperty: 0,
-        },
-        {
-          name: 'Культура питания «персонально»',
-          price: 2700,
-        },
-        {
-          name: 'Онлайн-Консультация',
-          price: 1500,
-        },
-        {
-          name: 'Подбор бадов',
-          price: 900,
-        },
-        {
-          name: 'Диагностика',
-          price: 900,
-        },
-      ],
+      programs: Config.programs
     }
   }
 
