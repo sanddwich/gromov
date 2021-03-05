@@ -24,12 +24,12 @@ interface Link {
   pass: string
 }
 
-// const siteURL = 'http://localhost:3000'
-const siteURL = 'http://gromov.top'
+const siteURL = 'http://localhost:3000'
+// const siteURL = 'http://gromov.top'
 
 const Config: ConfigParams = {
-  TerminalKey: 'TinkoffBankTest',
-  TerminalPassword: 'TinkoffBankTest',
+  TerminalKey: '1613847439636DEMO',
+  TerminalPassword: 'v1lv7nwkouwdrj23',
   SuccessURL: `${siteURL}/successpay`,
   FailURL: `${siteURL}/failpay`,
   Taxation: 'usn_income',
@@ -124,8 +124,8 @@ const Config: ConfigParams = {
       url: 'https://disk.yandex.ru/d/MDvCKIcdrfOKAg',
       pass: 'Lkjuio98',
     },
-    { name: 'Набор веса', url: '', pass: '' },
-    { name: 'Cнижения веса', url: '', pass: '' },
+    { name: 'Набор веса', url: 'https://disk.yandex.ru/d/eL6EP_INIIpzOg', pass: 'Dfrtyhj765' },
+    { name: 'Cнижения веса', url: 'https://disk.yandex.ru/d/xknTPJo5H9eF2A', pass: 'Lkiuyhj987' },
   ],
 }
 

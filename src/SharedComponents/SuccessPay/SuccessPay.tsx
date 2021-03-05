@@ -35,7 +35,7 @@ class SuccessPay extends React.Component<SuccessPayProps, SuccessPayState> {
 
     if (storage) {
       const orderData = JSON.parse(storage)
-      console.log(orderData)
+      // console.log(orderData)
       this.orderRequest(orderData)
     }
   }
@@ -52,6 +52,8 @@ class SuccessPay extends React.Component<SuccessPayProps, SuccessPayState> {
       Token: orderData.Token,
     }
 
+    console.log(requestData)
+
     const res = await fetch(url, {
       method: 'POST',
       headers,
@@ -60,7 +62,7 @@ class SuccessPay extends React.Component<SuccessPayProps, SuccessPayState> {
 
     const requestResult = await res.json()
 
-    // console.log(requestResult)
+    console.log(requestResult)
   }
 
   render() {
