@@ -22,6 +22,17 @@
       display: flex;
       justify-content: center;
     }
+
+    h4 {
+      width: 100%;
+      text-align: center;
+      padding-bottom: 20px;
+    }
+
+    p {
+      width: 100%;
+      padding-bottom: 20px;
+    }
   }
 
   &__iconButton {
@@ -48,7 +59,7 @@
     }
   }
   p {
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
@@ -57,8 +68,66 @@
   }
 }
 
+.buttonCont {
+  width: 200px;
+}
+
 @media (max-width: 520px) {
   .ComplexBlock {
     padding: 10px;
+  }
+
+  .ComplexBlock__stages {
+    padding: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    h1 {
+      font-size: 30px;
+      line-height: 120%;
+    }
+
+    h4 {
+      font-size: 24px;
+      line-height: 120%;
+    }
+
+    .DashedBorderBlock {
+      padding: 10px 5px !important;
+
+      .DashedBorderBlock__content {
+        font-size: 14px;
+        line-height: 135%;
+      }
+    }
+  }
+
+  .ComplexBlock__purchase {
+    padding: 50px !important;
+
+    h4 {
+      font-size: 24px;
+      line-height: 120%;
+      width: 100%;
+      text-align: center;
+      padding-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 145%;
+      padding-bottom: 20px;
+    }
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 145%;
+  }
+
+  .ComplexBlock__buttonCont {
+    margin: 0 !important;
+    margin-bottom: 10px !important;
+    padding: 0 !important;
   }
 }

@@ -31,6 +31,7 @@ interface AdditionalServicesProps {
 }
 
 interface AdditionalServicesState {
+  messangers: string[]
   programs: Program[]
 }
 
@@ -38,6 +39,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
   constructor(props: AdditionalServicesProps) {
     super(props)
     this.state = {
+      messangers: ['https://www.instagram.com/victor__gromov/', 'https://api.whatsapp.com/send?phone=+79171874086'],
       programs: [
         {
           name: '«Базовая тренировочная программа»',
@@ -80,6 +82,12 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
           price: 900,
         },
       ],
+    }
+  }  
+
+  onClickHandler = (element: number): void => {
+    if (this.state.messangers[element]) {
+      window.open(this.state.messangers[element])
     }
   }
 
@@ -554,13 +562,13 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   <h2 style={{ color: '#ffffff' }}>Напишите мне</h2>
                   <p>Напишите мне на один из предложенных каналов связи и я отвечу на любые вопросы</p>
 
-                  <div className="AdditionalServices__iconButton">
+                  <div className="AdditionalServices__iconButton" onClick={() => this.onClickHandler(1)}>
                     <img src="/img/whatsapp_blue.svg" alt="whatsapp" />
                     Whatsapp
                   </div>
 
-                  <div className="AdditionalServices__iconButton">
-                    <img src="/img/insta_blue.svg" alt="instagram" />
+                  <div className="AdditionalServices__iconButton" onClick={() => this.onClickHandler(0)}>
+                    <img src="/img/insta_blue.svg" alt="instagram"/>
                     Instagram
                   </div>
                 </div>

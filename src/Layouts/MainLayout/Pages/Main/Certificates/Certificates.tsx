@@ -19,22 +19,22 @@ class Certificates extends React.Component<CertificatesProps, CertificatesState>
     super(props)
     this.state = {
       certificates: [
-        '2.jpeg',
-        '3.jpeg',
-        '4.jpeg',
-        '5.jpeg',
-        '6.jpeg',
-        '7.jpeg',
-        '8.jpeg',
-        '9.jpeg',
-        '10.jpeg',
-        '11.jpeg',
-        '12.jpeg',
-        '13.jpeg',
-        '14.jpeg',
-        '15.jpeg',
-        '16.jpeg',
-        '17.jpeg',
+        '1.jpg',
+        '2.jpg',
+        '3.jpg',
+        '4.jpg',
+        '5.jpg',
+        '6.jpg',
+        '7.jpg',
+        '8.jpg',
+        '9.jpg',
+        '10.jpg',
+        '11.jpg',
+        '12.jpg',
+        '13.jpg',
+        '14.jpg',
+        '15.jpg',
+        '16.jpg',
       ],
     }
   }
@@ -42,12 +42,25 @@ class Certificates extends React.Component<CertificatesProps, CertificatesState>
   render() {
     return (
       <Element name="Certificates">
-        <Container fluid className="Certificates d-none d-md-block p-0">
+        <Container className="Certificates d-block p-0">
           <Swiper
-            slidesPerView={2}
-            // centeredSlides={true}
-            // spaceBetween={20}
+            slidesPerView={1}
+            spaceBetween={10}
             pagination={{ el: '.swiper-pagination', clickable: true }}
+            breakpoints={{
+              992: {
+                slidesPerView: 4,
+                spaceBetween: 10,
+              },
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+              },
+              576: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+              }
+            }}
           >
             {this.state.certificates.map((cert, index) => {
               return (
@@ -59,12 +72,12 @@ class Certificates extends React.Component<CertificatesProps, CertificatesState>
               )
             })}
           </Swiper>
-          <Row className="Certificates__pagination m-0 d-flex justify-content-center pt-5">          
-            <div className="swiper-pagination"></div>  
+          <Row className="Certificates__pagination m-0 d-flex justify-content-center pt-5">
+            <div className="swiper-pagination"></div>
           </Row>
         </Container>
 
-        <Container fluid className="Certificates__Mobile d-block d-md-none p-0">
+        {/* <Container fluid className="Certificates__Mobile d-block d-md-none p-0">
           <Swiper
             slidesPerView={1}
             centeredSlides={true}
@@ -84,8 +97,7 @@ class Certificates extends React.Component<CertificatesProps, CertificatesState>
           <Row className="Certificates__pagination m-0 d-flex justify-content-center pt-5">          
             <div className="swiper-paginationMobile"></div>  
           </Row>
-        </Container>
-
+        </Container> */}
       </Element>
     )
   }

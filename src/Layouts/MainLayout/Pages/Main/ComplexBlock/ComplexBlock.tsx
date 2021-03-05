@@ -3,12 +3,29 @@ import DashedBorderBlock from '../../../../../SharedComponents/DashedBorderBlock
 import { Element } from 'react-scroll'
 
 import './ComplexBlock.scss'
+import { Col, Row } from 'react-bootstrap'
+import IconButton from '../../../../../SharedComponents/IconButton/IconButton'
 
 interface ComplexBlockProps {}
 
-interface ComplexBlockState {}
+interface ComplexBlockState {
+  messangers: string[]
+}
 
 class ComplexBlock extends React.Component<ComplexBlockProps, ComplexBlockState> {
+  constructor(props: ComplexBlockProps) {
+    super(props)
+    this.state = {
+      messangers: ['https://www.instagram.com/victor__gromov/', 'https://api.whatsapp.com/send?phone=+79171874086'],
+    }
+  }
+
+  onClickHandler = (element: number): void => {
+    if (this.state.messangers[element]) {
+      window.open(this.state.messangers[element])
+    }
+  }
+
   render() {
     return (
       <Element name="ComplexBlock">
@@ -174,21 +191,47 @@ class ComplexBlock extends React.Component<ComplexBlockProps, ComplexBlockState>
             </p>
           </div>
 
-          <div className="ComplexBlock__purchase">
+          <Row className="ComplexBlock__purchase m-0">
             <h4>как приобрести?</h4>
             <p>Выберите удобный канал связи и напишите “Комплексное ведение”</p>
-            <div className="ComplexBlock__purchase__buttons">
-              <div className="ComplexBlock__iconButton">
-                <img src="/img/whatsapp_blue.svg" alt="whatsapp" />
-                Whatsapp
+            <Col xs={12} sm={6} className="ComplexBlock__buttonCont d-flex justify-content-sm-end justify-content-center">
+              <div className="buttonCont">
+                <IconButton
+                  icon="/img/whatsapp_blue.svg"
+                  text="Whatsapp"
+                  textColor="#058DC7"
+                  bgColor="#ffffff"
+                  height="60px"
+                  borderRadius="8px"
+                  bold="600"
+                  element={1}
+                  clickHandler={this.onClickHandler}
+                />
               </div>
 
-              <div className="ComplexBlock__iconButton">
-                <img src="/img/insta_blue.svg" alt="instagram" />
-                Instagram
+              {/* <img src="/img/whatsapp_blue.svg" alt="whatsapp" />
+                Whatsapp */}
+            </Col>
+
+            <Col xs={12} sm={6} className="ComplexBlock__buttonCont d-flex justify-content-sm-start justify-content-center">
+              <div className="buttonCont">
+                <IconButton
+                  icon="/img/insta_blue.svg"
+                  text="Instagram"
+                  textColor="#058DC7"
+                  bgColor="#ffffff"
+                  height="60px"
+                  borderRadius="8px"
+                  bold="600"
+                  element={0}
+                  clickHandler={this.onClickHandler}
+                />
               </div>
-            </div>
-          </div>
+
+              {/* <img src="/img/insta_blue.svg" alt="instagram" />
+                Instagram */}
+            </Col>
+          </Row>
         </div>
       </Element>
     )
