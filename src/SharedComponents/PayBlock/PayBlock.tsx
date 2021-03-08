@@ -75,16 +75,30 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
 
     const payment: TinkoffPay = this.props.order.payment
 
+    // payment.Description = 'test'
+
     let Token: string = ''
-    Token = sha256(
-      Token.concat(
-        payment.Amount.toString(),
-        payment.Description,
-        payment.OrderId,
-        Config.TerminalPassword,
-        Config.TerminalKey
-      )
+    
+    Token = Token.concat(
+      payment.Amount.toString(),
+      payment.Description,
+      payment.OrderId,
+      Config.TerminalPassword,
+      Config.TerminalKey
     )
+    console.log(Token)
+    Token = sha256(Token)
+    console.log(Token)
+
+    // Token = sha256(
+    //   Token.concat(
+    //     payment.Amount.toString(),
+    //     payment.Description,
+    //     payment.OrderId,
+    //     Config.TerminalPassword,
+    //     Config.TerminalKey
+    //   )
+    // )
     // let Token: string = '100000testTokenExampleTinkoffBankTestTinkoffBankTest'
     // Token = sha256(Token)
 
