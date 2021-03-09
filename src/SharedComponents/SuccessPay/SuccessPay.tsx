@@ -52,6 +52,14 @@ class SuccessPay extends React.Component<SuccessPayProps, SuccessPayState> {
       Token: orderData.Token,
     }
 
+    // const requestData: RequestData = {
+    //   TerminalKey: '1613847439636',
+    //   PaymentId: '488338572',
+    //   Token: '538ac47c602cb7e46d92ffd7e0c11a7e6d66b11550625ae1cb83e3c310ecfef2',
+    // }
+
+
+
     console.log(requestData)
 
     const res = await fetch(url, {

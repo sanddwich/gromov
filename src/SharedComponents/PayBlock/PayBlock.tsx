@@ -131,7 +131,7 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
       }
       localStorage.setItem('orderData', JSON.stringify(orderData))
 
-      window.open(paymentResult.PaymentURL, '_self')
+      // window.open(paymentResult.PaymentURL, '_self')
     } else {
       window.open(payment.FailURL, '_self')
     }

@@ -24,12 +24,14 @@ interface Link {
   pass: string
 }
 
-// const siteURL = 'http://localhost:3000'
-const siteURL = 'http://gromov.top'
+const siteURL = 'http://localhost:3000'
+// const siteURL = 'http://gromov.top'
 
 const Config: ConfigParams = {
   TerminalKey: '1613847439636DEMO',
   TerminalPassword: 'v1lv7nwkouwdrj23',
+  // TerminalKey: '1613847439636',
+  // TerminalPassword: 'f81d6srhltwgdfwb',
   SuccessURL: `${siteURL}/successpay`,
   FailURL: `${siteURL}/failpay`,
   Taxation: 'usn_income',
