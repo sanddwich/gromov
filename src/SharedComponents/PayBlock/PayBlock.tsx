@@ -75,8 +75,6 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
 
     const payment: TinkoffPay = this.props.order.payment
 
-    // payment.Description = 'test'
-
     let Token: string = ''
     
     Token = Token.concat(
@@ -86,21 +84,9 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
       Config.TerminalPassword,
       Config.TerminalKey
     )
-    console.log(Token)
+    // console.log(Token)
     Token = sha256(Token)
-    console.log(Token)
-
-    // Token = sha256(
-    //   Token.concat(
-    //     payment.Amount.toString(),
-    //     payment.Description,
-    //     payment.OrderId,
-    //     Config.TerminalPassword,
-    //     Config.TerminalKey
-    //   )
-    // )
-    // let Token: string = '100000testTokenExampleTinkoffBankTestTinkoffBankTest'
-    // Token = sha256(Token)
+    // console.log(Token)
 
     payment.Token = Token
 
@@ -109,7 +95,7 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
       payment.Receipt.Phone = this.state.formData.phone
     }
 
-    console.log(payment)
+    // console.log(payment)
 
     const res = await fetch(url, {
       method: 'POST',
@@ -122,14 +108,7 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
     console.log(paymentResult)
 
     if (paymentResult.PaymentId) {
-      const orderData: OrderData = {
-        email: this.state.formData.email,
-        phone: this.state.formData.phone,
-        PaymentId: paymentResult.PaymentId,
-        itemName: payment.Receipt && payment.Receipt.Items ? payment.Receipt?.Items[0].Name : '',
-        Token: Token,
-      }
-      localStorage.setItem('orderData', JSON.stringify(orderData))
+      localStorage.setItem('payment', JSON.stringify(payment))
 
       // window.open(paymentResult.PaymentURL, '_self')
     } else {

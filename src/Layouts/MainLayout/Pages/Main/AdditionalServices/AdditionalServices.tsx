@@ -136,7 +136,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
 
     if(payment.Receipt) payment.Receipt.Items = ItemsArray
     payment.Amount = program.price*100
-    payment.Description = program.name
+    payment.Description = `${program.name} / ${ItemsArray.map(item => item.Name + ' / ')}`
     payment.OrderId = ((new Date()).valueOf()).toString()
     
     this.props.setOrderPayment(payment)

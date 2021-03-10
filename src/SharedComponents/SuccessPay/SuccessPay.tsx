@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Row } from 'react-bootstrap'
 import Config from '../../Config/Config'
+import { TinkoffPay } from '../../Interfaces/TinkoffPay'
 import './SuccessPay.scss'
 
 interface SuccessPayProps {}
@@ -22,6 +23,12 @@ interface OrderData {
   Token: string
 }
 
+interface Link {
+  name: string
+  url: string
+  pass: string
+}
+
 class SuccessPay extends React.Component<SuccessPayProps, SuccessPayState> {
   constructor(props: SuccessPayProps) {
     super(props)
@@ -31,46 +38,73 @@ class SuccessPay extends React.Component<SuccessPayProps, SuccessPayState> {
   }
 
   componentDidMount() {
-    const storage = localStorage.getItem('orderData')    
+    const storage = localStorage.getItem('payment')
 
     if (storage) {
-      const orderData = JSON.parse(storage)
-      // console.log(orderData)
-      this.orderRequest(orderData)
+      const payment: TinkoffPay = JSON.parse(storage)
+
+      this.orderRequest(payment)
     }
   }
 
-  orderRequest = async (orderData: OrderData): Promise<any> => {
-    const url: string = 'https://securepay.tinkoff.ru/v2/GetState'
+
+  orderRequest = async (payment: TinkoffPay): Promise<any> => {
+    const url: string = 'https://securepay.tinkoff.ru/v2/Init'
     const headers = {
       'Content-Type': 'application/json',
     }
 
-    const requestData: RequestData = {
-      TerminalKey: Config.TerminalKey,
-      PaymentId: orderData.PaymentId,
-      Token: orderData.Token,
+    console.log(payment)
+
+    try {
+      const res = await fetch(url, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify(payment),
+      })
+
+      const requestResult = await res.json()
+
+      // console.log(requestResult)
+
+      if (!requestResult.Success && requestResult.ErrorCode === '8') {
+        try {
+          const formData = {
+            email: payment.Receipt?.Email,
+            phone: payment.Receipt?.Phone,
+          }
+
+          const link: Link = Config.links.map(link => link.name === payment.Receipt?.Items[0].Name)
+
+          const mailUrl: string = '/api/index.php'
+
+          const mailRes = await fetch(mailUrl, {
+            method: 'POST',
+            body: JSON.stringify(formData),
+            headers: {
+              'Content-Type': 'application/json',
+              'Content-Length': formData.toString().length.toString(),
+            },
+          })
+
+          const mailRequestResult = await mailRes.json()
+
+          if (mailRequestResult !== 'error') {
+            console.log('SUCCESS')
+          } else {
+            console.log('ERROR')
+          }
+
+        } catch (e) {
+          console.log(e)
+        }
+      } else {
+        window.open(payment.FailURL, '_self')
+      }
+
+    } catch (e) {
+      console.log(e)
     }
-
-    // const requestData: RequestData = {
-    //   TerminalKey: '1613847439636',
-    //   PaymentId: '488338572',
-    //   Token: '538ac47c602cb7e46d92ffd7e0c11a7e6d66b11550625ae1cb83e3c310ecfef2',
-    // }
-
-
-
-    console.log(requestData)
-
-    const res = await fetch(url, {
-      method: 'POST',
-      headers,
-      body: JSON.stringify(requestData),
-    })
-
-    const requestResult = await res.json()
-
-    console.log(requestResult)
   }
 
   render() {
