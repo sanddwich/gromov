@@ -8,6 +8,7 @@ interface SuccessPayProps {}
 
 interface SuccessPayState {
   loading: boolean
+  defaultLink: Link
 }
 
 interface RequestData {
@@ -34,6 +35,11 @@ class SuccessPay extends React.Component<SuccessPayProps, SuccessPayState> {
     super(props)
     this.state = {
       loading: true,
+      defaultLink: {
+        name: '',
+        pass: '',
+        url: '',
+      }
     }
   }
 
@@ -42,8 +48,11 @@ class SuccessPay extends React.Component<SuccessPayProps, SuccessPayState> {
 
     if (storage) {
       const payment: TinkoffPay = JSON.parse(storage)
-
+      
       this.orderRequest(payment)
+    } else {
+      // alert(Config.FailURL)
+      window.open(Config.FailURL, '_self')
     }
   }
 
@@ -65,16 +74,24 @@ class SuccessPay extends React.Component<SuccessPayProps, SuccessPayState> {
 
       const requestResult = await res.json()
 
-      // console.log(requestResult)
+      console.log(requestResult)
+      
+      localStorage.removeItem('payment')
 
       if (!requestResult.Success && requestResult.ErrorCode === '8') {
         try {
+          const link: Link = Config.links.find(link => link.name === (payment.Receipt ? payment.Receipt.Items[0].Name : '')) || this.state.defaultLink
+
           const formData = {
             email: payment.Receipt?.Email,
             phone: payment.Receipt?.Phone,
+            name: payment.Description,
+            pass: link.pass,
+            url: link.url,
+            siteURL: Config.siteURL,
           }
 
-          const link: Link = Config.links.map(link => link.name === payment.Receipt?.Items[0].Name)
+          console.log(formData)
 
           const mailUrl: string = '/api/index.php'
 
@@ -89,17 +106,22 @@ class SuccessPay extends React.Component<SuccessPayProps, SuccessPayState> {
 
           const mailRequestResult = await mailRes.json()
 
+          console.log(mailRequestResult)
+
           if (mailRequestResult !== 'error') {
             console.log('SUCCESS')
           } else {
             console.log('ERROR')
+            window.open(Config.FailURL, '_self')
           }
+          
+          this.setState({loading: false})
 
         } catch (e) {
           console.log(e)
         }
       } else {
-        window.open(payment.FailURL, '_self')
+        window.open(Config.FailURL, '_self')
       }
 
     } catch (e) {
@@ -126,8 +148,7 @@ class SuccessPay extends React.Component<SuccessPayProps, SuccessPayState> {
             </Row>
             <Row className="SuccessPay__text m-0 pt-5">
               <h3 className="text-success text-center">
-                Оплата прошла успешно! Благодарю за покупку! На указанный вами e-mail отправлена ссылка для доступа к
-                продукту
+                Оплата прошла успешно! Благодарю за покупку!
               </h3>
             </Row>
             <Row className="SuccessPay__siteLink d-flex justify-content-center pt-3">

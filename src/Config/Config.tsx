@@ -24,8 +24,8 @@ interface Link {
   pass: string
 }
 
-const siteURL = 'http://localhost:3000'
-// const siteURL = 'http://gromov.top'
+// const siteURL = 'http://localhost:3000'
+const siteURL = 'http://gromov.top'
 
 const Config: ConfigParams = {
   TerminalKey: '1613847439636DEMO',
@@ -33,7 +33,7 @@ const Config: ConfigParams = {
   // TerminalKey: '1613847439636',
   // TerminalPassword: 'f81d6srhltwgdfwb',
   SuccessURL: `${siteURL}/successpay`,
-  FailURL: `${siteURL}/failpay`,
+  FailURL: `${siteURL}/failedpay`,
   Taxation: 'usn_income',
   Tax: 'none',
   mailForMessages: '',

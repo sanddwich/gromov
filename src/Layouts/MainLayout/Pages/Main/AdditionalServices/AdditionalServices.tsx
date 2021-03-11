@@ -43,7 +43,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
       programs: [
         {
           name: '«Базовая тренировочная программа»',
-          price: 9,
+          price: 900,
           male: true,
           properties: [
             'программа с акцентом на похудение, для тренажерного зала',
@@ -136,7 +136,8 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
 
     if(payment.Receipt) payment.Receipt.Items = ItemsArray
     payment.Amount = program.price*100
-    payment.Description = `${program.name} / ${ItemsArray.map(item => item.Name + ' / ')}`
+    // payment.Description = `${program.name} / ${ItemsArray.map(item => item.Name + ' / ')}`
+    payment.Description = program.name
     payment.OrderId = ((new Date()).valueOf()).toString()
     
     this.props.setOrderPayment(payment)

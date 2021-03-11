@@ -9,28 +9,34 @@
 
 $body = json_decode(file_get_contents("php://input"));
 
-$date = $body->date;
+$email = $body->email;
 $phoneNumber = $body->phone;
+$name = $body->name;
+$pass = $body->pass;
+$url = $body->url;
+$siteURL = $body->siteURL;
 
-$message = '<p>Была отправлена заявка на бронь базы отдыха <strong><a href="http://rybafish.ru" target="_blank">"Надежда"</a></strong></p>
-<p><b>Выбранная дата брони: </b>'.$date.';<br>
-    <b>Телефон: </b> '.$phoneNumber .'<br>
-</p>';
+$message = '<h3>Вами была приобретена программа на сайте <strong><a href="'.$siteURL.'" target="_blank">"GROMOV.TOP"</a></strong></h3>
+<h4>Наименование программы: "'.$name.'"</h4>';
+
+if ($url !== '') {
+    $message = $message.'<p>Ссылка для скачивания программы: '.$url.'</p><p>Пароль для скачиваемого архива: '.$pass.'</p>';
+}
 
 // if (mb_strlen($tariff) > 3) {
 //     $message = $message.'<h3 style="color:#9E001F;background-color:#E9E9A0;padding:20px;">Выбран тарифный план: '.$tariff.'</h3>';
 // }
 
-$mail_address = 'lww@inbox.ru';
+$mail_address = $email;
 // $mail_address = 'bck-dkiselev@yandex.ru';
-$title = 'Заявка на бронь базы отдыха ' . date('d-m-Y G:i:s') .'!';
+$title = 'Программа ' . date('d-m-Y G:i:s') .'!';
 // Рассылка почты
 require_once "./SendMailSmtpClass.php"; // подключаем класс
 
-$mailSMTP = new SendMailSmtpClass('rybafish@deestore.ru', 'Dfghjuyt567', 'ssl://mail.hostland.ru', 'Rybafish Info', 465);
+$mailSMTP = new SendMailSmtpClass('info@gromov.top', 'Fghjuy67890', 'ssl://mail.hostland.ru', 'Gromov Info', 465);
 $headers= "MIME-Version: 1.0\r\n";
 $headers .= "Content-type: text/html; charset=utf-8\r\n"; // кодировка письма
-$headers .= "From: Rybafish.ru Info <rybafish@deestore.ru>\r\n"; // от кого письмо
+$headers .= "From: gromov.top Info <info@gromov.top>\r\n"; // от кого письмо
 
 try{
 
@@ -38,7 +44,7 @@ try{
     // echo json_encode($result);
 
     if($result === true){
-        $message = "Ваша заявка принята. Я обязательно свяжусь с Вами в ближайшее время.";
+        $message = "Сообщение отправлено";
         // echo $message;
         echo json_encode($message);
     } else {

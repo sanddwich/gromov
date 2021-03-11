@@ -67,6 +67,10 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
     }
   }
 
+  componentDidMount() {
+    
+  }
+
   payTinkoff = async (): Promise<any> => {
     const url: string = 'https://securepay.tinkoff.ru/v2/Init'
     const headers = {
@@ -105,12 +109,14 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
 
     const paymentResult = await res.json()
 
-    console.log(paymentResult)
+    // console.log(paymentResult)
 
     if (paymentResult.PaymentId) {
       localStorage.setItem('payment', JSON.stringify(payment))
 
-      // window.open(paymentResult.PaymentURL, '_self')
+      // console.log(Config.links.find(link => link.name === (payment.Receipt ? payment.Receipt.Items[0].Name : '')))
+
+      window.open(paymentResult.PaymentURL, '_self')
     } else {
       window.open(payment.FailURL, '_self')
     }
