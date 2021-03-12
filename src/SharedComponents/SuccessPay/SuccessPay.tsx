@@ -39,7 +39,7 @@ class SuccessPay extends React.Component<SuccessPayProps, SuccessPayState> {
         name: '',
         pass: '',
         url: '',
-      }
+      },
     }
   }
 
@@ -48,14 +48,13 @@ class SuccessPay extends React.Component<SuccessPayProps, SuccessPayState> {
 
     if (storage) {
       const payment: TinkoffPay = JSON.parse(storage)
-      
+
       this.orderRequest(payment)
     } else {
       // alert(Config.FailURL)
       window.open(Config.FailURL, '_self')
     }
   }
-
 
   orderRequest = async (payment: TinkoffPay): Promise<any> => {
     const url: string = 'https://securepay.tinkoff.ru/v2/Init'
@@ -75,12 +74,14 @@ class SuccessPay extends React.Component<SuccessPayProps, SuccessPayState> {
       const requestResult = await res.json()
 
       console.log(requestResult)
-      
+
       localStorage.removeItem('payment')
 
       if (!requestResult.Success && requestResult.ErrorCode === '8') {
         try {
-          const link: Link = Config.links.find(link => link.name === (payment.Receipt ? payment.Receipt.Items[0].Name : '')) || this.state.defaultLink
+          const link: Link =
+            Config.links.find((link) => link.name === (payment.Receipt ? payment.Receipt.Items[0].Name : '')) ||
+            this.state.defaultLink
 
           const formData = {
             email: payment.Receipt?.Email,
@@ -114,16 +115,14 @@ class SuccessPay extends React.Component<SuccessPayProps, SuccessPayState> {
             console.log('ERROR')
             window.open(Config.FailURL, '_self')
           }
-          
-          this.setState({loading: false})
 
+          this.setState({ loading: false })
         } catch (e) {
           console.log(e)
         }
       } else {
         window.open(Config.FailURL, '_self')
       }
-
     } catch (e) {
       console.log(e)
     }
@@ -146,10 +145,12 @@ class SuccessPay extends React.Component<SuccessPayProps, SuccessPayState> {
             <Row className="SuccessPay__img m-0 d-flex justify-content-center">
               <img className="img-fluid" src="/img/success.png" alt="" />
             </Row>
-            <Row className="SuccessPay__text m-0 pt-5">
+            <Row className="SuccessPay__text m-0 pt-5 d-flex justify-content-center">
               <h3 className="text-success text-center">
-                Оплата прошла успешно! Благодарю за покупку!
+                Оплата прошла успешно! Благодарю за покупку! На указанный вами E-mail придет информационное письмо по
+                приобретаемому продукту.
               </h3>
+              <h3 className="text-danger text-center">Если письмо не попало в почтовый ящик, проверьте папку "СПАМ"</h3>
             </Row>
             <Row className="SuccessPay__siteLink d-flex justify-content-center pt-3">
               <a href={`${Config.siteURL}`}>Перейти на сайт</a>

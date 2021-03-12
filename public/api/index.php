@@ -1,4 +1,6 @@
 <?php
+   header('Content-Type: text/html; charset=utf-8');
+
    if ( $_SERVER['REQUEST_METHOD']=='GET' && realpath(__FILE__) == realpath( $_SERVER['SCRIPT_FILENAME'] ) ) {
         header( 'HTTP/1.0 403 Forbidden', TRUE, 403 );
         die( header( 'location: /index.html' ) );
@@ -15,6 +17,8 @@ $name = $body->name;
 $pass = $body->pass;
 $url = $body->url;
 $siteURL = $body->siteURL;
+
+$textToLog = date('d-m-Y G:i:s').' - ' . $phoneNumber . ' - ' . $email .' - ' . $name.PHP_EOL;
 
 $message = '<h3>Вами была приобретена программа на сайте <strong><a href="'.$siteURL.'" target="_blank">"GROMOV.TOP"</a></strong></h3>
 <h4>Наименование программы: "'.$name.'"</h4>';
@@ -38,6 +42,19 @@ $headers= "MIME-Version: 1.0\r\n";
 $headers .= "Content-type: text/html; charset=utf-8\r\n"; // кодировка письма
 $headers .= "From: gromov.top Info <info@gromov.top>\r\n"; // от кого письмо
 
+function mailToLog($text) {
+    $fileName = 'mail.log';
+
+    if(!file_exists($fileName)){
+        $file = fopen($fileName, 'w');      
+        fclose($file);
+    }    
+
+    $file = fopen($fileName, 'a');
+    fwrite($file, $text);
+    fclose($file);
+}
+
 try{
 
     $result = $mailSMTP->send($mail_address, $title, $message, $headers);
@@ -45,6 +62,21 @@ try{
 
     if($result === true){
         $message = "Сообщение отправлено";
+        
+        // $fileName = 'mail.log';
+        // $text = date('d-m-Y G:i:s').' - '.$phoneNumber.' - '.$email .' - '.$name.PHP_EOL;
+
+        // if(!file_exists($fileName)){
+        //     $file = fopen($fileName, 'w');      
+        //     fclose($file);
+        // }    
+
+        // $file = fopen($fileName, 'a');
+        // fwrite($file, $text);
+        // fclose($file);
+
+        mailToLog($textToLog);
+
         // echo $message;
         echo json_encode($message);
     } else {
