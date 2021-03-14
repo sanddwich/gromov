@@ -21,6 +21,9 @@
 
   .MobileMenu__menuBlock {
     padding-top: 30px !important;
+    position: relative;
+    z-index: 200;
+
     ul {
       padding-inline-start: 10px !important;
       font-family: 'Druk Cyr';

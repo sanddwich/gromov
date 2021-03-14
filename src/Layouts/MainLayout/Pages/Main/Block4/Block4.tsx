@@ -76,7 +76,9 @@ class Block4 extends React.Component<Block4Props, Block4State> {
           </Row>
 
           <Row className="Block4__ImgMob w-100 d-flex d-sm-none justify-content-center">
-            <img className="img-fluid" src="img/block4_1.png" alt="" />
+            <img 
+            // className="img-fluid" 
+            src="img/block4_1.png" alt="" />
           </Row>
         </Container>
       </Element>

@@ -12,6 +12,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/swiper.scss'
 import 'swiper/components/navigation/navigation.scss'
 import 'swiper/components/pagination/pagination.scss'
+import ReactPlayer from 'react-player'
 
 // install Swiper components
 SwiperCore.use([Navigation, Pagination, Autoplay])
@@ -74,7 +75,27 @@ class Block9 extends React.Component<Block9Props, Block9State> {
           <h1>
             <p>Отзывы моих</p>учеников
           </h1>
-          <Swiper
+
+          <Row className="Block9__Row m-0">
+            <Col className="Block9__Col">
+              <ReactPlayer
+                // url="https://www.youtube.com/playlist?list=PLffwSWpMkQis_QJONjZyIV9Qf_Nc9B4fg"
+                url={[
+                  'https://www.youtube.com/watch?v=pHi43If-qp0',
+                  'https://www.youtube.com/watch?v=lHLCX5DGqHA',
+                  'https://www.youtube.com/watch?v=2FWK2hprFKg',
+                  'https://www.youtube.com/watch?v=rxBI-9B39V4',
+                  'https://www.youtube.com/watch?v=dvao7MDUQGw',
+                  'https://www.youtube.com/watch?v=AcJAZNaY5BQ',
+                ]}
+                width="100%"
+                height="100%"
+                controls={true}
+              />
+            </Col>
+          </Row>
+
+          {/* <Swiper
             loop={true}
             navigation={{
               nextEl: '#NextArrow',
@@ -83,7 +104,7 @@ class Block9 extends React.Component<Block9Props, Block9State> {
             slidesPerView={1}
           >
             {this.slideGeneretor()}
-          </Swiper>
+          </Swiper> */}
         </Container>
       </Element>
     )
