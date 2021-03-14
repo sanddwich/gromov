@@ -62,7 +62,7 @@ class SuccessPay extends React.Component<SuccessPayProps, SuccessPayState> {
       'Content-Type': 'application/json',
     }
 
-    console.log(payment)
+    // console.log(payment)
 
     try {
       const res = await fetch(url, {
@@ -73,7 +73,7 @@ class SuccessPay extends React.Component<SuccessPayProps, SuccessPayState> {
 
       const requestResult = await res.json()
 
-      console.log(requestResult)
+      // console.log(requestResult)
 
       localStorage.removeItem('payment')
 
@@ -87,12 +87,13 @@ class SuccessPay extends React.Component<SuccessPayProps, SuccessPayState> {
             email: payment.Receipt?.Email,
             phone: payment.Receipt?.Phone,
             name: payment.Description,
+            gromovMail: Config.gromovMail,
             pass: link.pass,
             url: link.url,
             siteURL: Config.siteURL,
           }
 
-          console.log(formData)
+          // console.log(formData)
 
           const mailUrl: string = '/api/index.php'
 

@@ -16,6 +16,7 @@ interface ConfigParams {
   siteURL: string
   programs: Program[]
   links: Link[]
+  gromovMail: string
 }
 
 interface Link {
@@ -43,6 +44,8 @@ const Config: ConfigParams = {
   defaultPhone: '',
   defaultDescription: 'Тестовый платеж',
   siteURL: siteURL,
+  gromovMail: 'victor.ifbb@gmail.com',
+  // gromovMail: 'bck-dkiselev@yandex.ru',
   programs: [
     {
       name: '«Базовая тренировочная программа»',
@@ -88,47 +91,91 @@ const Config: ConfigParams = {
   links: [
     {
       name: 'Мужская программа с акцентом на похудение, для тренажерного зала',
-      url: 'https://disk.yandex.ru/d/2QMcmT6UJWQWNQ',
+      url: 'https://disk.yandex.ru/d/r7rDYUQQi4oQ8Q',
       pass: 'Lkjuio985',
     },
     {
       name: 'Мужская программа с акцентом на набор мышечной массы, для тренажерного зала',
-      url: 'https://disk.yandex.ru/d/8xqS6WarMr09RQ',
+      url: 'https://disk.yandex.ru/d/RwGMnBFgqm8pKg',
       pass: 'Sdfgwwe76',
     },
     {
       name: 'Мужская программа для дома & улицы  с акцентом на похудение',
-      url: 'https://disk.yandex.ru/d/Xu4cIy3qP8WJWg',
+      url: 'https://disk.yandex.ru/d/MP7FvFMkQ7OsBw',
       pass: 'Mnbhgyt78',
     },
     {
       name: 'Мужская программа для дома & улицы с акцентом на набор мышечной массы',
-      url: 'https://disk.yandex.ru/d/ob1iYNoQyc5w4Q',
+      url: 'https://disk.yandex.ru/d/XZdZKIHFOrMIeg',
       pass: 'Dfghyt67',
     },
     {
       name: 'Женская программа с акцентом на похудение, для тренажерного зала',
-      url: 'https://disk.yandex.ru/d/4D3J1kFeOkxjoQ',
+      url: 'https://disk.yandex.ru/d/crfKYzbkIeH4gg',
       pass: 'Lkjhui876',
     },
     {
       name: 'Женская программа с акцентом на набор мышечной массы, для тренажерного зала',
-      url: 'https://disk.yandex.ru/d/Zgg37qBk7pOx2w',
+      url: 'https://disk.yandex.ru/d/n4CTi__AIGHenw',
       pass: 'Dfghytre345',
     },
     {
       name: 'Женская программа для дома & улицы с акцентом на похудение',
-      url: 'https://disk.yandex.ru/d/jltDBDksR5foEQ',
+      url: 'https://disk.yandex.ru/d/5pcc4AstZEYj0w',
       pass: 'Asdfgtr65',
     },
     {
       name: 'Женская программа для дома & улицы с акцентом на набор мышечной массы',
-      url: 'https://disk.yandex.ru/d/MDvCKIcdrfOKAg',
+      url: 'https://disk.yandex.ru/d/krmcOh9Zf-HtEw',
       pass: 'Lkjuio98',
     },
     { name: 'Набор веса', url: 'https://disk.yandex.ru/d/eL6EP_INIIpzOg', pass: 'Dfrtyhj765' },
     { name: 'Cнижения веса', url: 'https://disk.yandex.ru/d/xknTPJo5H9eF2A', pass: 'Lkiuyhj987' },
   ],
+  // links: [
+  //   {
+  //     name: 'Мужская программа с акцентом на похудение, для тренажерного зала',
+  //     url: 'https://disk.yandex.ru/d/2QMcmT6UJWQWNQ',
+  //     pass: 'Lkjuio985',
+  //   },
+  //   {
+  //     name: 'Мужская программа с акцентом на набор мышечной массы, для тренажерного зала',
+  //     url: 'https://disk.yandex.ru/d/8xqS6WarMr09RQ',
+  //     pass: 'Sdfgwwe76',
+  //   },
+  //   {
+  //     name: 'Мужская программа для дома & улицы  с акцентом на похудение',
+  //     url: 'https://disk.yandex.ru/d/Xu4cIy3qP8WJWg',
+  //     pass: 'Mnbhgyt78',
+  //   },
+  //   {
+  //     name: 'Мужская программа для дома & улицы с акцентом на набор мышечной массы',
+  //     url: 'https://disk.yandex.ru/d/ob1iYNoQyc5w4Q',
+  //     pass: 'Dfghyt67',
+  //   },
+  //   {
+  //     name: 'Женская программа с акцентом на похудение, для тренажерного зала',
+  //     url: 'https://disk.yandex.ru/d/4D3J1kFeOkxjoQ',
+  //     pass: 'Lkjhui876',
+  //   },
+  //   {
+  //     name: 'Женская программа с акцентом на набор мышечной массы, для тренажерного зала',
+  //     url: 'https://disk.yandex.ru/d/Zgg37qBk7pOx2w',
+  //     pass: 'Dfghytre345',
+  //   },
+  //   {
+  //     name: 'Женская программа для дома & улицы с акцентом на похудение',
+  //     url: 'https://disk.yandex.ru/d/jltDBDksR5foEQ',
+  //     pass: 'Asdfgtr65',
+  //   },
+  //   {
+  //     name: 'Женская программа для дома & улицы с акцентом на набор мышечной массы',
+  //     url: 'https://disk.yandex.ru/d/MDvCKIcdrfOKAg',
+  //     pass: 'Lkjuio98',
+  //   },
+  //   { name: 'Набор веса', url: 'https://disk.yandex.ru/d/eL6EP_INIIpzOg', pass: 'Dfrtyhj765' },
+  //   { name: 'Cнижения веса', url: 'https://disk.yandex.ru/d/xknTPJo5H9eF2A', pass: 'Lkiuyhj987' },
+  // ],
 }
 
 export default Config

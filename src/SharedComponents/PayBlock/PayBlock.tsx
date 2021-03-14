@@ -114,8 +114,6 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
     if (paymentResult.PaymentId) {
       localStorage.setItem('payment', JSON.stringify(payment))
 
-      // console.log(Config.links.find(link => link.name === (payment.Receipt ? payment.Receipt.Items[0].Name : '')))
-
       window.open(paymentResult.PaymentURL, '_self')
     } else {
       window.open(payment.FailURL, '_self')
