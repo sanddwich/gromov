@@ -20,11 +20,12 @@
   }
 
   .MobileMenu__menuBlock {
-    padding-top: 30px !important;
+    padding-top: 15px !important;
     position: relative;
     z-index: 200;
 
     ul {
+      // margin-top: -10px;
       padding-inline-start: 10px !important;
       font-family: 'Druk Cyr';
       font-style: normal;
@@ -39,17 +40,17 @@
       color: #ffffff;
 
       li {
-        padding-bottom: 12px;
+        padding-bottom: 10px;
       }
     }
   }
 
   .MobileMenu__messengersCont {
     height: 100%;
-    margin-top: -277px !important;
+    margin-top: -252px !important;
     .MobileMenu__messengers {
       background-color: #8ebe2d;
-      height: 350px;
+      height: 330px;
       border-radius: 20px 20px 0px 20px;
 
       h1 {
@@ -79,7 +80,7 @@
 
     .IconButton {
       filter: drop-shadow(0px 8px 13px rgba(0, 0, 0, 0.13));
-      margin-bottom: 15px;
+      margin-bottom: 10px;
 
       font-family: 'Montserrat';
       font-size: 16px;
@@ -96,6 +97,10 @@
   .MobileMenu__LeftContent {
     position: relative;
     z-index: 10;
+
+    h1 {
+      margin-bottom: 10px !important;
+    }
   }
 
   .MobileMenu__MC {

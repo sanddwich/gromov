@@ -103,7 +103,7 @@ class MobileMenu extends React.Component<MobileMenuProps, MobileMenuState> {
                     text="Whatsapp"
                     textColor="#058DC7"
                     bgColor="#ffffff"
-                    height="60px"
+                    height="50px"
                     borderRadius="8px"
                     bold="600"
                     element={1}
@@ -114,7 +114,7 @@ class MobileMenu extends React.Component<MobileMenuProps, MobileMenuState> {
                     text="Instagram"
                     textColor="#058DC7"
                     bgColor="#ffffff"
-                    height="60px"
+                    height="50px"
                     borderRadius="8px"
                     bold="600"
                     element={0}

@@ -81,11 +81,11 @@ class Block9 extends React.Component<Block9Props, Block9State> {
               <ReactPlayer
                 // url="https://www.youtube.com/playlist?list=PLffwSWpMkQis_QJONjZyIV9Qf_Nc9B4fg"
                 url={[
+                  'https://www.youtube.com/watch?v=dvao7MDUQGw',
                   'https://www.youtube.com/watch?v=pHi43If-qp0',
                   'https://www.youtube.com/watch?v=lHLCX5DGqHA',
                   'https://www.youtube.com/watch?v=2FWK2hprFKg',
                   'https://www.youtube.com/watch?v=rxBI-9B39V4',
-                  'https://www.youtube.com/watch?v=dvao7MDUQGw',
                   'https://www.youtube.com/watch?v=AcJAZNaY5BQ',
                 ]}
                 width="100%"

@@ -196,7 +196,7 @@ class Block8 extends React.Component<Block8Props, Block8State> {
                   <span>Цель:</span> Набор мышечной массы
                 </div>
                 <div className="Block8__cardDescrLine">
-                  Разница во времени фото <span>3 недели</span>
+                  Разница во времени фото <span>10 недель</span>
                 </div>
               </div>
             </Col>

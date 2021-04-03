@@ -1,3 +1,6 @@
+$imgWidth: 395px;
+$imgHeight: 755px;
+
 .Block4 {
   margin-top: 40px;
   padding: 110px;
@@ -44,7 +47,8 @@
     margin: 0;
 
     img {
-      width: 250px !important;
+      width: $imgWidth*0.6;
+      height: $imgHeight*0.6;
       margin-bottom: -50px;
     }
   }

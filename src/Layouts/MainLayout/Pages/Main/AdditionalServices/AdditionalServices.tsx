@@ -75,11 +75,11 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
         },
         {
           name: 'Подбор бадов',
-          price: 900,
+          price: 2000,
         },
         {
           name: 'Диагностика',
-          price: 900,
+          price: 7000,
         },
       ],
     }
