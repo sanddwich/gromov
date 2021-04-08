@@ -19,6 +19,10 @@
     padding-bottom: 20px;
     color: #313131;
 
+    p {
+      padding-top: 20px;
+    }
+
     span {
       font-weight: 600;
     }
@@ -33,7 +37,7 @@
     }
   }
 
-  @media screen and(max-width: 576px) {    
+  @media screen and(max-width: 576px) {
     .Block8__cardDescrLine {
       font-size: 18px;
       line-height: 135%;

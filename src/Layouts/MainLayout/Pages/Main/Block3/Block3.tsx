@@ -18,7 +18,7 @@ class Block3 extends React.Component<Block3Props, Block3State> {
     return (
       <Element name="Block3">
         <Container className="Block3 p-0">
-          <MirrorHeader headerLeft="Каждый день одно и тоже" headerRight="Вы находитесь в замкнутом кругу" />
+          <MirrorHeader headerLeft="Каждый день одно и то же" headerRight="Вы находитесь в замкнутом круге" />
 
           <Row className="Block3__img m-0 p-0">
             <Col md={7} className="m-0 p-0 d-none d-md-flex justify-content-center align-items-center">

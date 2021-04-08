@@ -30,10 +30,10 @@ class Block8 extends React.Component<Block8Props, Block8State> {
 
               <div className="Block8__cardDescr">
                 <div className="Block8__cardDescrLine">
-                  <span>Цель:</span> Соревнования
+                  <span>Цель:</span> cоревнования.
                 </div>
                 <div className="Block8__cardDescrLine">
-                  Разница во времени фото <span>6 недель</span>
+                  Разница во времени между фото – <span>6 недель</span>
                 </div>
                 <div className="Block8__cardDescrLine">
                   <span>Результат:</span>
@@ -41,16 +41,16 @@ class Block8 extends React.Component<Block8Props, Block8State> {
                 <div className="Block8__cardDescrLine">
                   <ul style={{ listStyleImage: 'url(img/marker.svg)' }}>
                     <li>
-                      <span>ТОП 10</span> на Чемпионате России
+                      <span>8 место </span> Чемпионата России;
                     </li>
                     <li>
-                      <span>Чемпион</span> Астраханской области
+                      <span>Чемпион</span> Астраханской области;
                     </li>
                     <li>
-                      <span>ТОП 5</span> Чемпионата Европы
+                      <span>5 место</span> Чемпионата Европы;
                     </li>
                     <li>
-                      <span>5 медалей</span> серебро/бронза по ЮФО
+                      <span>пять медалей</span> за участие в соревнованиях по ЮФО.
                     </li>
                   </ul>
                 </div>
@@ -70,7 +70,7 @@ class Block8 extends React.Component<Block8Props, Block8State> {
 
               <div className="Block8__cardDescr">
                 <div className="Block8__cardDescrLine">
-                  <span>Цель:</span> Снижение процента подкожного жира
+                  <span>Цель:</span> снижение процента подкожного жира.
                 </div>
                 <div className="Block8__cardDescrLine">
                   Разница во времени фото <span>1 месяц</span>
@@ -80,8 +80,8 @@ class Block8 extends React.Component<Block8Props, Block8State> {
                 </div>
                 <div className="Block8__cardDescrLine">
                   <ul style={{ listStyleImage: 'url(img/marker.svg)' }}>
-                    <li>Без диет и спорта</li>
-                    <li>Пример работы нутрициалогии</li>
+                    <li>процент подкожного жира снизился без диет и спорта;</li>
+                    <li>пример работы нутрициологии.</li>
                   </ul>
                 </div>
               </div>
@@ -100,10 +100,11 @@ class Block8 extends React.Component<Block8Props, Block8State> {
 
               <div className="Block8__cardDescr">
                 <div className="Block8__cardDescrLine">
-                  <span>Цель:</span> Набор мышечной массы
+                  <span>Цель:</span> набор мышечной массы.
                 </div>
                 <div className="Block8__cardDescrLine">
-                  Разница во времени фото <span>2,5 года</span>
+                  Разница во времени фото - <span>2,5 года</span>
+                  <p>Пример набора массы для эктоморфа.</p>
                 </div>
                 <div className="Block8__cardDescrLine">
                   <span>Результат:</span>
@@ -111,10 +112,7 @@ class Block8 extends React.Component<Block8Props, Block8State> {
                 <div className="Block8__cardDescrLine">
                   <ul style={{ listStyleImage: 'url(img/marker.svg)' }}>
                     <li>
-                      Набор <span>с 60 кг до 80 кг</span>
-                    </li>
-                    <li>
-                      Пример набора массы для <span>эктоморфа</span>
+                      набор <span>с 60 до 80 килограммов.</span>
                     </li>
                   </ul>
                 </div>
@@ -134,7 +132,8 @@ class Block8 extends React.Component<Block8Props, Block8State> {
 
               <div className="Block8__cardDescr">
                 <div className="Block8__cardDescrLine">
-                  <span>Цель:</span> Снижение процента подкожного жира и набор мышечной массы
+                  <span>Цель:</span> cнижение процента подкожного жира и набор мышечной массы.
+                  <p>Разница во времени между фото – <span>10 недель.</span></p>
                 </div>
                 <div className="Block8__cardDescrLine">
                   <span>Результат:</span>
@@ -142,7 +141,7 @@ class Block8 extends React.Component<Block8Props, Block8State> {
                 <div className="Block8__cardDescrLine">
                   <ul style={{ listStyleImage: 'url(img/marker.svg)' }}>
                     <li>
-                      Результат за <span>2 месяца тренировок</span>
+                      Достижение поставленной цели <span>за 2 месяца тренировок.</span>
                     </li>
                   </ul>
                 </div>
@@ -162,10 +161,10 @@ class Block8 extends React.Component<Block8Props, Block8State> {
 
               <div className="Block8__cardDescr">
                 <div className="Block8__cardDescrLine">
-                  <span>Цель:</span> Снижение веса
+                  <span>Цель:</span> снижение веса.
                 </div>
                 <div className="Block8__cardDescrLine">
-                  Разница во времени фото <span>3 недели</span>
+                  Разница во времени фото - <span>3 недели</span>
                 </div>
                 <div className="Block8__cardDescrLine">
                   <span>Результат:</span>
@@ -173,7 +172,7 @@ class Block8 extends React.Component<Block8Props, Block8State> {
                 <div className="Block8__cardDescrLine">
                   <ul style={{ listStyleImage: 'url(img/marker.svg)' }}>
                     <li>
-                      Минус <span>8 киллограмм</span>
+                      минус <span>8 киллограмм</span>
                     </li>
                   </ul>
                 </div>
@@ -193,10 +192,10 @@ class Block8 extends React.Component<Block8Props, Block8State> {
 
               <div className="Block8__cardDescr">
                 <div className="Block8__cardDescrLine">
-                  <span>Цель:</span> Набор мышечной массы
+                  <span>Цель:</span> набор мышечной массы.
                 </div>
                 <div className="Block8__cardDescrLine">
-                  Разница во времени фото <span>10 недель</span>
+                  Разница во времени фото - <span>10 недель</span>
                 </div>
               </div>
             </Col>

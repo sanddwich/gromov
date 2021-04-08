@@ -43,7 +43,7 @@ class Block5 extends React.Component<Block5Props, Block5State> {
                       />
                     </Col>
                     <Col xl={9} xs={8} className="Block5__RightLineTitle">
-                      Пробовала диеты и не получилось
+                      Пробовали диеты, но не смогла похудеть
                     </Col>
                   </Row>
                 </ScrollAnimation>
@@ -73,7 +73,7 @@ class Block5 extends React.Component<Block5Props, Block5State> {
                       />
                     </Col>
                     <Col xl={9} xs={8} className="Block5__RightLineTitle">
-                      Худела и вес вернулся
+                      Худели, но вес вернулся
                     </Col>
                   </Row>
                 </ScrollAnimation>

@@ -89,12 +89,12 @@ class Block7 extends React.Component<Block7Props, Block7State> {
 
               <Col className="Block7__BottomContentRight m-0 p-3">
                 <DashedBorderBlock bgColor="#80B21C" border="1px dashed #FFFFFF" color="#ffffff" pluses={true}>
-                  Тренировки могут проходить в любых условиях (спортзал, дом, улица)
+                  Тренировки могут проходить в любых условиях (спортзал, дом, улица).
                 </DashedBorderBlock>
               </Col>
             </Row>
 
-            <Row className="Block7__BottomContent m-0 p-0">
+            {/* <Row className="Block7__BottomContent m-0 p-0">
               <Col className="Block7__BottomContentLeft m-0 p-3">
                 <DashedBorderBlock bgColor="#80B21C" border="1px dashed #FFFFFF" color="#ffffff" pluses={true}>
                   Формат работы индивидуальный, то есть 1 на 1
@@ -106,7 +106,7 @@ class Block7 extends React.Component<Block7Props, Block7State> {
                   Не Вы подстраиваетесь под данную систему, а она формируется под вас
                 </DashedBorderBlock>
               </Col>
-            </Row>
+            </Row> */}
           </Container>
         </Container>
       </Element>

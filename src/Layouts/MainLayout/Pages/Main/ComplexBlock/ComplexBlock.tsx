@@ -43,8 +43,7 @@ class ComplexBlock extends React.Component<ComplexBlockProps, ComplexBlockState>
                   pluses={false}
                   padding="15px 20px"
                 >
-                  Первый важный пункт из этого пакета - это постановка целей: амбициозные, достижимые, желанные. Это
-                  важно
+                  Первый важный пункт из этого пакета – постановка целей: амбициозных, достижимых, желанных. Это важно.
                 </DashedBorderBlock>
               </div>
 
@@ -57,9 +56,9 @@ class ComplexBlock extends React.Component<ComplexBlockProps, ComplexBlockState>
                   pluses={false}
                   padding="15px 20px"
                 >
-                  Мы формируем цели исходя из реальной картины, обязательно учитываются: временные интервалы,
-                  производится контроль достижения целей и тут ни как не обойтись без психологической поддержкой от
-                  тренера
+                  Мы формируем цели исходя из реальной картины, поэтому обязательно учитываются временные интервалы,
+                  производится контроль достижения целей – значит никак не обойтись без психологической поддержки
+                  тренера.
                 </DashedBorderBlock>
               </div>
             </div>
@@ -75,7 +74,7 @@ class ComplexBlock extends React.Component<ComplexBlockProps, ComplexBlockState>
                   padding="15px 20px"
                 >
                   Мы будем работать с вашими культурно- пищевыми ценностями, которые формировались на протяжении всей
-                  вашей жизни. На их основе будет строиться ваш рацион
+                  жизни. На их основе будет строиться ваш рацион.
                 </DashedBorderBlock>
               </div>
 
@@ -88,7 +87,7 @@ class ComplexBlock extends React.Component<ComplexBlockProps, ComplexBlockState>
                   pluses={false}
                   padding="15px 20px"
                 >
-                  В формировании рациона принимаются во внимание и Ваши медицинские показания, мы скорректируем и
+                  При формировании рациона берутся во внимание и ваши медицинские показания. Мы скорректируем питание и
                   заменим продукты по необходимости
                 </DashedBorderBlock>
               </div>
@@ -104,10 +103,9 @@ class ComplexBlock extends React.Component<ComplexBlockProps, ComplexBlockState>
                   pluses={false}
                   padding="15px 20px"
                 >
-                  Предположим. У Вас плотный деловой график или Вы плотно занимаетесь семьей, это в принципе может быть
-                  любой фактор из вашей жизне- деятельности, и времени может просто не хватать - Окей, не проблема,
-                  адаптируем план питания под текущий ритм жизни. Говоря проще, не вы подстраиваетесь под план, а он
-                  формируется под вас
+                  Предположим, что у вас плотный деловой график или вы уделяете много времени семье. Это в принципе
+                  может быть любой фактор, говорящий о вашей занятости. Окей, не проблема, адаптируем план питания под
+                  текущий ритм жизни. Говоря проще, не вы подстраиваетесь под план, а он формируется под вас.
                 </DashedBorderBlock>
               </div>
 
@@ -120,8 +118,8 @@ class ComplexBlock extends React.Component<ComplexBlockProps, ComplexBlockState>
                   pluses={false}
                   padding="15px 20px"
                 >
-                  Наше с вами взаимодействие предусматривает постойную поддержку с моей стороны. Я всегда на связи и при
-                  любой непонятной ситуации скоординирую в верном направлении
+                  Наше взаимодействие предусматривает постоянную поддержку с моей стороны. Я всегда на связи и в любой
+                  непонятной ситуации скоординирую в верном направлении.
                 </DashedBorderBlock>
               </div>
             </div>
@@ -138,7 +136,7 @@ class ComplexBlock extends React.Component<ComplexBlockProps, ComplexBlockState>
                   padding="15px 20px"
                 >
                   Для вас составляется индивидуальная тренировочная программа с учетом всех нюансов: здоровье, образ
-                  жизни, деловая активность, быт, семья, время и так далее.
+                  жизни, деловая активность, быт, семья, время и т. д.
                 </DashedBorderBlock>
               </div>
 
@@ -152,7 +150,7 @@ class ComplexBlock extends React.Component<ComplexBlockProps, ComplexBlockState>
                   padding="15px 20px"
                 >
                   Важно, что программа формируется как для занятий в зале, так и для тренировок в домашних условиях или
-                  для улицы.
+                  на улице.
                 </DashedBorderBlock>
               </div>
             </div>
@@ -167,7 +165,7 @@ class ComplexBlock extends React.Component<ComplexBlockProps, ComplexBlockState>
                   pluses={false}
                   padding="15px 20px"
                 >
-                  В данном пакете Вам становятся доступны записи 600 роликов с детальным разбором каждого упражнения.
+                  В данном пакете вам становятся доступны записи 600 роликов с детальным разбором каждого упражнения.
                 </DashedBorderBlock>
               </div>
 
@@ -181,20 +179,24 @@ class ComplexBlock extends React.Component<ComplexBlockProps, ComplexBlockState>
                   padding="15px 20px"
                 >
                   Я буду анализировать корректность техники выполнения упражнений по видео и вносить изменения в
-                  программу по необходимости
+                  программу по необходимости.
                 </DashedBorderBlock>
               </div>
             </div>
             <p>
-              Помимо основных плюсов данного пакета, описанных выше, есть ещё много бонусов, которые Вы сможете
-              использовать, став его счастливым обладателем
+              Помимо основных плюсов данного пакета, описанных выше, есть ещё много бонусов, которые вы сможете
+              использовать, став его счастливым обладателем.
             </p>
           </div>
 
           <Row className="ComplexBlock__purchase m-0">
             <h4>как приобрести?</h4>
-            <p>Выберите удобный канал связи и напишите “Комплексное ведение”</p>
-            <Col xs={12} sm={6} className="ComplexBlock__buttonCont d-flex justify-content-sm-end justify-content-center">
+            <p>Выберите удобный канал связи и напишите <b>“Комплексное ведение”</b></p>
+            <Col
+              xs={12}
+              sm={6}
+              className="ComplexBlock__buttonCont d-flex justify-content-sm-end justify-content-center"
+            >
               <div className="buttonCont">
                 <IconButton
                   icon="/img/whatsapp_blue.svg"
@@ -213,7 +215,11 @@ class ComplexBlock extends React.Component<ComplexBlockProps, ComplexBlockState>
                 Whatsapp */}
             </Col>
 
-            <Col xs={12} sm={6} className="ComplexBlock__buttonCont d-flex justify-content-sm-start justify-content-center">
+            <Col
+              xs={12}
+              sm={6}
+              className="ComplexBlock__buttonCont d-flex justify-content-sm-start justify-content-center"
+            >
               <div className="buttonCont">
                 <IconButton
                   icon="/img/insta_blue.svg"

@@ -17,7 +17,7 @@ class Block10 extends React.Component<Block10Props, Block10State> {
         <Container fluid className="Block10 p-0">
           <Container className="Block10__container p-0">
             <h1>
-              <p>Почему я могу вас </p>привести к результату?
+              <p>Почему я могу привести </p>вас к результату?
             </h1>
 
             <ScrollAnimation animateOnce={true} offset={100} delay={0} animateIn="animate__zoomIn">
@@ -27,18 +27,12 @@ class Block10 extends React.Component<Block10Props, Block10State> {
                     <Col md={5} xs={12} className="Block10__contentLeft d-flex align-items-center">
                       <div>
                         <h2>Посмотрите короткое видео</h2>
-                        <p>
-                          В котором я расскажу вам, чем я могу помочь и как уже привел к результату более 1 000 человек
-                        </p>
+                        <p>В нем я расскажу вам, чем могу помочь и как уже привел к результату </p>
+                        <p><b>более 1 000 человек.</b></p>
                       </div>
                     </Col>
                     <Col md={7} xs={12} className="Block10__contentRight p-0">
-                      <ReactPlayer
-                        url="https://youtu.be/zNRvTl2gyaY"
-                        width="100%"
-                        height="100%"
-                        controls={true}
-                      />
+                      <ReactPlayer url="https://youtu.be/zNRvTl2gyaY" width="100%" height="100%" controls={true} />
                     </Col>
                   </Row>
                 </Container>

@@ -22,7 +22,7 @@ class Achivements extends React.Component<AchivementsProps, AchivementsState> {
                 <div className="Achivements__card">Вице-чемпион кубка Сочи</div>
                 <div className="Achivements__card">Чемпион турнира Гран-при Анапа</div>
                 <div className="Achivements__card">Призёр ЮФО на турнире «Самсон 46»</div>
-                <div className="Achivements__card">ТОП 6 на чемпионате России 2019</div>
+                <div className="Achivements__card">6 место на чемпионате России-2019</div>
                 <div className="Achivements__card">Действующий спортсмен</div>
               </div>
               <div className="col-md-6 d-flex align-items-center justify-content-center pt-4 pb-4">
@@ -44,8 +44,8 @@ class Achivements extends React.Component<AchivementsProps, AchivementsState> {
                     />
                     <div className="Achivements__text">
                       <div className="w-100">
-                        <p>Цель: Соревнования</p>
-                        <p>Разница во времени фото 14 месяцев</p>
+                        <p>Цель: cоревнования.</p>
+                        <p>Разница во времени между фото – <b>14 месяцев.</b></p>
                       </div>
                     </div>
                   </div>

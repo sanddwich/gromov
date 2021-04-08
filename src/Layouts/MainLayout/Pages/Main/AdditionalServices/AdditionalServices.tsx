@@ -83,7 +83,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
         },
       ],
     }
-  }  
+  }
 
   onClickHandler = (element: number): void => {
     if (this.state.messangers[element]) {
@@ -124,22 +124,24 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
 
     const ItemsArray: Items[] = [
       {
-        Amount: program.price*100,
+        Amount: program.price * 100,
         Name: `${typeof program.male !== 'undefined' ? (program.male ? 'Мужская ' : 'Женская ') : ''}${
-          program.properties && (typeof program.activeProperty === 'number') ? program.properties[program.activeProperty] : program.name
+          program.properties && typeof program.activeProperty === 'number'
+            ? program.properties[program.activeProperty]
+            : program.name
         }`,
-        Price: program.price*100 ,
+        Price: program.price * 100,
         Quantity: 1,
         Tax: Config.Tax,
       },
     ]
 
-    if(payment.Receipt) payment.Receipt.Items = ItemsArray
-    payment.Amount = program.price*100
+    if (payment.Receipt) payment.Receipt.Items = ItemsArray
+    payment.Amount = program.price * 100
     // payment.Description = `${program.name} / ${ItemsArray.map(item => item.Name + ' / ')}`
     payment.Description = program.name
-    payment.OrderId = ((new Date()).valueOf()).toString()
-    
+    payment.OrderId = new Date().valueOf().toString()
+
     this.props.setOrderPayment(payment)
     this.props.setShowPaymentModal(true)
   }
@@ -161,7 +163,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  Это список упражнений который скоординирует вас в тренажёрном зале, дома, или на улице
+                  Это список упражнений, который скоординирует вас в тренажёрном зале, дома или на улице.
                 </DashedBorderBlock>
                 <DashedBorderBlock
                   bgColor="#ffffff"
@@ -172,7 +174,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   padding="15px 0"
                 >
                   Вам не нужно тратить своё время на поиски программы в интернете, которая к тому же может быть весьма
-                  травмоопасной
+                  травмоопасной.
                 </DashedBorderBlock>
                 <DashedBorderBlock
                   bgColor="#ffffff"
@@ -182,7 +184,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  Данная программа является стандартной и универсальной, без учета индивидуальных параметров
+                  Данная программа является стандартной и универсальной без учёта индивидуальных параметров.
                 </DashedBorderBlock>
 
                 <Container className="AdditionalServices__propsCont p-0">
@@ -267,8 +269,8 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  Эта тренировочная программа составляется с учётом ваших индивидуальных параметров: сброс веса или
-                  набор мышечной массы
+                  Эта тренировочная программа составляется с учётом ваших индивидуальных параметров и пожеланий,
+                  например сброс веса или набор мышечной массы.
                 </DashedBorderBlock>
 
                 <DashedBorderBlock
@@ -279,8 +281,8 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  В ней принимается во внимание ритм жизни, рабочий график, а также возможные ограничения по физическим
-                  нагрузкам
+                  В ней принимается во внимание ритм жизни, рабочий график, а также возможные ограничения физических
+                  нагрузок.
                 </DashedBorderBlock>
 
                 <DashedBorderBlock
@@ -291,7 +293,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  Программа составляется для: тренажёрного зала, домашних и уличных тренировок
+                  Программа составляется для тренажёрного зала, домашних и уличных тренировок.
                 </DashedBorderBlock>
 
                 <DashedBorderBlock
@@ -302,8 +304,8 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  Также сюда входит консультация (по видео связи или звонку), в ходе которой по необходимости вносятся
-                  корректировки с учетом индивидуального прогресса
+                  Также сюда входит консультация (по видеосвязи или телефону), в ходе которой по необходимости вносятся
+                  корректировки с учетом индивидуального прогресса.
                 </DashedBorderBlock>
 
                 <DashedBorderBlock
@@ -314,8 +316,8 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  В данном формате программы, к каждому упражнению подкрепляется видео инструкция с подробным описанием
-                  техники выполнения
+                  В данном формате программы к каждому упражнению прикрепляется видеоинструкция с подробным описанием
+                  техники выполнения.
                 </DashedBorderBlock>
 
                 <PriceBlock theme="dark" price={this.state.programs[1].price + ' р'} />
@@ -337,7 +339,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  Это базовые принципы сбалансированного, рационального, так называемого правильного питания
+                  Это базовые принципы сбалансированного, рационального, так называемого правильного питания.
                 </DashedBorderBlock>
                 <DashedBorderBlock
                   bgColor="#ffffff"
@@ -347,8 +349,8 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  Это не диета, а фундаментальные плавила, придерживаясь которых вы сможете самостоятельно составить
-                  свой рацион питания для: похудения или набора массы
+                  Это не диета, а фундаментальные правила, придерживаясь которых вы сможете самостоятельно составить
+                  свой рацион питания для похудения или набора массы.
                 </DashedBorderBlock>
                 <DashedBorderBlock
                   bgColor="#ffffff"
@@ -358,8 +360,8 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  В данной программе присутствуют не только базовые рекомендации но и конкретные примеры сочетания
-                  продуктов в рационе, а также примеры конкретных блюд
+                  В данной программе присутствуют не только базовые рекомендации, но и конкретные примеры сочетания
+                  продуктов в рационе и определенных блюд.
                 </DashedBorderBlock>
                 <DashedBorderBlock
                   bgColor="#ffffff"
@@ -369,7 +371,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  Данная программа является стандартной и универсальной без учета индивидуальных параметров
+                  Данная программа является стандартной и универсальной без учёта индивидуальных параметров.
                 </DashedBorderBlock>
 
                 <Container className="AdditionalServices__propsCont p-0">
@@ -432,7 +434,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  Это не только базовые принципы сбалансированного, рационального, так называемого правильного питания
+                  Это не только базовые принципы сбалансированного, рационального, так называемого правильного питания.
                 </DashedBorderBlock>
 
                 <DashedBorderBlock
@@ -443,8 +445,8 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  В этой программе учитывается: - ваш график приёма пищи; - индивидуальная непереносимость продуктов; -
-                  ограничения по продуктам (например диабет или аллергия)
+                  В этой программе учитывается ваш график приёма пищи, индивидуальная непереносимость продуктов, пищевые
+                  ограничения (например, при диабете или аллергии).
                 </DashedBorderBlock>
 
                 <DashedBorderBlock
@@ -455,9 +457,9 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  В этом варианте программы ведётся ежедневный учёт потребляемой вами еды, в специальной форме. Так же
-                  Вы получаете консультацию по видео связи или звонку, в которой мы разбираем ваши записи и корректируем
-                  ошибки
+                  В этом варианте программы ведётся ежедневный учёт потребляемой вами еды в специальной форме. Также вы
+                  получаете консультацию по видеосвязи или по телефону, в которой мы разбираем ваши записи и
+                  корректируем ошибки.
                 </DashedBorderBlock>
 
                 <DashedBorderBlock
@@ -468,7 +470,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  В течении одной - двух недель составляется индивидуальная программа именно под вас
+                  В течение одной-двух недель составляется индивидуальная программа именно для вас.
                 </DashedBorderBlock>
 
                 <DashedBorderBlock
@@ -479,8 +481,8 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  Главным преимуществом данной программы является ее эффективность, т.к. она формируется исходя из
-                  вашего рациона, а не методом «рекомендаций в слепую»
+                  Главным преимуществом данной программы является её эффективность, т. к. она формируется исходя из
+                  вашего рациона, а не методом «рекомендаций вслепую».
                 </DashedBorderBlock>
 
                 <DashedBorderBlock
@@ -491,8 +493,8 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  Так же вы бонусом получаете файл с базовыми принципами питания с наиболее удачными сочетаниями
-                  продуктов и примерами конкретных блюд
+                  Также вы бонусом получаете файл с базовыми принципами питания с наиболее удачными сочетаниями
+                  продуктов и примерами конкретных блюд.
                 </DashedBorderBlock>
 
                 <PriceBlock theme="dark" price={this.state.programs[3].price + ' р'} />
@@ -513,8 +515,8 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   width="100%"
                   pluses={false}
                 >
-                  Ответы на интересующие вопросы, выявление потребностей, сопоставление желаемого результата с реалиями
-                  жизнедеятельности
+                  Ответы на интересующие вопросы, выявление потребностей, сопоставление желаемого результата с
+                  реальностью и образом жизни.
                 </DashedBorderBlock>
                 <PriceBlock theme="light" price={this.state.programs[4].price + ' р/час'} />
                 <Button text="Купить сейчас" buttonHandler={() => this.buyProgramBytton(4)} />
@@ -530,7 +532,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   width="100%"
                   pluses={false}
                 >
-                  Подбор бадов и способ их применения, учитывая ваши потребности и задачи
+                  Подбор бадов и способа их применения с учетом ваших потребностей и задач.
                 </DashedBorderBlock>
                 <PriceBlock theme="light" price={this.state.programs[5].price + ' р'} />
                 <Button text="Купить сейчас" buttonHandler={() => this.buyProgramBytton(5)} />
@@ -548,7 +550,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   width="100%"
                   pluses={false}
                 >
-                  Диагностика по анализам крови и рекомендации на основе полученного результата
+                  Диагностика по анализам крови и рекомендации на основе полученного результата.
                 </DashedBorderBlock>
                 <PriceBlock theme="light" price={this.state.programs[6].price + ' р'} />
                 <Button text="Купить сейчас" buttonHandler={() => this.buyProgramBytton(6)} />
@@ -561,7 +563,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
               >
                 <div className="AdditionalServices__card__text">
                   <h2 style={{ color: '#ffffff' }}>Напишите мне</h2>
-                  <p>Напишите мне на один из предложенных каналов связи и я отвечу на любые вопросы</p>
+                  <p>на одиниз предложенных каналов связи и я отвечу на любые вопросы</p>
 
                   <div className="AdditionalServices__iconButton" onClick={() => this.onClickHandler(1)}>
                     <img src="/img/whatsapp_blue.svg" alt="whatsapp" />
@@ -569,7 +571,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   </div>
 
                   <div className="AdditionalServices__iconButton" onClick={() => this.onClickHandler(0)}>
-                    <img src="/img/insta_blue.svg" alt="instagram"/>
+                    <img src="/img/insta_blue.svg" alt="instagram" />
                     Instagram
                   </div>
                 </div>

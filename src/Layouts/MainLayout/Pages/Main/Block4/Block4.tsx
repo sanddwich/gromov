@@ -25,8 +25,8 @@ class Block4 extends React.Component<Block4Props, Block4State> {
                 width="100%"
                 pluses={true}
               >
-                Снижение веса и физическая активность придаст легкость. Вы станете более энергичными, заряженными и
-                позитивными
+                Снижение веса и физическая активность придадут легкость. Вы станете более энергичными, заряженными и
+                позитивными.
               </DashedBorderBlock>
               <DashedBorderBlock
                 bgColor="#81B31C"
@@ -35,7 +35,8 @@ class Block4 extends React.Component<Block4Props, Block4State> {
                 width="100%"
                 pluses={true}
               >
-                Жировые отложения уйдут!
+                Жировые отложения уйдут, а снижение веса и повышение физической активности улучшат общее состояние
+                здоровья.
               </DashedBorderBlock>
               <DashedBorderBlock
                 bgColor="#81B31C"
@@ -44,9 +45,9 @@ class Block4 extends React.Component<Block4Props, Block4State> {
                 width="100%"
                 pluses={true}
               >
-                Снижение веса и повышение физической активности улуч- шает общее состояние здоровья
+                Мы поставим цели, пропишем способ их достижения и будем осуществлять контроль за их достижением.
               </DashedBorderBlock>
-              <DashedBorderBlock
+              {/* <DashedBorderBlock
                 bgColor="#81B31C"
                 border="1px dashed #FFFFFF"
                 color="#ffffff"
@@ -54,7 +55,7 @@ class Block4 extends React.Component<Block4Props, Block4State> {
                 pluses={true}
               >
                 Мы поставим цели. Пропишется способ их достижения и будет контроль по их достижению
-              </DashedBorderBlock>
+              </DashedBorderBlock> */}
             </Col>
 
             <Col md={6} xs={12} className="Block4__RightColumn d-flex align-items-end">
@@ -69,16 +70,18 @@ class Block4 extends React.Component<Block4Props, Block4State> {
                   width="100%"
                   pluses={true}
                 >
-                  В новом теле Вы будете чувст- вовать себя более уверенными и сексуальными
+                  В новом теле вы будете чувствовать себя более уверенными и сексуальными.
                 </DashedBorderBlock>
               </div>
             </Col>
           </Row>
 
           <Row className="Block4__ImgMob w-100 d-flex d-sm-none justify-content-center">
-            <img 
-            // className="img-fluid" 
-            src="img/block4_1.png" alt="" />
+            <img
+              // className="img-fluid"
+              src="img/block4_1.png"
+              alt=""
+            />
           </Row>
         </Container>
       </Element>

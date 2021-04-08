@@ -101,14 +101,14 @@ class Block1 extends React.Component<Block1Props, Block1State> {
                 <Row className="Block1__Row2DescrBlock">
                   <Col md={5} className="Block1__Row2DescrLeft">
                     <div>
-                      В основе метода - <span>нутрициология</span>, <span>психология</span> и{' '}
-                      <span>физические нагрузки</span>
+                      В основе метода <span>нутрициология</span>, <span>психология</span> и{' '}
+                      <span>физическая активность</span>
                     </div>
                   </Col>
                   <Col md={7} className="Block1__Row2DescrRight">
                     <div>
-                      <p>Учитывая эти факторы, на пути к желаемой фигуре</p> вы не потеряете заинтересованность и
-                      мотивацию
+                      Учитывая этот фактор, <b>вы не потеряете заинтересованность и мотивацию</b> на пути к желаемому
+                      результату
                     </div>
                   </Col>
                 </Row>
