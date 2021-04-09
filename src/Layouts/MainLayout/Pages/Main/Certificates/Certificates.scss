@@ -1,18 +1,18 @@
-.Certificates, .Certificates__Mobile {
+.Certificates, .Certificates__Mobile, .Certificates__two {
   padding-bottom: 80px !important;
 
   .Certificates__slide {
     img {
-      height: 350px;
+
     }
   }
 
   .Certificates__pagination {
-    .swiper-pagination, .swiper-paginationMobile {
+    .swiper-pagination, .swiper-pagination2, .swiper-paginationMobile {
       .swiper-pagination-bullet {
         margin-right: 5px;
-        width: 12px;
-        height: 12px;
+        width: 12px !important;
+        height: 12px !important;
       }
     }
 
@@ -24,7 +24,7 @@
   @media screen and(max-width: 576px) {
     .Certificates__slide {
       img {
-        height: 300px;
+        // height: 300px;
       }
     }
   }

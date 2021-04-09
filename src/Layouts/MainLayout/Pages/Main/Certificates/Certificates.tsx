@@ -11,16 +11,15 @@ import { Container, Row } from 'react-bootstrap'
 interface CertificatesProps {}
 
 interface CertificatesState {
-  certificates: string[]
+  certificatesHorizontal: string[]
+  certificatesVertical: string[]
 }
 
 class Certificates extends React.Component<CertificatesProps, CertificatesState> {
   constructor(props: CertificatesProps) {
     super(props)
     this.state = {
-      certificates: [
-        '1.jpg',
-        '2.jpg',
+      certificatesHorizontal: [
         '3.jpg',
         '4.jpg',
         '5.jpg',
@@ -28,7 +27,6 @@ class Certificates extends React.Component<CertificatesProps, CertificatesState>
         '7.jpg',
         '8.jpg',
         '9.jpg',
-        '10.jpg',
         '11.jpg',
         '12.jpg',
         '13.jpg',
@@ -36,6 +34,7 @@ class Certificates extends React.Component<CertificatesProps, CertificatesState>
         '15.jpg',
         '16.jpg',
       ],
+      certificatesVertical: ['1.jpg', '2.jpg', '10.jpg'],
     }
   }
 
@@ -44,25 +43,21 @@ class Certificates extends React.Component<CertificatesProps, CertificatesState>
       <Element name="Certificates">
         <Container className="Certificates d-block p-0">
           <Swiper
-            slidesPerView={1}
-            spaceBetween={10}
+            // spaceBetween={10}
             pagination={{ el: '.swiper-pagination', clickable: true }}
+            slidesPerView={1}
             breakpoints={{
               992: {
-                slidesPerView: 4,
-                spaceBetween: 10,
-              },
-              768: {
                 slidesPerView: 3,
                 spaceBetween: 10,
               },
-              576: {
+              768: {
                 slidesPerView: 2,
                 spaceBetween: 10,
-              }
+              },
             }}
           >
-            {this.state.certificates.map((cert, index) => {
+            {this.state.certificatesHorizontal.map((cert, index) => {
               return (
                 <SwiperSlide key={index}>
                   <div className="Certificates__slide d-flex justify-content-center align-items-center">
@@ -74,6 +69,37 @@ class Certificates extends React.Component<CertificatesProps, CertificatesState>
           </Swiper>
           <Row className="Certificates__pagination m-0 d-flex justify-content-center pt-5">
             <div className="swiper-pagination"></div>
+          </Row>
+        </Container>
+
+        <Container className="Certificates__two d-block p-0">
+          <Swiper
+            // spaceBetween={10}
+            pagination={{ el: '.swiper-pagination2', clickable: true }}
+            slidesPerView={1}
+            breakpoints={{
+              992: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+              },
+            }}
+          >
+            {this.state.certificatesVertical.map((cert, index) => {
+              return (
+                <SwiperSlide key={index}>
+                  <div className="Certificates__slide d-flex justify-content-center align-items-center">
+                    <img className="img-fluid" src={`/img/cert/${cert}`} alt="" />
+                  </div>
+                </SwiperSlide>
+              )
+            })}
+          </Swiper>
+          <Row className="Certificates__pagination m-0 d-flex justify-content-center pt-5">
+            <div className="swiper-pagination2"></div>
           </Row>
         </Container>
 
