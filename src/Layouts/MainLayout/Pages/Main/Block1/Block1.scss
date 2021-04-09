@@ -48,8 +48,15 @@
     }
 
     .MobileMenu__closeButton {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      color: #ffffff;
       margin-right: 30px;
+
       img {
+        margin-left: 10px;
         width: 20px;
       }
     }
