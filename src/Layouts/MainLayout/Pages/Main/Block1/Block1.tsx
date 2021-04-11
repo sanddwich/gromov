@@ -82,8 +82,9 @@ class Block1 extends React.Component<Block1Props, Block1State> {
               <div className="MobileMenu__logo p-2">
                 <img className="img-fluid" src="/img/logo.png" alt="" />
               </div>
-              <div className="MobileMenu__closeButton">
-                <img src="/img/burger.svg" alt="" onClick={() => this.openMobileMenu()} />
+              <div className="MobileMenu__closeButton d-flex" onClick={() => this.openMobileMenu()} >
+                Меню 
+                <img src="/img/burger.svg" alt=""/>
               </div>
             </Row>
           </Container>
