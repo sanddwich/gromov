@@ -40,18 +40,12 @@ class Block8 extends React.Component<Block8Props, Block8State> {
                 </div>
                 <div className="Block8__cardDescrLine">
                   <ul style={{ listStyleImage: 'url(img/marker.svg)' }}>
-                    <li>
-                      <span>8 место </span> Чемпионата России;
-                    </li>
-                    <li>
+                    <li>С первого раза вошёл в 10-ку лучших на чемпионате России</li>
+                    {/* <li>
                       <span>Чемпион</span> Астраханской области;
-                    </li>
-                    <li>
-                      <span>5 место</span> Чемпионата Европы;
-                    </li>
-                    <li>
-                      <span>пять медалей</span> за участие в соревнованиях по ЮФО.
-                    </li>
+                    </li> */}
+                    <li>4 место на чемпионате Европы</li>
+                    <li>Чемпион пяти регионов ЮФО</li>
                   </ul>
                 </div>
               </div>
@@ -133,7 +127,9 @@ class Block8 extends React.Component<Block8Props, Block8State> {
               <div className="Block8__cardDescr">
                 <div className="Block8__cardDescrLine">
                   <span>Цель:</span> cнижение процента подкожного жира и набор мышечной массы.
-                  <p>Разница во времени между фото – <span>10 недель.</span></p>
+                  <p>
+                    Разница во времени между фото – <span>10 недель.</span>
+                  </p>
                 </div>
                 <div className="Block8__cardDescrLine">
                   <span>Результат:</span>

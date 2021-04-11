@@ -76,6 +76,15 @@ class Block9 extends React.Component<Block9Props, Block9State> {
             <p>Отзывы моих</p>учеников
           </h1>
 
+          <Row className="Block9__descr d-flex align-items-center m-0">
+            <Col xs={10} className="d-flex justify-content-center align-items-center">
+              Для того, чтобы посмотреть все отзывы нажмите на кнопку плейлиста
+            </Col>
+            <Col xs={2} className="p-0 d-flex justify-content-center">
+              <img src="/img/playlist.svg" alt="" />
+            </Col>
+          </Row>
+
           <Row className="Block9__Row m-0">
             <Col className="Block9__Col">
               <ReactPlayer

@@ -75,11 +75,11 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
         },
         {
           name: 'Подбор бадов',
-          price: 2000,
+          price: 900,
         },
         {
           name: 'Диагностика',
-          price: 7000,
+          price: 900,
         },
       ],
     }
@@ -304,8 +304,8 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  Также сюда входит консультация (по видеосвязи или телефону), в ходе которой по необходимости вносятся
-                  корректировки с учетом индивидуального прогресса.
+                  Также сюда входит консультация (по видеосвязи или телефонному звонку), в ходе которой по необходимости
+                  вносятся корректировки с учетом индивидуального прогресса.
                 </DashedBorderBlock>
 
                 <DashedBorderBlock
@@ -563,7 +563,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
               >
                 <div className="AdditionalServices__card__text">
                   <h2 style={{ color: '#ffffff' }}>Напишите мне</h2>
-                  <p>на одиниз предложенных каналов связи и я отвечу на любые вопросы</p>
+                  <p>на один из предложенных каналов связи и я отвечу на любые вопросы</p>
 
                   <div className="AdditionalServices__iconButton" onClick={() => this.onClickHandler(1)}>
                     <img src="/img/whatsapp_blue.svg" alt="whatsapp" />

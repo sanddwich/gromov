@@ -88,7 +88,7 @@ class ComplexBlock extends React.Component<ComplexBlockProps, ComplexBlockState>
                   padding="15px 20px"
                 >
                   При формировании рациона берутся во внимание и ваши медицинские показания. Мы скорректируем питание и
-                  заменим продукты по необходимости
+                  заменим продукты по необходимости.
                 </DashedBorderBlock>
               </div>
             </div>

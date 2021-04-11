@@ -97,7 +97,7 @@ class MobileMenu extends React.Component<MobileMenuProps, MobileMenuState> {
               <Col xs={8} className="p-0 pl-4 d-flex align-items-center">
                 <div className="MobileMenu__LeftContent">
                   <h1>Напишите мне</h1>
-                  <p>Напишите мне на один из предложенных каналов связи и я отвечу на любые вопросы</p>
+                  <p>на один из предложенных каналов связи и я отвечу на любые вопросы</p>
                   <IconButton
                     icon="/img/whatsapp_blue.svg"
                     text="Whatsapp"

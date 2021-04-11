@@ -26,11 +26,29 @@
   .Block9__slideItem {
     height: 400px;
     background-color: #313131;
-    
+
     h1 {
       color: #ffffff !important;
       padding: 0;
     }
+  }
+
+  .Block9__descr {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px !important;
+
+    color: #313131;
+
+    // img {
+    //   margin-left: 20px;
+    //   margin-top: 10px;
+    // }
   }
 
   @media screen and(max-width: 768px) {
@@ -42,6 +60,11 @@
   @media screen and(max-width: 460px) {
     .Block9__Col {
       height: 300px;
+    }
+
+    .Block9__descr {
+      font-size: 16px;
+
     }
   }
 }

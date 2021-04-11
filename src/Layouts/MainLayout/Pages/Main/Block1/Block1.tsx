@@ -99,17 +99,17 @@ class Block1 extends React.Component<Block1Props, Block1State> {
                 </ScrollAnimation>
 
                 <Row className="Block1__Row2DescrBlock">
-                  <Col md={5} className="Block1__Row2DescrLeft">
+                  <Col md={8} className="Block1__Row2DescrLeft">
                     <div>
                       В основе метода <span>нутрициология</span>, <span>психология</span> и{' '}
                       <span>физическая активность</span>
                     </div>
                   </Col>
-                  <Col md={7} className="Block1__Row2DescrRight">
-                    <div>
+                  <Col md={4} className="Block1__Row2DescrRight">
+                    {/* <div>
                       Учитывая этот фактор, <b>вы не потеряете заинтересованность и мотивацию</b> на пути к желаемому
                       результату
-                    </div>
+                    </div> */}
                   </Col>
                 </Row>
               </div>
@@ -126,7 +126,7 @@ class Block1 extends React.Component<Block1Props, Block1State> {
           <div>
             <Row className="w-100 h-100 m-0">
               <Col xs={8} className="Block1__Row2Title d-flex align-items-end">
-                <div>
+                <div className="position-relative">
                   <p>Приведу вас в</p>
                   <p>форму за</p>
                   <span>4 месяца</span>
@@ -146,9 +146,9 @@ class Block1 extends React.Component<Block1Props, Block1State> {
                 </div>
               </Col>
               <Col xs={12} className="Block1__Row2DescrRight">
-                <div>
+                {/* <div>
                   <p>Учитывая эти факторы, на пути к желаемой фигуре</p> вы не потеряете заинтересованность и мотивацию
-                </div>
+                </div> */}
               </Col>
             </Row>
           </div>
