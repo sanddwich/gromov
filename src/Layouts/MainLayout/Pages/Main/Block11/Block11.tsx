@@ -45,7 +45,7 @@ class Block11 extends React.Component<Block11Props, Block11State> {
                   borderRadius="8px"
                   boxShadow="0px 8px 10px rgba(0, 0, 0, 0.13)"
                 >
-                  Имею квалификацию тренера Международного класса
+                  Имею квалификацию тренера международного класса
                 </DashedBorderBlock>
 
                 <DashedBorderBlock

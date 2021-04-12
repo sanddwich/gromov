@@ -67,7 +67,7 @@ class Block8 extends React.Component<Block8Props, Block8State> {
                   <span>Цель:</span> снижение процента подкожного жира.
                 </div>
                 <div className="Block8__cardDescrLine">
-                  Разница во времени фото <span>1 месяц</span>
+                  Разница во времени фото - <span>1 месяц</span>
                 </div>
                 <div className="Block8__cardDescrLine">
                   <span>Результат:</span>
@@ -128,7 +128,7 @@ class Block8 extends React.Component<Block8Props, Block8State> {
                 <div className="Block8__cardDescrLine">
                   <span>Цель:</span> cнижение процента подкожного жира и набор мышечной массы.
                   <p>
-                    Разница во времени между фото – <span>10 недель.</span>
+                    Разница во времени между фото – <span>2 месяца.</span>
                   </p>
                 </div>
                 <div className="Block8__cardDescrLine">
@@ -192,6 +192,15 @@ class Block8 extends React.Component<Block8Props, Block8State> {
                 </div>
                 <div className="Block8__cardDescrLine">
                   Разница во времени фото - <span>10 недель</span>
+                </div>
+                <div className="Block8__cardDescrLine">
+                  <span>Результат:</span>
+                </div>
+                <div className="Block8__cardDescrLine">
+                  <ul style={{ listStyleImage: 'url(img/marker.svg)' }}>
+                    <li>Увеличение веса на 5 кг;</li>
+                    <li>Дисциплина – гарант достижения качественного результата.</li>
+                  </ul>
                 </div>
               </div>
             </Col>

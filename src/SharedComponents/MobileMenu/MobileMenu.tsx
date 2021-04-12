@@ -93,7 +93,14 @@ class MobileMenu extends React.Component<MobileMenuProps, MobileMenuState> {
 
         <Container className="MobileMenu__messengersCont d-flex align-items-end">
           <Container className="MobileMenu__messengers p-0">
-            <Row className="MobileMenu__MC m-0 h-100">
+            <Row
+              className="MobileMenu__MC m-0 h-100"
+              style={{
+                backgroundImage: `url("/img/contacts_photo.png")`,
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+              }}
+            >
               <Col xs={8} className="p-0 pl-4 d-flex align-items-center">
                 <div className="MobileMenu__LeftContent">
                   <h1>Напишите мне</h1>
@@ -124,7 +131,7 @@ class MobileMenu extends React.Component<MobileMenuProps, MobileMenuState> {
               </Col>
 
               <Col className="MobileMenu__photo p-0 d-flex align-items-end justify-content-end" xs={4}>
-                <img src="/img/contacts_photo.png" alt="" />
+                {/* <img src="/img/contacts_photo.png" alt="" /> */}
               </Col>
             </Row>
           </Container>

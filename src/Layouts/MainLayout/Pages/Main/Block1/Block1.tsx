@@ -82,9 +82,9 @@ class Block1 extends React.Component<Block1Props, Block1State> {
               <div className="MobileMenu__logo p-2">
                 <img className="img-fluid" src="/img/logo.png" alt="" />
               </div>
-              <div className="MobileMenu__closeButton d-flex" onClick={() => this.openMobileMenu()} >
-                Меню 
-                <img src="/img/burger.svg" alt=""/>
+              <div className="MobileMenu__closeButton d-flex" onClick={() => this.openMobileMenu()}>
+                Меню
+                <img src="/img/burger.svg" alt="" />
               </div>
             </Row>
           </Container>
@@ -101,10 +101,7 @@ class Block1 extends React.Component<Block1Props, Block1State> {
 
                 <Row className="Block1__Row2DescrBlock">
                   <Col md={8} className="Block1__Row2DescrLeft">
-                    <div>
-                      В основе метода <span>нутрициология</span>, <span>психология</span> и{' '}
-                      <span>физическая активность</span>
-                    </div>
+                    <div>Без использования диет! Основа метода: психология, нутрициология и физическая активность.</div>
                   </Col>
                   <Col md={4} className="Block1__Row2DescrRight">
                     {/* <div>
@@ -141,10 +138,7 @@ class Block1 extends React.Component<Block1Props, Block1State> {
 
             <Row className="Block1__Row2DescrBlock p-0 m-0">
               <Col xs={12} className="Block1__Row2DescrLeft">
-                <div>
-                  В основе метода - <span>нутрициология</span>, <span>психология</span> и{' '}
-                  <span>физические нагрузки</span>
-                </div>
+                <div>Без использования диет! Основа метода: психология, нутрициология и физическая активность.</div>
               </Col>
               <Col xs={12} className="Block1__Row2DescrRight">
                 {/* <div>
