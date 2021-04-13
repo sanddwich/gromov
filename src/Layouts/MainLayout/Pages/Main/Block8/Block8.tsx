@@ -192,6 +192,7 @@ class Block8 extends React.Component<Block8Props, Block8State> {
                 </div>
                 <div className="Block8__cardDescrLine">
                   Разница во времени фото - <span>10 недель</span>
+                  <p>Дисциплина – гарант достижения качественного результата.</p>
                 </div>
                 <div className="Block8__cardDescrLine">
                   <span>Результат:</span>
@@ -199,7 +200,6 @@ class Block8 extends React.Component<Block8Props, Block8State> {
                 <div className="Block8__cardDescrLine">
                   <ul style={{ listStyleImage: 'url(img/marker.svg)' }}>
                     <li>Увеличение веса на 5 кг;</li>
-                    <li>Дисциплина – гарант достижения качественного результата.</li>
                   </ul>
                 </div>
               </div>

@@ -40,48 +40,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
     super(props)
     this.state = {
       messangers: ['https://www.instagram.com/victor__gromov/', 'https://api.whatsapp.com/send?phone=+79171874086'],
-      programs: [
-        {
-          name: '«Базовая тренировочная программа»',
-          price: 900,
-          male: true,
-          properties: [
-            'программа с акцентом на похудение, для тренажерного зала',
-            'программа с акцентом на набор мышечной массы, для тренажерного зала',
-            'программа для дома & улицы  с акцентом на похудение',
-            'программа для дома & улицы с акцентом на набор мышечной массы',
-          ],
-          propertiesSelectActive: false,
-          activeProperty: 0,
-        },
-        {
-          name: '«Персональная тренировочная программа»',
-          price: 2500,
-        },
-        {
-          name: '«Базовое питание»',
-          price: 900,
-          properties: ['Cнижения веса', 'Набор веса'],
-          propertiesSelectActive: false,
-          activeProperty: 0,
-        },
-        {
-          name: 'Культура питания «персонально»',
-          price: 2700,
-        },
-        {
-          name: 'Онлайн-Консультация',
-          price: 1500,
-        },
-        {
-          name: 'Подбор бадов',
-          price: 900,
-        },
-        {
-          name: 'Диагностика',
-          price: 900,
-        },
-      ],
+      programs: Config.programs,
     }
   }
 

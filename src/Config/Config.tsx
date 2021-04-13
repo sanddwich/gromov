@@ -81,11 +81,11 @@ const Config: ConfigParams = {
     },
     {
       name: 'Подбор бадов',
-      price: 900,
+      price: 2000,
     },
     {
       name: 'Диагностика',
-      price: 900,
+      price: 7500,
     },
   ],
   links: [
