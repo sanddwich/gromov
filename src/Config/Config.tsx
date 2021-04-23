@@ -26,7 +26,7 @@ interface Link {
 }
 
 // const siteURL = 'http://localhost:3000'
-const siteURL = 'https://gromov.top'
+const siteURL = 'https://gromov.fit'
 
 const Config: ConfigParams = {
   TerminalKey: '1613847439636DEMO',
