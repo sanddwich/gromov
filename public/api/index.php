@@ -21,10 +21,10 @@ $gromovMail = $body->gromovMail;
 
 $textToLog = date('d-m-Y G:i:s') . ' - ' . $phoneNumber . ' - ' . $email . ' - ' . $name . PHP_EOL;
 
-$gromovMessage = '<h3>Была приобретена программа на сайте <strong><a href="' . $siteURL . '" target="_blank">"GROMOV.TOP"</a></strong></h3>
+$gromovMessage = '<h3>Была приобретена программа на сайте <strong><a href="' . $siteURL . '" target="_blank">"GROMOV.FIT"</a></strong></h3>
 <p>Информация по клиенту/продукту:</p>'.$textToLog;
 
-$message = '<h3>Вами была приобретена программа на сайте <strong><a href="' . $siteURL . '" target="_blank">"GROMOV.TOP"</a></strong></h3>
+$message = '<h3>Вами была приобретена программа на сайте <strong><a href="' . $siteURL . '" target="_blank">"GROMOV.FIT"</a></strong></h3>
 <h4>Наименование программы: "' . $name . '"</h4>';
 
 if ($url !== '') {
@@ -42,10 +42,10 @@ $gromovTitle = 'На вашем сайте была приобретена пр�
 // Рассылка почты
 require_once "./SendMailSmtpClass.php"; // подключаем класс
 
-$mailSMTP = new SendMailSmtpClass('info@gromov.top', 'Fghjuy67890', 'ssl://mail.hostland.ru', 'Gromov Info', 465);
+$mailSMTP = new SendMailSmtpClass('info@gromov.fit', 'Fghjuy67890', 'ssl://mail.hostland.ru', 'Gromov Info', 465);
 $headers = "MIME-Version: 1.0\r\n";
 $headers .= "Content-type: text/html; charset=utf-8\r\n"; // кодировка письма
-$headers .= "From: gromov.top Info <info@gromov.top>\r\n"; // от кого письмо
+$headers .= "From: gromov.fit Info <info@gromov.fit>\r\n"; // от кого письмо
 
 
 function mailToLog($text)
