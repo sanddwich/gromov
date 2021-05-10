@@ -39,7 +39,7 @@ const Config: ConfigParams = {
   Tax: 'none',
   mailForMessages: '',
   defaultQuantity: 1,
-  defaultPrice: 90000,
+  defaultPrice: 900,
   defaultName: 'Базовая тренировочная программа',
   defaultPhone: '',
   defaultDescription: 'Тестовый платеж',
@@ -100,7 +100,7 @@ const Config: ConfigParams = {
       pass: 'Sdfgwwe76',
     },
     {
-      name: 'Мужская программа для дома & улицы  с акцентом на похудение',
+      name: 'Мужская программа для дома & улицы с акцентом на похудение',
       url: 'https://disk.yandex.ru/d/MP7FvFMkQ7OsBw',
       pass: 'Mnbhgyt78',
     },
