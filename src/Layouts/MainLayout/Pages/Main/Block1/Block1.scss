@@ -62,7 +62,22 @@
     }
   }
 
+  .Block1__Row2DescrRightNew {
+    p {
+      padding-top: 15px;
+      text-align: center;
+    }
+  }
+
   .Block1__Row2ContMobile {
+    .Block1__Row2TitleSubT {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 600;
+      line-height: 145%;
+      font-size: 16px !important;
+    }
+
     .Block1__mobileImg {
       margin-left: -180px;
       margin-bottom: -300px;
@@ -128,7 +143,7 @@
       .Block1__Row2DescrRight {
         height: 70px;
 
-        // padding: 50px;
+        // padding: 50px !important;
         // background-color: #3e3e3e;
         // border-bottom: 10px solid #515151;
         // border-radius: 0px 10px 0px 0px;
@@ -136,8 +151,16 @@
         // margin-left: -2px;
 
         p {
-          color: #c5c6c6;
-          margin-bottom: 0;
+          font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 145%;
+          /* or 23px */
+
+          text-align: center !important;
+
+          color: #ffffff;
         }
       }
     }
@@ -193,6 +216,16 @@
 
       padding-bottom: 150px;
 
+      .Block1__Row2TitleSubT {
+        width: 564px;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 145%;
+        color: #ffffff;
+      }
+
       span {
         background-color: #8ebe2d;
       }
@@ -218,7 +251,7 @@
           padding: 50px;
           background-color: #2e2e2e;
           border-bottom: 10px solid #414141;
-          border-radius: 10px 0px 0px 0px;
+          border-radius: 10px 10px 0px 0px;
           display: flex;
           align-items: center;
 
@@ -305,7 +338,7 @@
     .Block1__Row2 {
       .Block1__img {
         img {
-          margin-left: -120%;
+          margin-left: -90%;
           height: 768px;
         }
       }
@@ -316,7 +349,7 @@
     .Block1__Row2 {
       .Block1__img {
         img {
-          margin-left: -150%;
+          margin-left: -110%;
           height: 700px;
         }
       }

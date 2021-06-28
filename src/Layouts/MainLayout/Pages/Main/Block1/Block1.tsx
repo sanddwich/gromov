@@ -7,6 +7,7 @@ import RoundButton from '../../../../../SharedComponents/RoundButton/RoundButton
 import { setMobileMenuModal, setGiftModal } from '../../../../../Redux/actions/modal'
 import './Block1.scss'
 import ScrollAnimation from 'react-animate-on-scroll'
+import Button from '../../../../../SharedComponents/Button/Button'
 
 interface Block1Props {
   setGiftModal: (isActive: boolean) => void
@@ -38,6 +39,10 @@ class Block1 extends React.Component<Block1Props, Block1State> {
 
   openMobileMenu = (): void => {
     this.props.setMobileMenuModal(true)
+  }
+
+  goToQuiz = (): void => {
+    console.log('goToQuiz')
   }
 
   render() {
@@ -95,15 +100,18 @@ class Block1 extends React.Component<Block1Props, Block1State> {
             <Col md={5} className="p-0 p-0 d-flex align-items-center">
               <div className="Block1__Row2Title">
                 <ScrollAnimation animateOnce={true} offset={0} delay={1000} animateIn="animate__fadeIn">
+                  <p className="Block1__Row2TitleSubT">Онлайн фитнес тренер</p>
                   <p>Приведу вас в форму за</p>
                   <span>4 месяца</span>
                 </ScrollAnimation>
 
                 <Row className="Block1__Row2DescrBlock">
-                  <Col md={8} className="Block1__Row2DescrLeft">
-                    <div>Без использования диет! Основа метода: психология, нутрициология и физическая активность.</div>
+                  <Col md={5} className="Block1__Row2DescrRightNew">
+                    <Button text="Пройдите опрос" buttonHandler={() => this.goToQuiz()} />
+                    <p>И получите скидку после прохождения</p>
                   </Col>
-                  <Col md={4} className="Block1__Row2DescrRight">
+                  <Col md={7} className="Block1__Row2DescrLeft d-none d-md-flex">
+                    <div>Без использования диет! Основа метода: психология, нутрициология и физическая активность.</div>
                     {/* <div>
                       Учитывая этот фактор, <b>вы не потеряете заинтересованность и мотивацию</b> на пути к желаемому
                       результату
@@ -125,6 +133,7 @@ class Block1 extends React.Component<Block1Props, Block1State> {
             <Row className="w-100 h-100 m-0">
               <Col xs={8} className="Block1__Row2Title d-flex align-items-end">
                 <div className="position-relative">
+                  <p className="Block1__Row2TitleSubT">Онлайн фитнес тренер</p>
                   <p>Приведу вас в</p>
                   <p>форму за</p>
                   <span>4 месяца</span>
@@ -137,13 +146,9 @@ class Block1 extends React.Component<Block1Props, Block1State> {
             </Row>
 
             <Row className="Block1__Row2DescrBlock p-0 m-0">
-              <Col xs={12} className="Block1__Row2DescrLeft">
-                <div>Без использования диет! Основа метода: психология, нутрициология и физическая активность.</div>
-              </Col>
-              <Col xs={12} className="Block1__Row2DescrRight">
-                {/* <div>
-                  <p>Учитывая эти факторы, на пути к желаемой фигуре</p> вы не потеряете заинтересованность и мотивацию
-                </div> */}
+              <Col xs={12} className="Block1__Row2DescrRightNew">
+                <Button text="Пройдите опрос" buttonHandler={() => this.goToQuiz()} />
+                <p>И получите скидку после прохождения</p>
               </Col>
             </Row>
           </div>

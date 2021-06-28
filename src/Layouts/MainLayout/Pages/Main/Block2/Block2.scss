@@ -24,7 +24,7 @@
 
     .Block2__cardContent {
       position: relative;
-      z-index: 10;      
+      z-index: 10;
       padding-left: 20px !important;
       // text-shadow: 2px 2px 2px #000000;
     }
@@ -122,6 +122,61 @@
       .Block2__cardContent {
         font-size: 20px;
       }
+    }
+  }
+}
+
+.Block2__bottom {
+  margin-top: 30px;
+  font-family: 'Druk Cyr';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 64px;
+  line-height: 120%;
+  /* identical to box height, or 77px */
+
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+
+  .Block2__card {
+    padding: 50px;
+    background: #80b21c;
+    border-radius: 20px 20px 0px 20px;
+  }
+
+  @media screen and(max-width:1200px) {
+    .Block2__card {
+      padding: 30px;
+      font-size: 46px;
+    }
+  }
+
+  @media screen and(max-width:992px) {
+    .Block2__card {
+      font-weight: 600;
+      font-size: 32px;
+    }
+  }
+  
+  @media screen and(max-width:768px) {
+    .Block2__card {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 120%;
+    }
+  }
+
+  
+  @media screen and(max-width:576px) {
+    margin-top: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    .Block2__card {
+      font-size: 18px;
     }
   }
 }

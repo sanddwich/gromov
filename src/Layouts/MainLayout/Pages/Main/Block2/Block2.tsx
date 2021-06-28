@@ -14,7 +14,7 @@ class Block2 extends React.Component<Block2Props, Block2State> {
         <Container className="Block2 p-0">
           <Row className="m-0 pl-2 pr-2 pr-sm-0 pl-sm-0">
             <Col md={4} xs={6} className="p-2 p-sm-0">
-              <Row className="Block2__card m-0 h-100 hvr-grow-shadow" style={{ backgroundColor: '#00A0E3' }}>
+              <Row className="Block2__card m-0 h-100" style={{ backgroundColor: '#00A0E3' }}>
                 <Col xs={6} className="Block2__cardContent p-0 pl-3">
                   Уйдёт лишний вес
                 </Col>
@@ -25,7 +25,7 @@ class Block2 extends React.Component<Block2Props, Block2State> {
             </Col>
 
             <Col md={4} xs={6} className="p-2 p-sm-0">
-              <Row className="Block2__card m-0 hvr-grow-shadow" style={{ backgroundColor: '#00B2FD' }}>
+              <Row className="Block2__card m-0" style={{ backgroundColor: '#00B2FD' }}>
                 <Col xs={6} className="Block2__cardContent p-0 pl-3">
                   Почувствуете энергию, заряженность, позитив
                 </Col>
@@ -36,7 +36,7 @@ class Block2 extends React.Component<Block2Props, Block2State> {
             </Col>
 
             <Col md={4} xs={6} className="p-2 p-sm-0">
-              <Row className="Block2__card m-0 hvr-grow-shadow" style={{ backgroundColor: '#00A0E3' }}>
+              <Row className="Block2__card m-0" style={{ backgroundColor: '#00A0E3' }}>
                 <Col xs={6} className="Block2__cardContent p-0 pl-3">
                   Кайф от занятий и питания
                 </Col>
@@ -47,7 +47,7 @@ class Block2 extends React.Component<Block2Props, Block2State> {
             </Col>
 
             <Col md={4} xs={6} className="p-2 p-sm-0">
-              <Row className="Block2__card m-0 hvr-grow-shadow" style={{ backgroundColor: '#05ABF0' }}>
+              <Row className="Block2__card m-0" style={{ backgroundColor: '#05ABF0' }}>
                 <Col xs={6} className="Block2__cardContent p-0 pl-3">
                   Никаких диет, голоданий, ограничений
                 </Col>
@@ -58,7 +58,7 @@ class Block2 extends React.Component<Block2Props, Block2State> {
             </Col>
 
             <Col md={4} xs={6} className="p-2 p-sm-0">
-              <Row className="Block2__card m-0 hvr-grow-shadow" style={{ backgroundColor: '#14BAFF' }}>
+              <Row className="Block2__card m-0" style={{ backgroundColor: '#14BAFF' }}>
                 <Col xs={6} className="Block2__cardContent p-0 pl-3">
                   Наставник на связи 24/7
                 </Col>
@@ -69,11 +69,22 @@ class Block2 extends React.Component<Block2Props, Block2State> {
             </Col>
 
             <Col md={4} xs={6} className="p-2 p-sm-0">
-              <Row className="Block2__card m-0 hvr-grow-shadow" style={{ backgroundColor: '#668E15' }}>
-                <Col xs={12} className="Block2__cardContent p-0 pl-3 pr-3">
-                  8 из 10 чувствуют изменения в первый месяц
+              <Row className="Block2__card m-0" style={{ backgroundColor: '#05ABF0'}}>
+                <Col xs={6} className="Block2__cardContent p-0 pl-3">
+                  восстановитесь после родов
+                </Col>
+                <Col xs={6} className="Block2__cardImg p-0 d-flex justify-content-end align-items-end h-100">
+                  <img className="fullHeight" src="img/26.png" alt="" />
                 </Col>
               </Row>
+            </Col>
+          </Row>
+        </Container>
+
+        <Container className="Block2__bottom">
+          <Row className="Block2__card" style={{ backgroundColor: '#668E15' }}>
+            <Col xs={12}>
+              8 из 10 чувствуют изменения в первый месяц
             </Col>
           </Row>
         </Container>

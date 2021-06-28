@@ -31,6 +31,9 @@ class Main extends React.Component<MainProps, MainState> {
 
         <Block1 />
         <Block2 />
+        <Block11 />
+        <Achivements />
+        <Certificates />
         <Block3 />
         <Block4 />
         <Block5 />
@@ -39,10 +42,7 @@ class Main extends React.Component<MainProps, MainState> {
         <Block8 />
         <Block9 />
         <Block10 />
-        <Block11 />
 
-        <Achivements />
-        <Certificates />
 
         <ComplexBlock />
 
