@@ -1,0 +1,160 @@
+.Exclusive {
+  background-color: #f6f6f6;
+  padding: 0;
+  padding-bottom: 150px;
+
+  .Exclusive__content {
+    padding: 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    .Exclusive__title {
+      font-family: 'Druk Cyr';
+      font-style: normal;
+      font-weight: 900;
+      font-size: 64px;
+      line-height: 120%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+
+      color: #313131;
+      padding-top: 60px;
+      padding-bottom: 60px;
+
+      @media screen and(max-width: 992px) {
+        font-size: 42px;
+      }
+
+      @media screen and(max-width: 768px) {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        font-size: 32px;
+      }
+    }
+  }
+
+  .Exclusive__card {
+    padding: 0;
+    margin-bottom: 40px;
+
+    @media screen and(max-width: 576px) {
+      padding: 10px;
+    }
+  }
+}
+
+.Exclusive__howToBuy {
+  background: #00a4e9;
+  border-radius: 0px 0px 0px 21px;
+  padding: 60px;
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-top: -190px;
+  margin-bottom: 100px;
+
+  @media screen and(max-width: 768px) {
+    padding: 10px;
+    margin-top: -190px;
+    margin-bottom: 100px;
+  }
+
+  @media screen and(max-width: 576px) {
+    margin-top: -200px;
+  }
+
+  .Exclusive__howToBuyLeft {
+    h1 {
+      font-family: 'Druk Cyr';
+      font-style: normal;
+      font-weight: 900;
+      font-size: 36px;
+      line-height: 120%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-align: left;
+
+      color: #ffffff;
+      padding-bottom: 20px;
+    }
+
+    p {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 145%;
+      /* or 29px */
+
+      color: #ffffff;
+    }
+
+    .IconButton {
+      background-color: #80b21c !important;
+      border-radius: 8px !important;
+      margin-right: 30px;
+      margin-bottom: 20px !important;
+    }
+
+    .Exclusive__howToBuyButtons {
+      padding-top: 30px;
+    }
+
+    @media screen and(max-width: 576px) {
+      p {
+        margin-top: 20px;
+        font-size: 14px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .Exclusive__howToBuyButtons {
+        padding-bottom: 40px;
+      }
+    }
+  }
+
+  .Exclusive__howToBuyRight {
+    p {
+      padding-top: 20px;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 120%;
+      color: #ffffff;
+    }
+
+    h1 {
+      padding-top: 20px;
+      font-family: 'Druk Cyr';
+      font-style: normal;
+      font-weight: 900;
+      font-size: 40px;
+      line-height: 120%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-align: left;
+
+      color: #ffffff;
+    }
+
+    @media screen and(max-width: 576px) {
+      p {
+        margin-top: 30px;
+        font-size: 16px;
+      }
+
+      h1 {
+        font-size: 30px;
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
+
+.Exclusive__howToBuy__cont {
+  padding-left: 10px;
+  padding-right: 10px;
+}

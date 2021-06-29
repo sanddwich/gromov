@@ -16,6 +16,7 @@ import Block8 from './Block8/Block8'
 import Block9 from './Block9/Block9'
 import Certificates from './Certificates/Certificates'
 import ComplexBlock from './ComplexBlock/ComplexBlock'
+import Exclusive from './Exclusive/Exclusive'
 
 import './Main.scss'
 import QuizPage from './QuizPage/QuizPage'
@@ -43,10 +44,10 @@ class Main extends React.Component<MainProps, MainState> {
         <QuizPage />
         <Block8 />
         <Block9 />
+        <Exclusive />
         <Block10 />
 
-
-        <ComplexBlock />
+        {/* <ComplexBlock /> */}
 
         <AdditionalServices />
       </Container>

@@ -1,4 +1,85 @@
 .AdditionalServices {
+  .DoubleCard {
+    padding: 0;
+    margin-bottom: 60px;
+    padding-right: 40px;
+
+    @media screen and(max-width: 1200px) {
+      padding-right: 0px;
+    }
+
+    .DoubleCard__Row {
+      background: #f6f6f6;
+      box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.13);
+      border-radius: 20px 20px 0px 20px;
+      padding: 40px;
+
+      @media screen and(max-width: 576px) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+
+    h1 {
+      font-family: 'Druk Cyr';
+      font-style: normal;
+      font-weight: 900;
+      font-size: 48px;
+      line-height: 120%;
+      text-align: center;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+
+      color: #313131;
+    }
+
+    h3 {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 120%;
+      text-align: center;
+
+      color: #313131;
+    }
+
+    p {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 135%;
+      text-align: center;
+
+      color: #313131;
+    }
+
+    @media screen and(max-width: 576px) {
+      h1 {
+        font-size: 24px;
+      }
+
+      h3 {
+        font-size: 16px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .AdditionalServices__cardCont {
+    img {
+      padding-right: 20px;
+    }
+
+    @media screen and(max-width:576px) {
+      font-size: 14px;
+    }
+  }
+
   &__card {
     min-height: 615px;
     box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.13);
@@ -7,7 +88,7 @@
     padding: 50px;
     max-width: 530px;
 
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: stretch;
     flex-wrap: wrap;
@@ -17,6 +98,16 @@
       font-weight: 600;
       font-size: 24px;
       text-align: center;
+    }
+
+    @media screen and(max-width:576px) {
+      h2 {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 16px;
+      }
     }
 
     &__text {
@@ -156,7 +247,8 @@
     }
 
     &__card {
-      padding: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
     }
 
     &__card.green {

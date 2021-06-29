@@ -1,0 +1,70 @@
+.ExclusiveCard {
+  background: #ffffff;
+  border: 1px dashed #058dc7;
+  box-sizing: border-box;
+  border-radius: 8px;
+
+  padding: 60px;
+  padding-left: 100px;
+  padding-right: 100px;
+
+  @media screen and(max-width: 768px) {
+    padding: 10px;
+  }
+
+  .DashedBorderBlock__content {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 135%;
+    /* or 22px */
+
+    color: #ffffff;
+
+    padding: 30px !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+
+    @media screen and(max-width: 576px) {
+      font-size: 14px;
+      line-height: 120%;
+
+      padding: 20px !important;
+    }
+  }
+
+  .ExclusiveCard__img {
+    padding-right: 50px;
+    @media screen and(max-width: 768px) {
+      padding-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+
+  .DashedBorderBlock {
+    padding-bottom: 30px !important;
+    @media screen and(max-width: 576px) {
+      padding-bottom: 15px !important;
+    }
+  }
+
+  .ExclusiveCard__content {
+    h1 {
+      padding-bottom: 40px;
+    }
+
+    @media screen and(max-width: 768px) {
+      h1 {
+        font-size: 32px;
+        padding-bottom: 20px;
+      }
+    }
+
+    @media screen and(max-width: 576px) {
+      h1 {
+        font-size: 26px;
+      }
+    }
+  }
+}

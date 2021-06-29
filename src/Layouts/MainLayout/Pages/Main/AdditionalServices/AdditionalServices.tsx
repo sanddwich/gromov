@@ -122,7 +122,10 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  Это список упражнений, который скоординирует вас в тренажёрном зале, дома или на улице.
+                  <div className="AdditionalServices__cardCont d-flex align-items-center">
+                    <img className="img-fluid" src="/img/icons/1.png" alt="" />
+                    Содержит список упражнений для занятий дома, на улице, в тренажёрном зале.
+                  </div>
                 </DashedBorderBlock>
                 <DashedBorderBlock
                   bgColor="#ffffff"
@@ -132,8 +135,10 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  Вам не нужно тратить своё время на поиски программы в интернете, которая к тому же может быть весьма
-                  травмоопасной.
+                  <div className="AdditionalServices__cardCont d-flex align-items-center">
+                    <img className="img-fluid" src="/img/icons/2.png" alt="" />
+                    Безопасна и экономит ваше время.
+                  </div>
                 </DashedBorderBlock>
                 <DashedBorderBlock
                   bgColor="#ffffff"
@@ -143,7 +148,10 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  Данная программа является стандартной и универсальной без учёта индивидуальных параметров.
+                  <div className="AdditionalServices__cardCont d-flex align-items-center">
+                    <img className="img-fluid" src="/img/icons/3.png" alt="" />
+                    Универсальна (без учета индивидуальных параметров).
+                  </div>
                 </DashedBorderBlock>
 
                 <Container className="AdditionalServices__propsCont p-0">
@@ -217,76 +225,6 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
               </div>
             </div>
             <div className="col-lg-6 m-0 p-0">
-              <div className="AdditionalServices__card blue">
-                <h2 style={{ color: '#ffffff' }}>«персональная тренировочная программа»</h2>
-                <p>Отдельная услуга</p>
-                <DashedBorderBlock
-                  bgColor="#00A4E9"
-                  border="1px dashed #FFFFFF"
-                  color="#ffffff"
-                  width="100%"
-                  pluses={false}
-                  padding="15px 0"
-                >
-                  Эта тренировочная программа составляется с учётом ваших индивидуальных параметров и пожеланий,
-                  например сброс веса или набор мышечной массы.
-                </DashedBorderBlock>
-
-                <DashedBorderBlock
-                  bgColor="#00A4E9"
-                  border="1px dashed #FFFFFF"
-                  color="#ffffff"
-                  width="100%"
-                  pluses={false}
-                  padding="15px 0"
-                >
-                  В ней принимается во внимание ритм жизни, рабочий график, а также возможные ограничения физических
-                  нагрузок.
-                </DashedBorderBlock>
-
-                <DashedBorderBlock
-                  bgColor="#00A4E9"
-                  border="1px dashed #FFFFFF"
-                  color="#ffffff"
-                  width="100%"
-                  pluses={false}
-                  padding="15px 0"
-                >
-                  Программа составляется для тренажёрного зала, домашних и уличных тренировок.
-                </DashedBorderBlock>
-
-                <DashedBorderBlock
-                  bgColor="#00A4E9"
-                  border="1px dashed #FFFFFF"
-                  color="#ffffff"
-                  width="100%"
-                  pluses={false}
-                  padding="15px 0"
-                >
-                  Также сюда входит консультация (по видеосвязи или телефонному звонку), в ходе которой по необходимости
-                  вносятся корректировки с учетом индивидуального прогресса.
-                </DashedBorderBlock>
-
-                <DashedBorderBlock
-                  bgColor="#00A4E9"
-                  border="1px dashed #FFFFFF"
-                  color="#ffffff"
-                  width="100%"
-                  pluses={false}
-                  padding="15px 0"
-                >
-                  В данном формате программы к каждому упражнению прикрепляется видеоинструкция с подробным описанием
-                  техники выполнения.
-                </DashedBorderBlock>
-
-                <PriceBlock theme="dark" price={this.state.programs[1].price + ' р'} />
-                <Button text="Купить сейчас" buttonHandler={() => this.buyProgramBytton(1)} />
-              </div>
-            </div>
-          </div>
-
-          <div className="row m-0 p-0">
-            <div className="col-lg-6 m-0 p-0">
               <div className="AdditionalServices__card gray">
                 <h2>«базовое питание»</h2>
                 <p>Отдельная услуга</p>
@@ -298,7 +236,10 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  Это базовые принципы сбалансированного, рационального, так называемого правильного питания.
+                  <div className="AdditionalServices__cardCont d-flex align-items-center">
+                    <img className="img-fluid" src="/img/icons/4.png" alt="" />
+                    Включает в себя базовые принципы правильного питания.
+                  </div>
                 </DashedBorderBlock>
                 <DashedBorderBlock
                   bgColor="#ffffff"
@@ -308,8 +249,11 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  Это не диета, а фундаментальные правила, придерживаясь которых вы сможете самостоятельно составить
-                  свой рацион питания для похудения или набора массы.
+                  <div className="AdditionalServices__cardCont d-flex align-items-center">
+                    <img className="img-fluid" src="/img/icons/5.png" alt="" />
+                    Не является диетой, но заключает в себе важные правила благодаря которым вы сможете самостоятельно
+                    составить свой рацион для определенных целей.
+                  </div>
                 </DashedBorderBlock>
                 <DashedBorderBlock
                   bgColor="#ffffff"
@@ -319,8 +263,10 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  В данной программе присутствуют не только базовые рекомендации, но и конкретные примеры сочетания
-                  продуктов в рационе и определенных блюд.
+                  <div className="AdditionalServices__cardCont d-flex align-items-center">
+                    <img className="img-fluid" src="/img/icons/6.png" alt="" />
+                    Содержит конкретные примеры блюд и сочетания продуктов в рационе.
+                  </div>
                 </DashedBorderBlock>
                 <DashedBorderBlock
                   bgColor="#ffffff"
@@ -330,7 +276,10 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  Данная программа является стандартной и универсальной без учёта индивидуальных параметров.
+                  <div className="AdditionalServices__cardCont d-flex align-items-center">
+                    <img className="img-fluid" src="/img/icons/7.png" alt="" />
+                    Универсальна (без учета индивидуальных параметров).
+                  </div>
                 </DashedBorderBlock>
 
                 <Container className="AdditionalServices__propsCont p-0">
@@ -381,6 +330,100 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                 <Button text="Купить сейчас" buttonHandler={() => this.buyProgramBytton(2)} />
               </div>
             </div>
+          </div>
+
+          <Container fluid className="DoubleCard">
+            <Row className="DoubleCard__Row m-0">
+              <Col lg={6} className="DoubleCard__Col p-0">
+                <div className="DoubleCard__title">
+                  <h1>«База: Тренировки и питание»</h1>
+                  <h3>Комбо</h3>
+                  <p>Содержит в себе все из курсов «базовая тренировочная программа» и «базовое питание»</p>
+                </div>
+              </Col>
+              <Col lg={6} className="DoubleCard__Col p-0"></Col>
+            </Row>
+          </Container>
+
+          <div className="row m-0 p-0">
+            <div className="col-lg-6 m-0 p-0">
+              <div className="AdditionalServices__card blue">
+                <h2 style={{ color: '#ffffff' }}>«персональная тренировочная программа»</h2>
+                <p>Отдельная услуга</p>
+                <DashedBorderBlock
+                  bgColor="#00A4E9"
+                  border="1px dashed #FFFFFF"
+                  color="#ffffff"
+                  width="100%"
+                  pluses={false}
+                  padding="15px 0"
+                >
+                  <div className="AdditionalServices__cardCont d-flex align-items-center">
+                    <img className="img-fluid" src="/img/icons/8.png" alt="" />
+                    Составляется с учётом индивидуальных параметров и пожеланий.
+                  </div>
+                </DashedBorderBlock>
+
+                <DashedBorderBlock
+                  bgColor="#00A4E9"
+                  border="1px dashed #FFFFFF"
+                  color="#ffffff"
+                  width="100%"
+                  pluses={false}
+                  padding="15px 0"
+                >
+                  <div className="AdditionalServices__cardCont d-flex align-items-center">
+                    <img className="img-fluid" src="/img/icons/9.png" alt="" />
+                    Учитывает ваш ритм жизни, факторы занятости и медицинские показатели.
+                  </div>
+                </DashedBorderBlock>
+
+                <DashedBorderBlock
+                  bgColor="#00A4E9"
+                  border="1px dashed #FFFFFF"
+                  color="#ffffff"
+                  width="100%"
+                  pluses={false}
+                  padding="15px 0"
+                >
+                  <div className="AdditionalServices__cardCont d-flex align-items-center">
+                    <img className="img-fluid" src="/img/icons/10.png" alt="" />
+                    Подходит для тренировок дома, на улице, в тренажерном зале.
+                  </div>
+                </DashedBorderBlock>
+
+                <DashedBorderBlock
+                  bgColor="#00A4E9"
+                  border="1px dashed #FFFFFF"
+                  color="#ffffff"
+                  width="100%"
+                  pluses={false}
+                  padding="15px 0"
+                >
+                  <div className="AdditionalServices__cardCont d-flex align-items-center">
+                    <img className="img-fluid" src="/img/icons/11.png" alt="" />
+                    Включает в себя консультацию по телефону или видеосвязи.
+                  </div>
+                </DashedBorderBlock>
+
+                <DashedBorderBlock
+                  bgColor="#00A4E9"
+                  border="1px dashed #FFFFFF"
+                  color="#ffffff"
+                  width="100%"
+                  pluses={false}
+                  padding="15px 0"
+                >
+                  <div className="AdditionalServices__cardCont d-flex align-items-center">
+                    <img className="img-fluid" src="/img/icons/12.png" alt="" />
+                    Содержит видеоинструкцию с техникой выполнения для каждого упражнения.
+                  </div>
+                </DashedBorderBlock>
+
+                <PriceBlock theme="dark" price={this.state.programs[1].price + ' р'} />
+                <Button text="Купить сейчас" buttonHandler={() => this.buyProgramBytton(1)} />
+              </div>
+            </div>
             <div className="col-lg-6 m-0 p-0">
               <div className="AdditionalServices__card blue">
                 <h2 style={{ color: '#ffffff' }}>Культура питания «персонально»</h2>
@@ -393,7 +436,10 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  Это не только базовые принципы сбалансированного, рационального, так называемого правильного питания.
+                  <div className="AdditionalServices__cardCont d-flex align-items-center">
+                    <img className="img-fluid" src="/img/icons/13.png" alt="" />
+                    Содержит базовые принципы правильного питания.
+                  </div>
                 </DashedBorderBlock>
 
                 <DashedBorderBlock
@@ -404,8 +450,10 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  В этой программе учитывается ваш график приёма пищи, индивидуальная непереносимость продуктов, пищевые
-                  ограничения (например, при диабете или аллергии).
+                  <div className="AdditionalServices__cardCont d-flex align-items-center">
+                    <img className="img-fluid" src="/img/icons/14.png" alt="" />
+                    Учитывает ваш график приема пищи и любые пищевые ограничения.
+                  </div>
                 </DashedBorderBlock>
 
                 <DashedBorderBlock
@@ -416,9 +464,10 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  В этом варианте программы ведётся ежедневный учёт потребляемой вами еды в специальной форме. Также вы
-                  получаете консультацию по видеосвязи или по телефону, в которой мы разбираем ваши записи и
-                  корректируем ошибки.
+                  <div className="AdditionalServices__cardCont d-flex align-items-center">
+                    <img className="img-fluid" src="/img/icons/15.png" alt="" />
+                    Предполагает сбор информации о вашем рационе, в специальной форме.
+                  </div>
                 </DashedBorderBlock>
 
                 <DashedBorderBlock
@@ -429,7 +478,10 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  В течение одной-двух недель составляется индивидуальная программа именно для вас.
+                  <div className="AdditionalServices__cardCont d-flex align-items-center">
+                    <img className="img-fluid" src="/img/icons/16.png" alt="" />
+                    Индивидуальная программа составляется в течение одной-двух недель.
+                  </div>
                 </DashedBorderBlock>
 
                 <DashedBorderBlock
@@ -440,8 +492,10 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  Главным преимуществом данной программы является её эффективность, т. к. она формируется исходя из
-                  вашего рациона, а не методом «рекомендаций вслепую».
+                  <div className="AdditionalServices__cardCont d-flex align-items-center">
+                    <img className="img-fluid" src="/img/icons/17.png" alt="" />
+                    Формируется исходя из вашего рациона, и потому наиболее эффективна.
+                  </div>
                 </DashedBorderBlock>
 
                 <DashedBorderBlock
@@ -452,8 +506,10 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   pluses={false}
                   padding="15px 0"
                 >
-                  Также вы бонусом получаете файл с базовыми принципами питания с наиболее удачными сочетаниями
-                  продуктов и примерами конкретных блюд.
+                  <div className="AdditionalServices__cardCont d-flex align-items-center">
+                    <img className="img-fluid" src="/img/icons/18.png" alt="" />В качестве бонуса включает в себя файл с
+                    базовыми принципами питания, удачными сочетаниями пррдуктов, примерами конкретных блюд.
+                  </div>
                 </DashedBorderBlock>
 
                 <PriceBlock theme="dark" price={this.state.programs[3].price + ' р'} />
