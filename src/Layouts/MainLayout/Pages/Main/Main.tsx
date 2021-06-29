@@ -18,6 +18,7 @@ import Certificates from './Certificates/Certificates'
 import ComplexBlock from './ComplexBlock/ComplexBlock'
 
 import './Main.scss'
+import QuizPage from './QuizPage/QuizPage'
 
 interface MainProps {}
 
@@ -39,6 +40,7 @@ class Main extends React.Component<MainProps, MainState> {
         <Block5 />
         <Block6 />
         <Block7 />
+        <QuizPage />
         <Block8 />
         <Block9 />
         <Block10 />
