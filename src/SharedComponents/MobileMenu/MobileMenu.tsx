@@ -86,7 +86,7 @@ class MobileMenu extends React.Component<MobileMenuProps, MobileMenuState> {
               <li onClick={() => this.scrollTo('Block4', -150)}>Чем мы можем помочь</li>
               <li onClick={() => this.scrollTo('Block9', -80)}>Отзывы</li>
               <li onClick={() => this.scrollTo('Block11', -80)}>Обо мне</li>
-              <li onClick={() => this.scrollTo('ComplexBlock', -140)}>Тарифы и цены</li>
+              <li onClick={() => this.scrollTo('AdditionalServices', -100)}>Тарифы и цены</li>
             </ul>
           </Col>
         </Row>

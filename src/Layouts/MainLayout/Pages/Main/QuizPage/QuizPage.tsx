@@ -1,5 +1,6 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
+import Config from '../../../../../Config/Config'
 import Button from '../../../../../SharedComponents/Button/Button'
 import './QuizPage.scss'
 
@@ -7,7 +8,7 @@ interface QuizPageProps {}
 
 const QuizPage = (props: QuizPageProps) => {
   const toQuiz = (): void => {
-    console.log('toQuiz')
+    window.open(Config.quizLink) 
   }
 
   return (

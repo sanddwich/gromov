@@ -8,6 +8,7 @@ import { setMobileMenuModal, setGiftModal } from '../../../../../Redux/actions/m
 import './Block1.scss'
 import ScrollAnimation from 'react-animate-on-scroll'
 import Button from '../../../../../SharedComponents/Button/Button'
+import Config from '../../../../../Config/Config'
 
 interface Block1Props {
   setGiftModal: (isActive: boolean) => void
@@ -42,7 +43,7 @@ class Block1 extends React.Component<Block1Props, Block1State> {
   }
 
   goToQuiz = (): void => {
-    console.log('goToQuiz')
+    window.open(Config.quizLink)    
   }
 
   render() {

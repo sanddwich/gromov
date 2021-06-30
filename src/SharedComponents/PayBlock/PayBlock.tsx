@@ -259,7 +259,7 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
     let discount = 0
     promoCodes.map((promoCode) => {
       promoCode.codeList.map((promo) => {
-        if (promo === promoEntry) {
+        if (promo.toLowerCase() === promoEntry.toLowerCase()) {
           discount = promoCode.discount
         }
       })

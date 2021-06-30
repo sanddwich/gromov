@@ -19,6 +19,7 @@ interface ConfigParams {
   links: Link[]
   gromovMail: string
   promoCodes: PromoCodes[]
+  quizLink: string
 }
 
 interface Link {
@@ -27,8 +28,8 @@ interface Link {
   pass: string
 }
 
-const siteURL = 'http://localhost:3000'
-// const siteURL = 'https://gromov.fit'
+// const siteURL = 'http://localhost:3000'
+const siteURL = 'https://gromov.fit'
 
 const Config: ConfigParams = {
   TerminalKey: '1613847439636DEMO',
@@ -47,10 +48,11 @@ const Config: ConfigParams = {
   defaultDescription: 'Тестовый платеж',
   siteURL: siteURL,
   gromovMail: 'victor.ifbb@gmail.com',
+  quizLink: 'https://docs.google.com/forms/d/1A-IyDPCBUEGMrJfNdFxo3q-RbKlut3xStdqMLoIjwMo/edit',
   promoCodes: [
     {
-      discount: 20,
-      codeList: ['1111', '2222', '3333'],
+      discount: 10,
+      codeList: ['VIC24', '1111'],
     },
   ],
   // gromovMail: 'bck-dkiselev@yandex.ru',
@@ -122,86 +124,126 @@ const Config: ConfigParams = {
   links: [
     {
       name: 'Мужская программа с акцентом на похудение, для тренажерного зала',
-      url: 'https://disk.yandex.ru/d/r7rDYUQQi4oQ8Q',
+      url: 'https://disk.yandex.ru/d/9b_xOpBS65Slew',
       pass: 'Lkjuio985',
     },
     {
       name: 'Мужская программа с акцентом на набор мышечной массы, для тренажерного зала',
-      url: 'https://disk.yandex.ru/d/RwGMnBFgqm8pKg',
+      url: 'https://disk.yandex.ru/d/rg5RS29npSBTUA',
       pass: 'Sdfgwwe76',
     },
     {
       name: 'Мужская программа для дома & улицы с акцентом на похудение',
-      url: 'https://disk.yandex.ru/d/MP7FvFMkQ7OsBw',
+      url: 'https://disk.yandex.ru/d/c0SVeQjmZWm6Vw',
       pass: 'Mnbhgyt78',
     },
     {
       name: 'Мужская программа для дома & улицы с акцентом на набор мышечной массы',
-      url: 'https://disk.yandex.ru/d/XZdZKIHFOrMIeg',
+      url: 'https://disk.yandex.ru/d/W_m74JGL7gD9mg',
       pass: 'Dfghyt67',
     },
     {
       name: 'Женская программа с акцентом на похудение, для тренажерного зала',
-      url: 'https://disk.yandex.ru/d/crfKYzbkIeH4gg',
+      url: 'https://disk.yandex.ru/d/9SEhmHCZYhRJsQ',
       pass: 'Lkjhui876',
     },
     {
       name: 'Женская программа с акцентом на набор мышечной массы, для тренажерного зала',
-      url: 'https://disk.yandex.ru/d/n4CTi__AIGHenw',
+      url: 'https://disk.yandex.ru/d/f1YYOv1o77QA6g',
       pass: 'Dfghytre345',
     },
     {
       name: 'Женская программа для дома & улицы с акцентом на похудение',
-      url: 'https://disk.yandex.ru/d/5pcc4AstZEYj0w',
+      url: 'https://disk.yandex.ru/d/ceZ6VGHG-5gurQ',
       pass: 'Asdfgtr65',
     },
     {
       name: 'Женская программа для дома & улицы с акцентом на набор мышечной массы',
-      url: 'https://disk.yandex.ru/d/krmcOh9Zf-HtEw',
+      url: 'https://disk.yandex.ru/d/agc4Q3pN66r9FA',
       pass: 'Lkjuio98',
     },
-    { name: 'Набор веса', url: 'https://disk.yandex.ru/d/eL6EP_INIIpzOg', pass: 'Dfrtyhj765' },
-    { name: 'Cнижения веса', url: 'https://disk.yandex.ru/d/xknTPJo5H9eF2A', pass: 'Lkiuyhj987' },
+    { name: 'Набор веса', url: 'https://disk.yandex.ru/d/YRf4lHTkhAFOYQ', pass: 'Dfrtyhj765' },
+    { name: 'Cнижения веса', url: 'https://disk.yandex.ru/d/PzAXJ1nFL5ztnw', pass: 'Lkiuyhj987' },
+    {
+      name: 'Комплексная Мужская программа с акцентом на похудение, для тренажерного зала',
+      url: 'https://disk.yandex.ru/d/PdwdW8lBlvV8mA',
+      pass: 'Jhgtyu765',
+    },
+    {
+      name: 'Комплексная Мужская программа с акцентом на набор мышечной массы, для тренажерного зала',
+      url: 'https://disk.yandex.ru/d/vJtMnh8e1vgdVQ',
+      pass: 'Jkloiu789',
+    },
+    {
+      name: 'Комплексная Мужская программа для дома & улицы с акцентом на похудение',
+      url: 'https://disk.yandex.ru/d/tC9gtdZEk54u6Q',
+      pass: 'Dfgtry765',
+    },
+    {
+      name: 'Комплексная Мужская программа для дома & улицы с акцентом на набор мышечной массы',
+      url: 'https://disk.yandex.ru/d/2FfhXk5sscIh2w',
+      pass: 'Vbnmjh678',
+    },
+    {
+      name: 'Комплексная Женская программа с акцентом на похудение, для тренажерного зала',
+      url: 'https://disk.yandex.ru/d/izpW3GXJvBtR0g',
+      pass: 'Jhgtyu765',
+    },
+    {
+      name: 'Комплексная Женская программа с акцентом на набор мышечной массы, для тренажерного зала',
+      url: 'https://disk.yandex.ru/d/EHBnAbU9EsQbVQ',
+      pass: 'Jkloiu789',
+    },
+    {
+      name: 'Комплексная Женская программа для дома & улицы с акцентом на похудение',
+      url: 'https://disk.yandex.ru/d/zeRt2VLGRRxCWg',
+      pass: 'Dfgtry765',
+    },
+    {
+      name: 'Комплексная Женская программа для дома & улицы с акцентом на набор мышечной массы',
+      url: 'https://disk.yandex.ru/d/846n7Ue-LKrYUA',
+      pass: 'Vbnmjh678',
+    },
   ],
   // links: [
   //   {
   //     name: 'Мужская программа с акцентом на похудение, для тренажерного зала',
-  //     url: 'https://disk.yandex.ru/d/2QMcmT6UJWQWNQ',
+  //     url: 'https://disk.yandex.ru/d/r7rDYUQQi4oQ8Q',
   //     pass: 'Lkjuio985',
   //   },
   //   {
   //     name: 'Мужская программа с акцентом на набор мышечной массы, для тренажерного зала',
-  //     url: 'https://disk.yandex.ru/d/8xqS6WarMr09RQ',
+  //     url: 'https://disk.yandex.ru/d/RwGMnBFgqm8pKg',
   //     pass: 'Sdfgwwe76',
   //   },
   //   {
-  //     name: 'Мужская программа для дома & улицы  с акцентом на похудение',
-  //     url: 'https://disk.yandex.ru/d/Xu4cIy3qP8WJWg',
+  //     name: 'Мужская программа для дома & улицы с акцентом на похудение',
+  //     url: 'https://disk.yandex.ru/d/MP7FvFMkQ7OsBw',
   //     pass: 'Mnbhgyt78',
   //   },
   //   {
   //     name: 'Мужская программа для дома & улицы с акцентом на набор мышечной массы',
-  //     url: 'https://disk.yandex.ru/d/ob1iYNoQyc5w4Q',
+  //     url: 'https://disk.yandex.ru/d/XZdZKIHFOrMIeg',
   //     pass: 'Dfghyt67',
   //   },
   //   {
   //     name: 'Женская программа с акцентом на похудение, для тренажерного зала',
-  //     url: 'https://disk.yandex.ru/d/4D3J1kFeOkxjoQ',
+  //     url: 'https://disk.yandex.ru/d/crfKYzbkIeH4gg',
   //     pass: 'Lkjhui876',
   //   },
   //   {
   //     name: 'Женская программа с акцентом на набор мышечной массы, для тренажерного зала',
-  //     url: 'https://disk.yandex.ru/d/Zgg37qBk7pOx2w',
+  //     url: 'https://disk.yandex.ru/d/n4CTi__AIGHenw',
   //     pass: 'Dfghytre345',
   //   },
   //   {
   //     name: 'Женская программа для дома & улицы с акцентом на похудение',
-  //     url: 'https://disk.yandex.ru/d/jltDBDksR5foEQ',
+  //     url: 'https://disk.yandex.ru/d/5pcc4AstZEYj0w',
   //     pass: 'Asdfgtr65',
   //   },
   //   {
   //     name: 'Женская программа для дома & улицы с акцентом на набор мышечной массы',
-  //     url: 'https://disk.yandex.ru/d/MDvCKIcdrfOKAg',
+  //     url: 'https://disk.yandex.ru/d/krmcOh9Zf-HtEw',
   //     pass: 'Lkjuio98',
   //   },
   //   { name: 'Набор веса', url: 'https://disk.yandex.ru/d/eL6EP_INIIpzOg', pass: 'Dfrtyhj765' },
