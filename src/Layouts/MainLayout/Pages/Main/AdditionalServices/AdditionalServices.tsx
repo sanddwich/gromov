@@ -14,15 +14,7 @@ import { OrderState } from '../../../../../Redux/interfaces/interfaces'
 import { Items } from '../../../../../Interfaces/Items'
 import Config from '../../../../../Config/Config'
 import { setShowPaymentModal } from '../../../../../Redux/actions/modal'
-
-interface Program {
-  name: string
-  male?: boolean
-  properties?: string[]
-  propertiesSelectActive?: boolean
-  activeProperty?: number
-  price: number
-}
+import { Program } from '../../../../../Interfaces/Program'
 
 interface AdditionalServicesProps {
   setShowPaymentModal: (isActive: boolean) => void
@@ -62,6 +54,12 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
     this.setState({ programs })
   }
 
+  setPropertySelectActive2 = (program: number, val: boolean): void => {
+    const programs = this.state.programs
+    programs[program].propertiesSelectActive2 = val
+    this.setState({ programs })
+  }
+
   setProp = (program: number, id: number): void => {
     const programs = this.state.programs
     programs[program].activeProperty = id
@@ -69,10 +67,24 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
 
     this.setPropertySelectActive(program, false)
   }
+  
+  setProp2 = (program: number, id: number): void => {
+    const programs = this.state.programs
+    programs[program].activeProperty2 = id
+    this.setState({ programs })
+
+    this.setPropertySelectActive2(program, false)
+  }
 
   toggleProperties = (program: number): void => {
     const programs = this.state.programs
     programs[program].propertiesSelectActive = !programs[program].propertiesSelectActive
+    this.setState({ programs })
+  }
+  
+  toggleProperties2 = (program: number): void => {
+    const programs = this.state.programs
+    programs[program].propertiesSelectActive2 = !programs[program].propertiesSelectActive2
     this.setState({ programs })
   }
 
@@ -81,14 +93,20 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
     // Items Массив позиций чека с информацией о товарах.
     const payment = this.props.order.payment
 
+    let name = `${typeof program.male !== 'undefined' ? (program.male ? 'Мужская ' : 'Женская ') : ''}${
+      program.properties && typeof program.activeProperty === 'number'
+        ? program.properties[program.activeProperty]
+        : program.name
+    }`
+
+    if (programId === 7 || programId === 8) {
+      name = 'Комплексная ' + name
+    } 
+
     const ItemsArray: Items[] = [
       {
         Amount: program.price * 100,
-        Name: `${typeof program.male !== 'undefined' ? (program.male ? 'Мужская ' : 'Женская ') : ''}${
-          program.properties && typeof program.activeProperty === 'number'
-            ? program.properties[program.activeProperty]
-            : program.name
-        }`,
+        Name: name,
         Price: program.price * 100,
         Quantity: 1,
         Tax: Config.Tax,
@@ -334,14 +352,123 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
 
           <Container fluid className="DoubleCard">
             <Row className="DoubleCard__Row m-0">
-              <Col lg={6} className="DoubleCard__Col p-0">
+              <Col lg={6} className="DoubleCard__Col p-0 d-flex align-items-center">
                 <div className="DoubleCard__title">
                   <h1>«База: Тренировки и питание»</h1>
                   <h3>Комбо</h3>
                   <p>Содержит в себе все из курсов «базовая тренировочная программа» и «базовое питание»</p>
                 </div>
               </Col>
-              <Col lg={6} className="DoubleCard__Col p-0"></Col>
+              <Col lg={6} className="DoubleCard__Col">
+                <Container className="AdditionalServices__propsCont  p-0">
+                  <Row className="AdditionalServices__sex m-0 d-flex justify-content-around">
+                    <div
+                      className="AdditionalServices__sexType d-flex align-items-center"
+                      onClick={() => this.checkMale(7, true)}
+                    >
+                      <img
+                        src={`${this.state.programs[7].male ? '/img/radio__true.svg' : '/img/radio__false.svg'}`}
+                        alt=""
+                      />
+                      <span>Мужчине</span>
+                    </div>
+                    <div
+                      className="AdditionalServices__sexType d-flex align-items-center"
+                      onClick={() => this.checkMale(7, false)}
+                    >
+                      <img
+                        src={`${this.state.programs[7].male ? '/img/radio__false.svg' : '/img/radio__true.svg'}`}
+                        alt=""
+                      />
+                      <span>Женщине</span>
+                    </div>
+                  </Row>
+                  <Row className="AdditionalServices__select m-0">
+                    <Container fluid className="AdditionalServices__styledSelect p-0">
+                      <Row
+                        className="m-0 mb-2 d-flex justify-content-between"
+                        onClick={() => {
+                          this.toggleProperties(7)
+                        }}
+                      >
+                        <Col xs={9} className="AdditionalServices__selectValue p-0 d-flex align-items-center">
+                          {this.state.programs[7].properties
+                            ? this.state.programs[7].properties[
+                                this.state.programs[7].activeProperty ? this.state.programs[7].activeProperty : 0
+                              ]
+                            : ''}
+                        </Col>
+                        <Col
+                          xs={3}
+                          className="AdditionalServices__selectArrow p-0 d-flex align-items-center justify-content-end"
+                        >
+                          <img className="img-fluid" src="/img/select__arrow.svg" alt="" />
+                        </Col>
+                      </Row>
+
+                      {this.state.programs[7].propertiesSelectActive ? (
+                        <Row className="AdditionalServices__selectOptions m-0">
+                          {this.state.programs[7].properties?.map((prop, index) => {
+                            return (
+                              <Container
+                                fluid
+                                className="AdditionalServices__selectOption p-0"
+                                key={index}
+                                onClick={() => this.setProp(7, index)}
+                              >
+                                {prop}
+                              </Container>
+                            )
+                          })}
+                        </Row>
+                      ) : null}
+                    </Container>
+                  </Row>
+                  {/* <Row className="AdditionalServices__select m-0">
+                    <Container fluid className="AdditionalServices__styledSelect p-0">
+                      <Row
+                        className="m-0 mb-2 d-flex justify-content-between"
+                        onClick={() => {
+                          this.toggleProperties2(7)
+                        }}
+                      >
+                        <Col xs={9} className="AdditionalServices__selectValue p-0 d-flex align-items-center">
+                          {this.state.programs[7].properties2
+                            ? this.state.programs[7].properties2[
+                                this.state.programs[7].activeProperty2 ? this.state.programs[7].activeProperty2 : 0
+                              ]
+                            : ''}
+                        </Col>
+                        <Col
+                          xs={3}
+                          className="AdditionalServices__selectArrow p-0 d-flex align-items-center justify-content-end"
+                        >
+                          <img className="img-fluid" src="/img/select__arrow.svg" alt="" />
+                        </Col>
+                      </Row>
+
+                      {this.state.programs[7].propertiesSelectActive2 ? (
+                        <Row className="AdditionalServices__selectOptions m-0">
+                          {this.state.programs[7].properties2?.map((prop, index) => {
+                            return (
+                              <Container
+                                fluid
+                                className="AdditionalServices__selectOption p-0"
+                                key={index}
+                                onClick={() => this.setProp2(7, index)}
+                              >
+                                {prop}
+                              </Container>
+                            )
+                          })}
+                        </Row>
+                      ) : null}
+                    </Container>
+                  </Row> */}
+                </Container>
+                <PriceBlock theme="light" oldPrice={this.state.programs[7].oldPrice + ' р'} price={this.state.programs[7].price + ' р'} />
+                <Button text="Купить сейчас" buttonHandler={() => this.buyProgramBytton(7)} />
+              </Col>
             </Row>
           </Container>
 
@@ -517,6 +644,46 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
               </div>
             </div>
           </div>
+
+          <Container fluid className="DoubleCard">
+            <Row className="DoubleCard__Row m-0" style={{backgroundColor: '#058DC7'}}>
+              <Col lg={6} className="DoubleCard__Col p-0 d-flex align-items-center">
+                <div className="DoubleCard__title">
+                  <h1 style={{color: '#ffffff'}}>«Персонально: Тренировки и питание»</h1>
+                  <h3 style={{color: '#ffffff'}}>Комбо</h3>
+                  <p style={{color: '#ffffff'}}>Содержит в себе все из курсов «базовая тренировочная программа» и «базовое питание»</p>
+                </div>
+              </Col>
+              <Col lg={6} className="DoubleCard__Col">
+                <Container className="AdditionalServices__propsCont  p-0">
+                  <Row className="AdditionalServices__sex m-0 d-flex justify-content-around">
+                    <div
+                      className="AdditionalServices__sexType d-flex align-items-center"
+                      onClick={() => this.checkMale(8, true)}
+                    >
+                      <img
+                        src={`${this.state.programs[8].male ? '/img/radio__true.svg' : '/img/radio__false.svg'}`}
+                        alt=""
+                      />
+                      <span>Мужчине</span>
+                    </div>
+                    <div
+                      className="AdditionalServices__sexType d-flex align-items-center"
+                      onClick={() => this.checkMale(8, false)}
+                    >
+                      <img
+                        src={`${this.state.programs[8].male ? '/img/radio__false.svg' : '/img/radio__true.svg'}`}
+                        alt=""
+                      />
+                      <span>Женщине</span>
+                    </div>
+                  </Row>                  
+                </Container>
+                <PriceBlock theme="dark" oldPrice={this.state.programs[8].oldPrice + ' р'} price={this.state.programs[8].price + ' р'} />
+                <Button text="Купить сейчас" buttonHandler={() => this.buyProgramBytton(8)} />
+              </Col>
+            </Row>
+          </Container>
 
           <h1>Дополнительные услуги</h1>
           <div className="row m-0 p-0">

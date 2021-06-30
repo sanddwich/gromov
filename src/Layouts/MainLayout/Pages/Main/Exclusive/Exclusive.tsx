@@ -54,9 +54,9 @@ const Exclusive = (props: ExclusiveProps) => {
             </Col>
           </Row>
         </Container>
-        {cardsContent.map((card) => {
+        {cardsContent.map((card, index) => {
           return (
-            <Container className="Exclusive__card">
+            <Container key={index} className="Exclusive__card">
               <ExclusiveCard img={card.img} title={card.title} list={card.list} />
             </Container>
           )

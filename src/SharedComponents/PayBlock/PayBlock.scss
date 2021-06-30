@@ -31,6 +31,37 @@
     padding-bottom: 0;
   }
 
+  .PayBlock__promoCode {
+    padding-left: 30px;
+    padding-right: 30px;
+
+    .PayBlock__input {
+      height: 30px !important;
+      padding: 0 !important;
+      text-align: center;
+    }
+
+    .Button {
+      height: 30px;
+      font-weight: 400;
+      font-size: 24px;
+      border-radius: 2px;
+      letter-spacing: 2px;
+    }
+  }
+
+  .PayBlock__promoCodeEx {
+    font-family: 'Montserrat';
+    font-style: normal;
+    color: #80b21c;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+    line-height: 110%;
+    margin-top: -10px;
+  }
+
   .PayBlock__checkboxRow {
     padding: 15px;
     padding-top: 0;

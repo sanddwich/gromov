@@ -29,6 +29,27 @@
   }
 }
 
+.PriceBlock__oldPrice {
+  font-family: 'Druk Cyr';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 120%;
+  text-align: right;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  padding-top: 6px;
+  padding-right: 10px;
+
+  .PriceBlock__oldPriceLine {
+    position: relative;
+    z-index: 10;
+    margin-top: -12px;
+    border-bottom: 2px solid #F45959;
+  }
+}
+
 .PriceBlock.dark {
   border-top: 1px dashed #ffffff;
   border-bottom: 1px dashed #ffffff;

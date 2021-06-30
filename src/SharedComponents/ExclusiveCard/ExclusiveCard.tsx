@@ -21,9 +21,9 @@ const ExclusiveCard = (props: ExclusiveCardProps) => {
         </Col>
         <Col md={6} className="ExclusiveCard__content p-0">
           <h1>{props.title}</h1>
-          {props.list.map((el) => {
+          {props.list.map((el, index) => {
             return (
-              <DashedBorderBlock bgColor="#668E15" color="#ffffff" border="1px dashed #FFFFFF">
+              <DashedBorderBlock key={index} bgColor="#668E15" color="#ffffff" border="1px dashed #FFFFFF">
                 {el}
               </DashedBorderBlock>
             )

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
+import Button from '../Button/Button'
 import ReactInputMask from 'react-input-mask'
 import { connect } from 'react-redux'
 import { Items } from '../../Interfaces/Items'
@@ -7,16 +8,19 @@ import { Receipt } from '../../Interfaces/Receipt'
 import { TinkoffPay } from '../../Interfaces/TinkoffPay'
 import { RootState } from '../../Redux'
 import { setShowPaymentModal } from '../../Redux/actions/modal'
+import { setOrderPayment } from '../../Redux/actions/order'
 import { ModalState, OrderState } from '../../Redux/interfaces/interfaces'
 import { sha256 } from 'js-sha256'
 
 import './PayBlock.scss'
 import Config from '../../Config/Config'
+import PromoCodes from '../../Interfaces/PromoCodes'
 
 interface PayBlockProps {
   modal: ModalState
   order: OrderState
   setShowPaymentModal: (isActive: boolean) => void
+  setOrderPayment: (payment: TinkoffPay) => void
 }
 
 interface PayBlockState {
@@ -34,6 +38,10 @@ interface PayBlockState {
     agree: boolean
     showFormErrorMessage: boolean
     loading: boolean
+    promoCode: string
+    promoCodeValid: boolean
+    promoExecuted: boolean
+    discount: number
   }
 }
 
@@ -63,13 +71,15 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
         agree: false,
         showFormErrorMessage: false,
         loading: false,
+        promoCode: '',
+        promoCodeValid: true,
+        promoExecuted: false,
+        discount: 0,
       },
     }
   }
 
-  componentDidMount() {
-    
-  }
+  componentDidMount() {}
 
   payTinkoff = async (): Promise<any> => {
     const url: string = 'https://securepay.tinkoff.ru/v2/Init'
@@ -80,7 +90,7 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
     const payment: TinkoffPay = this.props.order.payment
 
     let Token: string = ''
-    
+
     Token = Token.concat(
       payment.Amount.toString(),
       payment.Description,
@@ -216,6 +226,14 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
     this.setState({ formData })
   }
 
+  onPromoChange = (event: any): void => {
+    const formData = this.state.formData
+    formData.promoCode = event.target.value
+    formData.promoCodeValid = true
+
+    this.setState({ formData })
+  }
+
   onPhoneChange = (event: any): void => {
     const formData = this.state.formData
     formData.phone = event.target.value
@@ -232,6 +250,40 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
     formData.agreeTouched = true
     formData.showFormErrorMessage = false
     this.setState({ formData })
+  }
+
+  executePromo = (): void => {
+    const promoCodes: PromoCodes[] = Config.promoCodes
+    const promoEntry = this.state.formData.promoCode
+    const formData = this.state.formData
+    let discount = 0
+    promoCodes.map((promoCode) => {
+      promoCode.codeList.map((promo) => {
+        if (promo === promoEntry) {
+          discount = promoCode.discount
+        }
+      })
+    })
+
+    if (discount > 0) {
+      const payment: TinkoffPay = this.props.order.payment
+      let amount = 0
+      payment.Receipt?.Items.map((item) => {
+        const price = ((100 - discount) / 100) * item.Price
+        item.Price = price
+        item.Amount = price
+        amount = amount + price
+      })
+
+      payment.Amount = amount
+      this.props.setOrderPayment(payment)
+      formData.discount = discount
+      formData.promoExecuted = true
+      this.setState({ formData })
+    } else {
+      formData.promoCodeValid = false
+      this.setState({ formData })
+    }
   }
 
   render() {
@@ -326,6 +378,30 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
             </a>
           </Col>
         </Row>
+
+        {!this.state.formData.promoExecuted ? (
+          <Row className="PayBlock__promoCode PayBlock__inputCont">
+            <Col xs={6} className="PayBlock__promoTextBlock">
+              <input
+                type="string"
+                className={`PayBlock__input ${!this.state.formData.promoCodeValid ? 'inputInvalid' : ''}`}
+                value={this.state.formData.promoCode}
+                name="promo"
+                placeholder="промо код"
+                autoComplete="off"
+                onChange={(event) => this.onPromoChange(event)}
+              />
+            </Col>
+            <Col xs={6} className="PayBlock__promoButton">
+              <Button text="Применить" buttonHandler={() => this.executePromo()} />
+            </Col>
+          </Row>
+        ) : (
+          <Row className="PayBlock__promoCodeEx justify-content-center">
+            Вы успешно активировали промо код на {this.state.formData.discount}% скидку
+          </Row>
+        )}
+
         <Row className="PayBlock__finalPriceCont d-flex justify-content-between align-items-center">
           <div className="PayBlock__finalPriceTitle">Стоимость</div>
           <div className="PayBlock__finalPrice">
@@ -366,6 +442,7 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
 
 const mapDispatchToProps = {
   setShowPaymentModal,
+  setOrderPayment,
 }
 
 const mapStateToProps = (state: RootState) => {

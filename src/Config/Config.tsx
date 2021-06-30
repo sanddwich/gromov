@@ -1,4 +1,5 @@
 import { Program } from '../Interfaces/Program'
+import PromoCodes from '../Interfaces/PromoCodes'
 
 interface ConfigParams {
   TerminalKey: string
@@ -17,6 +18,7 @@ interface ConfigParams {
   programs: Program[]
   links: Link[]
   gromovMail: string
+  promoCodes: PromoCodes[]
 }
 
 interface Link {
@@ -39,17 +41,23 @@ const Config: ConfigParams = {
   Tax: 'none',
   mailForMessages: '',
   defaultQuantity: 1,
-  defaultPrice: 900,
+  defaultPrice: 950,
   defaultName: 'Базовая тренировочная программа',
   defaultPhone: '',
   defaultDescription: 'Тестовый платеж',
   siteURL: siteURL,
   gromovMail: 'victor.ifbb@gmail.com',
+  promoCodes: [
+    {
+      discount: 20,
+      codeList: ['1111', '2222', '3333'],
+    },
+  ],
   // gromovMail: 'bck-dkiselev@yandex.ru',
   programs: [
     {
       name: '«Базовая тренировочная программа»',
-      price: 900,
+      price: 950,
       male: true,
       properties: [
         'программа с акцентом на похудение, для тренажерного зала',
@@ -62,18 +70,18 @@ const Config: ConfigParams = {
     },
     {
       name: '«Персональная тренировочная программа»',
-      price: 2500,
+      price: 2700,
     },
     {
       name: '«Базовое питание»',
-      price: 900,
+      price: 950,
       properties: ['Cнижения веса', 'Набор веса'],
       propertiesSelectActive: false,
       activeProperty: 0,
     },
     {
       name: 'Культура питания «персонально»',
-      price: 2700,
+      price: 2900,
     },
     {
       name: 'Онлайн-Консультация',
@@ -86,6 +94,29 @@ const Config: ConfigParams = {
     {
       name: 'Диагностика',
       price: 7500,
+    },
+    {
+      name: '«Базовая программа: тренировки и питание»',
+      price: 1590,
+      oldPrice: 1900,
+      male: true,
+      properties: [
+        'программа с акцентом на похудение, для тренажерного зала',
+        'программа с акцентом на набор мышечной массы, для тренажерного зала',
+        'программа для дома & улицы с акцентом на похудение',
+        'программа для дома & улицы с акцентом на набор мышечной массы',
+      ],
+      properties2: ['Cнижения веса', 'Набор веса'],
+      propertiesSelectActive: false,
+      propertiesSelectActive2: false,
+      activeProperty: 0,
+      activeProperty2: 0,
+    },
+    {
+      name: '«Персональная программа: тренировки и питание»',
+      price: 4950,
+      oldPrice: 5600,
+      male: true,
     },
   ],
   links: [
