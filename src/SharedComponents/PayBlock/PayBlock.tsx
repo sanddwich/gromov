@@ -327,7 +327,7 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
             <div className="PayBlock__inputCont">
               <h3>Номер телефона</h3>
               <ReactInputMask
-                mask="+7 (999) 999-99-99"
+                mask="9 (999) 999-99-99"
                 className={`PayBlock__input ${
                   this.state.formData.inputPhoneTouched
                     ? this.state.formData.phoneValid
@@ -337,7 +337,7 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
                 } `}
                 type="tel"
                 name="phone"
-                placeholder="+7 (___) ___-__-__"
+                placeholder="_ (___) ___-__-__"
                 value={this.state.formData.phone}
                 onChange={(event) => this.onPhoneChange(event)}
               />

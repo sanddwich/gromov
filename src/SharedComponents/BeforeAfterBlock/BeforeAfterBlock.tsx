@@ -11,6 +11,7 @@ interface BeforeAfterBlockProps {
   colorBefore?: string
   colorAfter?: string
   width?: string
+  onClickHandler?: () => void
 }
 
 interface BeforeAfterBlockState {}
@@ -18,7 +19,9 @@ interface BeforeAfterBlockState {}
 class BeforeAfterBlock extends React.Component<BeforeAfterBlockProps, BeforeAfterBlockState> {
   render() {
     return (
-      <Container fluid className="BeforeAfterBlock p-0 d-flex justify-content-center align-items-center">
+      <Container fluid className="BeforeAfterBlock p-0 d-flex justify-content-center align-items-center" onClick={() => {
+        this.props.onClickHandler && this.props.onClickHandler()
+      }}>
         <div style={{width: this.props.width ? this.props.width : '100%'}}>
           <Row className="BeforeAfterBlock__images m-0 p-0">
             <Col xs={6} className="BeforeAfterBlock__imgBefore m-0 p-0">

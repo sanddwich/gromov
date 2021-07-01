@@ -10,7 +10,20 @@ interface Block8Props {}
 
 interface Block8State {}
 
+const links: string[] = [
+  'https://instagram.com/malygin_mph?utm_medium=copy_link',
+  'https://instagram.com/kohanovskaya91?utm_medium=copy_link',
+  'https://www.instagram.com/amiljaev2018/',
+  'https://instagram.com/ann_bilberry?utm_medium=copy_link',
+  'https://instagram.com/radik_show?utm_medium=copy_link',
+  'https://instagram.com/anna___polyakova?utm_medium=copy_link',
+]
+
 class Block8 extends React.Component<Block8Props, Block8State> {
+  toInsta = (link: string):void => {
+    window.open(link)
+  }
+
   render() {
     return (
       <Element name="Block8">
@@ -25,6 +38,7 @@ class Block8 extends React.Component<Block8Props, Block8State> {
                   textBefore="ДО"
                   textAfter="После"
                   textVisible={true}
+                  onClickHandler={() => this.toInsta(links[0])}
                 />
               </ScrollAnimation>
 
@@ -59,6 +73,7 @@ class Block8 extends React.Component<Block8Props, Block8State> {
                   textBefore="ДО"
                   textAfter="После"
                   textVisible={true}
+                  onClickHandler={() => this.toInsta(links[1])}
                 />
               </ScrollAnimation>
 
@@ -89,6 +104,7 @@ class Block8 extends React.Component<Block8Props, Block8State> {
                   textBefore="ДО"
                   textAfter="После"
                   textVisible={true}
+                  onClickHandler={() => this.toInsta(links[2])}
                 />
               </ScrollAnimation>
 
@@ -121,6 +137,7 @@ class Block8 extends React.Component<Block8Props, Block8State> {
                   textBefore="ДО"
                   textAfter="После"
                   textVisible={true}
+                  onClickHandler={() => this.toInsta(links[3])}
                 />
               </ScrollAnimation>
 
@@ -152,6 +169,7 @@ class Block8 extends React.Component<Block8Props, Block8State> {
                   textBefore="ДО"
                   textAfter="После"
                   textVisible={true}
+                  onClickHandler={() => this.toInsta(links[4])}
                 />
               </ScrollAnimation>
 
@@ -183,6 +201,7 @@ class Block8 extends React.Component<Block8Props, Block8State> {
                   textBefore="ДО"
                   textAfter="После"
                   textVisible={true}
+                  onClickHandler={() => this.toInsta(links[5])}
                 />
               </ScrollAnimation>
 

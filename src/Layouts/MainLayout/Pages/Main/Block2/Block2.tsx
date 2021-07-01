@@ -82,7 +82,7 @@ class Block2 extends React.Component<Block2Props, Block2State> {
         </Container>
 
         <Container className="Block2__bottom">
-          <Row className="Block2__card" style={{ backgroundColor: '#668E15' }}>
+          <Row className="Block2__card" style={{ backgroundColor: 'rgb(128, 178, 28)' }}>
             <Col xs={12}>
               8 из 10 чувствуют изменения в первый месяц
             </Col>

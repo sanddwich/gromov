@@ -10,8 +10,8 @@
   .ModalPayment__closeButton {
     width: 45px;
     height: 45px;
-    margin-top: -55px;
-    margin-right: 10px;
+    margin-top: -10px;
+    margin-right: -10px;
     border-radius: 50% !important;
     display: flex;
     justify-content: center;
@@ -44,7 +44,7 @@
     .ModalPayment__closeButton {
       width: 35px;
       height: 35px;
-      margin-top: -25px;
+      margin-right: 0;
 
       img {
         width: 15px;
