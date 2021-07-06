@@ -15,6 +15,7 @@ import { sha256 } from 'js-sha256'
 import './PayBlock.scss'
 import Config from '../../Config/Config'
 import PromoCodes from '../../Interfaces/PromoCodes'
+import { valuesIn } from 'lodash'
 
 interface PayBlockProps {
   modal: ModalState
@@ -185,7 +186,7 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
     formData.inputPhoneTouched = true
     formData.agreeTouched = true
     formData.emailValid = this.emailValidate(formData.email)
-    formData.phoneValid = this.phoneValidate(formData.phone)
+    // formData.phoneValid = this.phoneValidate(formData.phone)
     formData.formValid = formData.emailValid && formData.phoneValid && formData.agree
 
     if (formData.formValid) {
@@ -197,15 +198,15 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
     this.setState({ formData })
   }
 
-  phoneValidate = (phone: string): boolean => {
-    let filterPhone: string = ''
-    filterPhone = filterPhone + phone.match(/\d/g)?.join('')
-    if (filterPhone.length < this.state.formData.minPhoneNumbers) {
-      return false
-    } else {
-      return true
-    }
-  }
+  // phoneValidate = (phone: string): boolean => {
+  //   let filterPhone: string = ''
+  //   filterPhone = filterPhone + phone.match(/\d/g)?.join('')
+  //   if (filterPhone.length < this.state.formData.minPhoneNumbers) {
+  //     return false
+  //   } else {
+  //     return true
+  //   }
+  // }
 
   emailValidate = (email: string): boolean => {
     const reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
@@ -234,15 +235,34 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
     this.setState({ formData })
   }
 
+  clearPhone = (val: string): string => {
+    const assignedLetters: string = '+0123456789\b\0'
+    if (assignedLetters.indexOf(val) === -1) {
+      return ''
+    }
+
+    if (val === '+' && this.state.formData.phone.length > 0) {
+      return ''
+    }
+    return val
+  }
+
   onPhoneChange = (event: any): void => {
     const formData = this.state.formData
-    formData.phone = event.target.value
-    !formData.inputPhoneTouched && (formData.inputPhoneTouched = true)
-    formData.phoneValid = this.phoneValidate(formData.phone)
-    formData.showFormErrorMessage = false
+    formData.phone = formData.phone + this.clearPhone(event.target.value.slice(-1))
 
     this.setState({ formData })
   }
+
+  // onPhoneChange = (event: any): void => {
+  //   const formData = this.state.formData
+  //   formData.phone = event.target.value
+  //   !formData.inputPhoneTouched && (formData.inputPhoneTouched = true)
+  //   formData.phoneValid = this.phoneValidate(formData.phone)
+  //   formData.showFormErrorMessage = false
+
+  //   this.setState({ formData })
+  // }
 
   checkboxHandler = (): void => {
     const formData = this.state.formData
@@ -326,7 +346,7 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
 
             <div className="PayBlock__inputCont">
               <h3>Номер телефона</h3>
-              <ReactInputMask
+              {/* <ReactInputMask
                 mask="9 (999) 999-99-99"
                 className={`PayBlock__input ${
                   this.state.formData.inputPhoneTouched
@@ -338,6 +358,21 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
                 type="tel"
                 name="phone"
                 placeholder="_ (___) ___-__-__"
+                value={this.state.formData.phone}
+                onChange={(event) => this.onPhoneChange(event)}
+              /> */}
+
+              <input
+                className={`PayBlock__input ${
+                  this.state.formData.inputPhoneTouched
+                    ? this.state.formData.phoneValid
+                      ? 'inputValid'
+                      : 'inputInvalid'
+                    : null
+                } `}
+                type="tel"
+                name="phone"
+                placeholder="Введите номер телефона"
                 value={this.state.formData.phone}
                 onChange={(event) => this.onPhoneChange(event)}
               />
