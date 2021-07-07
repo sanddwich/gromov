@@ -65,7 +65,7 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
         emailValid: false,
         inputPhoneTouched: false,
         inputEmailTouched: false,
-        minPhoneNumbers: 11,
+        minPhoneNumbers: 10,
         checkbox: true,
         formValid: false,
         agreeTouched: false,
@@ -186,7 +186,7 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
     formData.inputPhoneTouched = true
     formData.agreeTouched = true
     formData.emailValid = this.emailValidate(formData.email)
-    // formData.phoneValid = this.phoneValidate(formData.phone)
+    formData.phoneValid = this.phoneValidate(formData.phone)
     formData.formValid = formData.emailValid && formData.phoneValid && formData.agree
 
     if (formData.formValid) {
@@ -198,15 +198,14 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
     this.setState({ formData })
   }
 
-  // phoneValidate = (phone: string): boolean => {
-  //   let filterPhone: string = ''
-  //   filterPhone = filterPhone + phone.match(/\d/g)?.join('')
-  //   if (filterPhone.length < this.state.formData.minPhoneNumbers) {
-  //     return false
-  //   } else {
-  //     return true
-  //   }
-  // }
+  phoneValidate = (phone: string): boolean => {
+    // filterPhone = filterPhone + phone.match(/\d/g)?.join('')
+    if (phone.length < this.state.formData.minPhoneNumbers) {
+      return false
+    } else {
+      return true
+    }
+  }
 
   emailValidate = (email: string): boolean => {
     const reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
@@ -235,21 +234,30 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
     this.setState({ formData })
   }
 
-  clearPhone = (val: string): string => {
-    const assignedLetters: string = '+0123456789\b\0'
-    if (assignedLetters.indexOf(val) === -1) {
-      return ''
-    }
+  //Оставляет только численную строку с + или без в начале
+  checkPhone = (phone: string): string => {
+    let result = phone.match(/\d/g)?.join('')
+    const plus = phone.match(/\+/)?.join('')
+    if(result) {
+      if (plus) {
+        return (plus + result)
+      } else {
+        return result
+      }
+    } 
 
-    if (val === '+' && this.state.formData.phone.length > 0) {
-      return ''
+    if(plus) {
+      return plus
     }
-    return val
+    
+    return ''
   }
 
   onPhoneChange = (event: any): void => {
     const formData = this.state.formData
-    formData.phone = formData.phone + this.clearPhone(event.target.value.slice(-1))
+    formData.phone = event.target.value
+    formData.phone = this.checkPhone(formData.phone)
+    // console.log(formData.phone)
 
     this.setState({ formData })
   }
