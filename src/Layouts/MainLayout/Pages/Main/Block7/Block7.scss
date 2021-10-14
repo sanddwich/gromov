@@ -42,6 +42,24 @@
     height: 100%;
   }
 
+  .Block7__BottomContentLeft {
+    .DashedBorderBlock__content  {
+      b {
+        margin-top: -20px;
+      }
+    }
+  }
+  .Block7__BottomContentRight {
+    .DashedBorderBlock__content  {
+      b {
+        margin-top: -60px !important;
+        @media screen and(max-width: 768px) {
+          margin-top: -20px !important;
+        }
+      }
+    }
+  }
+
   .DashedBorderBlock__content {
     height: 100%;
     padding: 45px !important;

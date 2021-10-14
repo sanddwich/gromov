@@ -1,5 +1,7 @@
 import React from 'react'
+import ScrollAnimation from 'react-animate-on-scroll'
 import { Col, Container, Row } from 'react-bootstrap'
+import DashedBorderBlock from '../../../../../SharedComponents/DashedBorderBlock/DashedBorderBlock'
 import ExclusiveCard from '../../../../../SharedComponents/ExclusiveCard/ExclusiveCard'
 import IconButton from '../../../../../SharedComponents/IconButton/IconButton'
 import './Exclusive.scss'
@@ -50,17 +52,94 @@ const Exclusive = (props: ExclusiveProps) => {
         <Container className="Exclusive__content">
           <Row className="Exclusive__Row1 m-0">
             <Col md={7} className="Exclusive__title">
-              Эксклюзивный вариант «Комплексное ведение»
+              Эксклюзивный вариант «Персональное ведение»
             </Col>
           </Row>
         </Container>
-        {cardsContent.map((card, index) => {
+
+        <Container className="Exclusive__card">
+          <Container fluid className="ExclusiveCard">
+            <Row className="ExclusiveCard__Row1 m-0">
+              <Col md={6} className="ExclusiveCard__img d-flex justify-content-center align-items-center">
+                <ScrollAnimation animateOnce={true} offset={150} delay={0} animateIn="animate__fadeIn">
+                  <img src="/img/ec1.png" className="img-fluid" alt="" />
+                </ScrollAnimation>
+              </Col>
+              <Col md={6} className="ExclusiveCard__content p-0">
+                <h1>1. Постановка целей</h1>
+                <DashedBorderBlock bgColor="#668E15" color="#ffffff" border="1px dashed #FFFFFF">
+                  <span>Построение</span> и проработка желаемых <span>целей</span>
+                </DashedBorderBlock>
+                <DashedBorderBlock bgColor="#668E15" color="#ffffff" border="1px dashed #FFFFFF">
+                  Формирование целей производится с учетом временных интервалов, а их достижение контролируется
+                  тренером, который оказывает психологическую <span>поддержку</span> на данном этапе
+                </DashedBorderBlock>
+              </Col>
+            </Row>
+          </Container>
+        </Container>
+
+        <Container className="Exclusive__card">
+          <Container fluid className="ExclusiveCard">
+            <Row className="ExclusiveCard__Row1 m-0">
+              <Col md={6} className="ExclusiveCard__img d-flex justify-content-center align-items-center">
+                <ScrollAnimation animateOnce={true} offset={150} delay={0} animateIn="animate__fadeIn">
+                  <img src="/img/ec2.png" className="img-fluid" alt="" />
+                </ScrollAnimation>
+              </Col>
+              <Col md={6} className="ExclusiveCard__content p-0">
+                <h1>2. Питание</h1>
+                <DashedBorderBlock bgColor="#668E15" color="#ffffff" border="1px dashed #FFFFFF">
+                  Ваш рацион выстраивается <span>на основе уже сформированных</span> культурно-пищевых <span>ценностей</span>
+                </DashedBorderBlock>
+                <DashedBorderBlock bgColor="#668E15" color="#ffffff" border="1px dashed #FFFFFF">
+                  При построении рациона <span>учитываются</span> ваши медицинские <span>показания</span>
+                </DashedBorderBlock>
+                <DashedBorderBlock bgColor="#668E15" color="#ffffff" border="1px dashed #FFFFFF">
+                  План питания <span>адаптируется под</span> текущий ритм жизни и любые <span>факторы</span> занятости
+                </DashedBorderBlock>
+                <DashedBorderBlock bgColor="#668E15" color="#ffffff" border="1px dashed #FFFFFF">
+                  Вы можете рассчитывать на <span>мою поддержку</span> в любой непонятной ситуации, связанной с планом питания
+                </DashedBorderBlock>
+              </Col>
+            </Row>
+          </Container>
+        </Container>
+
+        <Container className="Exclusive__card">
+          <Container fluid className="ExclusiveCard">
+            <Row className="ExclusiveCard__Row1 m-0">
+              <Col md={6} className="ExclusiveCard__img d-flex justify-content-center align-items-center">
+                <ScrollAnimation animateOnce={true} offset={150} delay={0} animateIn="animate__fadeIn">
+                  <img src="/img/ec3.png" className="img-fluid" alt="" />
+                </ScrollAnimation>
+              </Col>
+              <Col md={6} className="ExclusiveCard__content p-0">
+                <h1>3. Физическая активность</h1>
+                <DashedBorderBlock bgColor="#668E15" color="#ffffff" border="1px dashed #FFFFFF">
+                <span>Индивидуальная</span> тренеровочная программа
+                </DashedBorderBlock>
+                <DashedBorderBlock bgColor="#668E15" color="#ffffff" border="1px dashed #FFFFFF">
+                  Программа формируется для занятий <span>в любых</span> доступных <span>условиях</span> (спортзал, дом, улица)
+                </DashedBorderBlock>
+                <DashedBorderBlock bgColor="#668E15" color="#ffffff" border="1px dashed #FFFFFF">
+                  Детальный <span>видеоразбор</span> для каждого упражнения.
+                </DashedBorderBlock>
+                <DashedBorderBlock bgColor="#668E15" color="#ffffff" border="1px dashed #FFFFFF">
+                <span>Анализ техники</span> выполнения упражнений по видеосвязи
+                </DashedBorderBlock>
+              </Col>
+            </Row>
+          </Container>
+        </Container>
+
+        {/* {cardsContent.map((card, index) => {
           return (
             <Container key={index} className="Exclusive__card">
               <ExclusiveCard img={card.img} title={card.title} list={card.list} />
             </Container>
           )
-        })}
+        })} */}
       </Container>
 
       <Container fluid className="Exclusive__howToBuy__cont">
@@ -68,7 +147,7 @@ const Exclusive = (props: ExclusiveProps) => {
           <Row className="Exclusive__Row m-0">
             <Col md={6} className="Exclusive__howToBuyRight d-block d-md-none">
               <p>Стоимость комплексного ведения</p>
-              <h1>от 10 000 рублей</h1>
+              <h1>от 8 000 рублей</h1>
             </Col>
             <Col md={6} className="Exclusive__howToBuyLeft">
               <h1>как приобрести?</h1>
@@ -94,7 +173,7 @@ const Exclusive = (props: ExclusiveProps) => {
             </Col>
             <Col md={6} className="Exclusive__howToBuyRight d-none d-md-block">
               <p>Стоимость комплексного ведения</p>
-              <h1>от 10 000 рублей</h1>
+              <h1>от 8 000 рублей</h1>
             </Col>
           </Row>
         </Container>

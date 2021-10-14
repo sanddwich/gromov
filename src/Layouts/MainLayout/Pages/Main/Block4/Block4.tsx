@@ -25,8 +25,10 @@ class Block4 extends React.Component<Block4Props, Block4State> {
                 width="100%"
                 pluses={true}
               >
-                Снижение веса и физическая активность придадут легкость. Вы станете более энергичными, заряженными и
-                позитивными.
+                Снижение веса и физическая активность придадут легкость.{' '}
+                <b>
+                  <u>Вы станете более энергичными, заряженными и позитивными.</u>
+                </b>
               </DashedBorderBlock>
               <DashedBorderBlock
                 bgColor="#81B31C"
@@ -35,8 +37,10 @@ class Block4 extends React.Component<Block4Props, Block4State> {
                 width="100%"
                 pluses={true}
               >
-                Жировые отложения уйдут, а снижение веса и повышение физической активности улучшат общее состояние
-                здоровья.
+                <b>
+                  <u>Жировые отложения уйдут,</u>
+                </b>{' '}
+                а снижение веса и повышение физической активности улучшат общее состояние здоровья.
               </DashedBorderBlock>
               <DashedBorderBlock
                 bgColor="#81B31C"
@@ -45,7 +49,10 @@ class Block4 extends React.Component<Block4Props, Block4State> {
                 width="100%"
                 pluses={true}
               >
-                Мы поставим цели, пропишем способ их достижения и будем осуществлять контроль за их достижением.
+                <b>
+                  <u>Мы поставим цели,</u>
+                </b>{' '}
+                пропишем способ их достижения и будем осуществлять контроль за их достижением.
               </DashedBorderBlock>
               {/* <DashedBorderBlock
                 bgColor="#81B31C"
@@ -70,7 +77,10 @@ class Block4 extends React.Component<Block4Props, Block4State> {
                   width="100%"
                   pluses={true}
                 >
-                  В новом теле вы будете чувствовать себя более уверенными и сексуальными.
+                  В новом теле вы будете чувствовать себя более{' '}
+                  <b>
+                    <u>уверенными и сексуальными.</u>
+                  </b>
                 </DashedBorderBlock>
               </div>
             </Col>

@@ -109,7 +109,7 @@ class Block1 extends React.Component<Block1Props, Block1State> {
                 <Row className="Block1__Row2DescrBlock">
                   <Col md={5} className="Block1__Row2DescrRightNew">
                     <Button text="Пройдите опрос" buttonHandler={() => this.goToQuiz()} />
-                    <p>И получите скидку после прохождения</p>
+                    <p>И получите скидку на любую услугу</p>
                   </Col>
                   <Col md={7} className="Block1__Row2DescrLeft d-none d-md-flex">
                     <div>Без использования диет! Основа метода: психология, нутрициология и физическая активность.</div>
@@ -149,7 +149,7 @@ class Block1 extends React.Component<Block1Props, Block1State> {
             <Row className="Block1__Row2DescrBlock p-0 m-0">
               <Col xs={12} className="Block1__Row2DescrRightNew">
                 <Button text="Пройдите опрос" buttonHandler={() => this.goToQuiz()} />
-                <p>И получите скидку после прохождения</p>
+                <p>И получите скидку на любую услугу</p>
               </Col>
             </Row>
           </div>

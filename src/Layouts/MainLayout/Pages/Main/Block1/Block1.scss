@@ -280,7 +280,7 @@
   }
 
   @media screen and(max-width: 1600px) {
-    height: 900px;
+    // height: 900px;
     .Block1__Row2 {
       .Block1__img {
         img {
@@ -301,7 +301,7 @@
   }
 
   @media screen and(max-width: 1366px) {
-    // height: 768px;
+    height: 900px;
     .Block1__Row2 {
       .Block1__img {
         img {
@@ -321,7 +321,7 @@
   }
 
   @media screen and(max-width: 1200px) {
-    height: 650px;
+    height: 768px;
     .Block1__Row2Title {
       font-size: 72px !important;
     }
@@ -347,6 +347,7 @@
   }
 
   @media screen and(max-width: 992px) {
+    height: 600px;
     .Block1__Row2 {
       .Block1__img {
         img {

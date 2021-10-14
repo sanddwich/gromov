@@ -625,7 +625,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   </div>
                 </DashedBorderBlock>
 
-                <DashedBorderBlock
+                {/* <DashedBorderBlock
                   bgColor="#00A4E9"
                   border="1px dashed #FFFFFF"
                   color="#ffffff"
@@ -637,7 +637,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                     <img className="img-fluid" src="/img/icons/18.png" alt="" />В качестве бонуса включает в себя файл с
                     базовыми принципами питания, удачными сочетаниями пррдуктов, примерами конкретных блюд.
                   </div>
-                </DashedBorderBlock>
+                </DashedBorderBlock> */}
 
                 <PriceBlock theme="dark" price={this.state.programs[3].price + ' р'} />
                 <Button text="Купить сейчас" buttonHandler={() => this.buyProgramBytton(3)} />

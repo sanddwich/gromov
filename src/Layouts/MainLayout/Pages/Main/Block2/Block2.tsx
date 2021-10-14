@@ -60,7 +60,7 @@ class Block2 extends React.Component<Block2Props, Block2State> {
             <Col md={4} xs={6} className="p-2 p-sm-0">
               <Row className="Block2__card m-0" style={{ backgroundColor: '#14BAFF' }}>
                 <Col xs={6} className="Block2__cardContent p-0 pl-3">
-                  Наставник на связи 24/7
+                  Наставник всегда на связи
                 </Col>
                 <Col xs={6} className="Block2__cardImg p-0 d-flex justify-content-end align-items-end h-100">
                   <img className="gromovImg bottomEnd" src="img/25.png" alt="" />
@@ -69,7 +69,7 @@ class Block2 extends React.Component<Block2Props, Block2State> {
             </Col>
 
             <Col md={4} xs={6} className="p-2 p-sm-0">
-              <Row className="Block2__card m-0" style={{ backgroundColor: '#05ABF0'}}>
+              <Row className="Block2__card m-0" style={{ backgroundColor: '#05ABF0' }}>
                 <Col xs={6} className="Block2__cardContent p-0 pl-3">
                   восстановитесь после родов
                 </Col>
@@ -83,9 +83,7 @@ class Block2 extends React.Component<Block2Props, Block2State> {
 
         <Container className="Block2__bottom">
           <Row className="Block2__card" style={{ backgroundColor: 'rgb(128, 178, 28)' }}>
-            <Col xs={12}>
-              8 из 10 чувствуют изменения в первый месяц
-            </Col>
+            <Col xs={12}>8 из 10 чувствуют изменения в первый месяц</Col>
           </Row>
         </Container>
       </Element>

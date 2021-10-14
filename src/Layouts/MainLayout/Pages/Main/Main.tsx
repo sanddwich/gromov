@@ -41,7 +41,7 @@ class Main extends React.Component<MainProps, MainState> {
         <Block5 />
         <Block6 />
         <Block7 />
-        <QuizPage />
+        {/* <QuizPage /> */}
         <Block8 />
         <Block9 />
         <Exclusive />

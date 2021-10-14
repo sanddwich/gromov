@@ -8,6 +8,8 @@ import MirrorHeader from '../../../../../SharedComponents/MirrorHeader/MirrorHea
 import ScrollAnimation from 'react-animate-on-scroll'
 import './Block3.scss'
 import { Element } from 'react-scroll'
+import Button from '../../../../../SharedComponents/Button/Button'
+import Config from '../../../../../Config/Config'
 
 interface Block3Props {}
 
@@ -49,6 +51,9 @@ class Block3 extends React.Component<Block3Props, Block3State> {
                     <BottomShadowBlock bgColor="#F45959" shadowColor="#DB3030" image="img/mirror_icon.png">
                       Комплексы из-за внешнего вида
                     </BottomShadowBlock>
+                  </Row>
+                  <Row className="Block3__button m-0 p-0 pb-3 pl-3 pr-3">
+                    <Button text="Решить проблему сейчас" buttonHandler={() => Config.goToWhattsApp()} />
                   </Row>
                 </div>
               </ScrollAnimation>

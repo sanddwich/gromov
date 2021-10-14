@@ -20,6 +20,7 @@ interface ConfigParams {
   gromovMail: string
   promoCodes: PromoCodes[]
   quizLink: string
+  goToWhattsApp: () => void
 }
 
 interface Link {
@@ -32,6 +33,9 @@ interface Link {
 const siteURL = 'https://gromov.fit'
 
 const Config: ConfigParams = {
+  goToWhattsApp: () => {
+    window.open('https://api.whatsapp.com/send?phone=+79171874086')
+  },
   TerminalKey: '1613847439636DEMO',
   TerminalPassword: 'v1lv7nwkouwdrj23',
   // TerminalKey: '1613847439636',

@@ -27,7 +27,10 @@ class Block6 extends React.Component<Block6Props, Block6State> {
                   pluses={true}
                   borderRadius="0 15px 0 15px"
                 >
-                  Никаких диет, голоданий и ограничений, провоцирующих срывы.
+                  <b>
+                    <u>Никаких диет,</u>
+                  </b>{' '}
+                  голоданий и ограничений, провоцирующих срывы.
                 </DashedBorderBlock>
 
                 <DashedBorderBlock
@@ -37,7 +40,10 @@ class Block6 extends React.Component<Block6Props, Block6State> {
                   pluses={true}
                   borderRadius="0 15px 0 15px"
                 >
-                  8 из 10 видят позитивные изменения уже в первый месяц.
+                  8 из 10 видят позитивные{' '}
+                  <b>
+                    <u>изменения уже в первый месяц.</u>
+                  </b>
                 </DashedBorderBlock>
 
                 {/* <DashedBorderBlock

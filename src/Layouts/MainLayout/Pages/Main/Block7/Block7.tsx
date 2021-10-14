@@ -6,6 +6,8 @@ import MirrorHeader from '../../../../../SharedComponents/MirrorHeader/MirrorHea
 import './Block7.scss'
 import { Element } from 'react-scroll'
 import ScrollAnimation from 'react-animate-on-scroll'
+import Button from '../../../../../SharedComponents/Button/Button'
+import Config from '../../../../../Config/Config'
 
 interface Block7Props {}
 
@@ -47,7 +49,7 @@ class Block7 extends React.Component<Block7Props, Block7State> {
                 <div className="Block7__RightEl">
                   <ScrollAnimation animateOnce={true} offset={150} delay={400} animateIn="animate__fadeInUp">
                     <BottomShadowBlock bgColor="#F45959" shadowColor="#DB3030" height="100px">
-                      А что если у вас все как у всех?
+                      Нет стимула начать
                     </BottomShadowBlock>
                   </ScrollAnimation>
                 </div>
@@ -55,8 +57,14 @@ class Block7 extends React.Component<Block7Props, Block7State> {
                 <div className="Block7__RightEl">
                   <ScrollAnimation animateOnce={true} offset={150} delay={600} animateIn="animate__fadeInUp">
                     <BottomShadowBlock bgColor="#F45959" shadowColor="#DB3030" height="100px">
-                      Это марафон?
+                      Лень?
                     </BottomShadowBlock>
+                  </ScrollAnimation>
+                </div>
+
+                <div className="Block7__RightEl">
+                  <ScrollAnimation animateOnce={true} offset={150} delay={800} animateIn="animate__fadeInUp">
+                    <Button text="Начать действовать сейчас" buttonHandler={() => Config.goToWhattsApp()} />
                   </ScrollAnimation>
                 </div>
               </div>
@@ -83,13 +91,19 @@ class Block7 extends React.Component<Block7Props, Block7State> {
               <Col className="Block7__BottomContentLeft m-0 p-3">
                 <DashedBorderBlock bgColor="#80B21C" border="1px dashed #FFFFFF" color="#ffffff" pluses={true}>
                   За основу методики взята психофизиология и выстраивание фундамента пищевых привычек. Это позволяет
-                  сохранить результат на долгие годы!
+                  сохранить
+                  <b>
+                    <u>результат на долгие годы!</u>
+                  </b>
                 </DashedBorderBlock>
               </Col>
 
               <Col className="Block7__BottomContentRight m-0 p-3">
                 <DashedBorderBlock bgColor="#80B21C" border="1px dashed #FFFFFF" color="#ffffff" pluses={true}>
-                  Тренировки могут проходить в любых условиях (спортзал, дом, улица).
+                  Тренировки могут проходить{' '}
+                  <b>
+                    <u>в любых условиях (спортзал, дом, улица).</u>
+                  </b>
                 </DashedBorderBlock>
               </Col>
             </Row>

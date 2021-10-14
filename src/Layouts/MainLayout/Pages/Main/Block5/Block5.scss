@@ -46,6 +46,10 @@ $imgHeight: 647px;
     justify-content: center;
   }
 
+  .Block5__button {
+    padding-top: 10px !important;
+  }
+
   .Block5__imgMob {
     margin-top: 130px;
     border-radius: 40px 40px 0px 40px;
@@ -55,8 +59,8 @@ $imgHeight: 647px;
 
     img {
       margin-top: -93px;
-      width: $imgWidth*0.6;
-      height: $imgHeight*0.6;
+      width: $imgWidth * 0.6;
+      height: $imgHeight * 0.6;
     }
   }
 

@@ -5,6 +5,8 @@ import MirrorHeader from '../../../../../SharedComponents/MirrorHeader/MirrorHea
 import './Block5.scss'
 import { Element } from 'react-scroll'
 import ScrollAnimation from 'react-animate-on-scroll'
+import Button from '../../../../../SharedComponents/Button/Button'
+import Config from '../../../../../Config/Config'
 
 interface Block5Props {}
 
@@ -75,6 +77,11 @@ class Block5 extends React.Component<Block5Props, Block5State> {
                     <Col xl={9} xs={8} className="Block5__RightLineTitle">
                       Худел(ла), но вес вернулся
                     </Col>
+                  </Row>
+                </ScrollAnimation>
+                <ScrollAnimation animateOnce={true} offset={150} delay={600} animateIn="animate__fadeInUp">
+                  <Row className="Block5__button m-0 p-0 pb-3 pl-3 pr-3">
+                    <Button text="Хочу добиться результата" buttonHandler={() => Config.goToWhattsApp()} />
                   </Row>
                 </ScrollAnimation>
               </Container>
