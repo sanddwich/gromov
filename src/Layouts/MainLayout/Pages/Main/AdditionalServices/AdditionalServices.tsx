@@ -747,7 +747,7 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
                   <h2 style={{ color: '#ffffff' }}>Напишите мне</h2>
                   <p>на один из предложенных каналов связи и я отвечу на любые вопросы</p>
 
-                  <div className="AdditionalServices__iconButton" onClick={() => this.onClickHandler(1)}>
+                  <div className="AdditionalServices__iconButton" onClick={() => Config.goToWhattsApp()}>
                     <img src="/img/whatsapp_blue.svg" alt="whatsapp" />
                     Whatsapp
                   </div>

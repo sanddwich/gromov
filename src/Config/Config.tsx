@@ -34,7 +34,7 @@ const siteURL = 'https://gromov.fit'
 
 const Config: ConfigParams = {
   goToWhattsApp: () => {
-    window.open('https://api.whatsapp.com/send?phone=+79171874086')
+    window.open('https://api.whatsapp.com/send?phone=+79171874086&text=Здравствуйте%2C+у+меня+есть+вопрос+по+УСЛУГАМ+САЙТА')
   },
   TerminalKey: '1613847439636DEMO',
   TerminalPassword: 'v1lv7nwkouwdrj23',

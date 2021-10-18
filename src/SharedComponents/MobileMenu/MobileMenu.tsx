@@ -7,6 +7,7 @@ import './MobileMenu.scss'
 import { connect } from 'react-redux'
 import IconButton from '../IconButton/IconButton'
 import { scroller } from 'react-scroll'
+import Config from '../../Config/Config'
 
 interface MobileMenuProps {
   setShowPaymentModal: (isActive: boolean) => void
@@ -114,7 +115,7 @@ class MobileMenu extends React.Component<MobileMenuProps, MobileMenuState> {
                     borderRadius="8px"
                     bold="600"
                     element={1}
-                    clickHandler={this.onClickHandler}
+                    clickHandler={() => Config.goToWhattsApp()}
                   />
                   <IconButton
                     icon="/img/insta_blue.svg"

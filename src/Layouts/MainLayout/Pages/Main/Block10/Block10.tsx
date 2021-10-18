@@ -27,10 +27,10 @@ class Block10 extends React.Component<Block10Props, Block10State> {
                     <Col md={5} xs={12} className="Block10__contentLeft d-flex align-items-center">
                       <div>
                         <h2>Посмотрите короткое видео</h2>
-                        <p>В нем я расскажу вам, чем могу помочь и как уже привел к результату более 1 500 человек.</p>
-                        {/* <p>
-                          <b>более 1 000 человек.</b>
-                        </p> */}
+                        <p>В нем я расскажу вам, чем могу помочь и как уже привел к результату</p>
+                        <p>
+                          <b>более 1 500 человек.</b>
+                        </p>
                       </div>
                     </Col>
                     <Col md={7} xs={12} className="Block10__contentRight p-0">

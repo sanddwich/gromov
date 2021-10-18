@@ -25,7 +25,7 @@ class Block11 extends React.Component<Block11Props, Block11State> {
                   borderRadius="8px"
                   boxShadow="0px 8px 10px rgba(0, 0, 0, 0.13)"
                 >
-                  Стаж в фитнес-индустрии более 14 лет
+                  Стаж в фитнес-индустрии более 15 лет
                 </DashedBorderBlock>
 
                 <DashedBorderBlock
@@ -35,7 +35,7 @@ class Block11 extends React.Component<Block11Props, Block11State> {
                   borderRadius="8px"
                   boxShadow="0px 8px 10px rgba(0, 0, 0, 0.13)"
                 >
-                  Обучался в лучшем образовательном фитнес-учреждении страны
+                  Обучался в лучших образовательных фитнес-учреждениях страны
                 </DashedBorderBlock>
 
                 <DashedBorderBlock
@@ -95,7 +95,7 @@ class Block11 extends React.Component<Block11Props, Block11State> {
                   borderRadius="8px"
                   boxShadow="0px 8px 10px rgba(0, 0, 0, 0.13)"
                 >
-                  Организатор самого крупного проекта преображения в своём регионе
+                  Организатор самого крупного проекта по преображению в своем регионе
                 </DashedBorderBlock>
               </div>
             </Col>

@@ -1,6 +1,7 @@
 import React from 'react'
 import ScrollAnimation from 'react-animate-on-scroll'
 import { Col, Container, Row } from 'react-bootstrap'
+import Config from '../../../../../Config/Config'
 import DashedBorderBlock from '../../../../../SharedComponents/DashedBorderBlock/DashedBorderBlock'
 import ExclusiveCard from '../../../../../SharedComponents/ExclusiveCard/ExclusiveCard'
 import IconButton from '../../../../../SharedComponents/IconButton/IconButton'
@@ -68,11 +69,15 @@ const Exclusive = (props: ExclusiveProps) => {
               <Col md={6} className="ExclusiveCard__content p-0">
                 <h1>1. Постановка целей</h1>
                 <DashedBorderBlock bgColor="#668E15" color="#ffffff" border="1px dashed #FFFFFF">
-                  <span>Построение</span> и проработка желаемых <span>целей</span>
+                  <p>
+                    <span>Построение</span> и проработка желаемых <span>целей</span>
+                  </p>
                 </DashedBorderBlock>
                 <DashedBorderBlock bgColor="#668E15" color="#ffffff" border="1px dashed #FFFFFF">
-                  Формирование целей производится с учетом временных интервалов, а их достижение контролируется
-                  тренером, который оказывает психологическую <span>поддержку</span> на данном этапе
+                  <p>
+                    Формирование целей производится с учетом временных интервалов, а их достижение контролируется
+                    тренером, который оказывает психологическую <span>поддержку</span> на данном этапе
+                  </p>
                 </DashedBorderBlock>
               </Col>
             </Row>
@@ -90,16 +95,26 @@ const Exclusive = (props: ExclusiveProps) => {
               <Col md={6} className="ExclusiveCard__content p-0">
                 <h1>2. Питание</h1>
                 <DashedBorderBlock bgColor="#668E15" color="#ffffff" border="1px dashed #FFFFFF">
-                  Ваш рацион выстраивается <span>на основе уже сформированных</span> культурно-пищевых <span>ценностей</span>
+                  <p>
+                    Ваш рацион выстраивается <span>на основе уже сформированных</span> культурно-пищевых{' '}
+                    <span>ценностей</span>
+                  </p>
                 </DashedBorderBlock>
                 <DashedBorderBlock bgColor="#668E15" color="#ffffff" border="1px dashed #FFFFFF">
-                  При построении рациона <span>учитываются</span> ваши медицинские <span>показания</span>
+                  <p>
+                    При построении рациона <span>учитываются</span> ваши медицинские <span>показания</span>
+                  </p>
                 </DashedBorderBlock>
                 <DashedBorderBlock bgColor="#668E15" color="#ffffff" border="1px dashed #FFFFFF">
-                  План питания <span>адаптируется под</span> текущий ритм жизни и любые <span>факторы</span> занятости
+                  <p>
+                    План питания <span>адаптируется под</span> текущий ритм жизни и любые <span>факторы</span> занятости
+                  </p>
                 </DashedBorderBlock>
                 <DashedBorderBlock bgColor="#668E15" color="#ffffff" border="1px dashed #FFFFFF">
-                  Вы можете рассчитывать на <span>мою поддержку</span> в любой непонятной ситуации, связанной с планом питания
+                  <p>
+                    Вы можете рассчитывать на <span>мою поддержку</span> в любой непонятной ситуации, связанной с планом
+                    питания
+                  </p>
                 </DashedBorderBlock>
               </Col>
             </Row>
@@ -117,16 +132,25 @@ const Exclusive = (props: ExclusiveProps) => {
               <Col md={6} className="ExclusiveCard__content p-0">
                 <h1>3. Физическая активность</h1>
                 <DashedBorderBlock bgColor="#668E15" color="#ffffff" border="1px dashed #FFFFFF">
-                <span>Индивидуальная</span> тренеровочная программа
+                  <p>
+                    <span>Индивидуальная</span> тренеровочная программа
+                  </p>
                 </DashedBorderBlock>
                 <DashedBorderBlock bgColor="#668E15" color="#ffffff" border="1px dashed #FFFFFF">
-                  Программа формируется для занятий <span>в любых</span> доступных <span>условиях</span> (спортзал, дом, улица)
+                  <p>
+                    Программа формируется для занятий <span>в любых</span> доступных <span>условиях</span> (спортзал,
+                    дом, улица)
+                  </p>
                 </DashedBorderBlock>
                 <DashedBorderBlock bgColor="#668E15" color="#ffffff" border="1px dashed #FFFFFF">
-                  Детальный <span>видеоразбор</span> для каждого упражнения.
+                  <p>
+                    Детальный <span>видеоразбор</span> для каждого упражнения
+                  </p>
                 </DashedBorderBlock>
                 <DashedBorderBlock bgColor="#668E15" color="#ffffff" border="1px dashed #FFFFFF">
-                <span>Анализ техники</span> выполнения упражнений по видеосвязи
+                  <p>
+                    <span>Анализ техники</span> выполнения упражнений по видеосвязи
+                  </p>
                 </DashedBorderBlock>
               </Col>
             </Row>
@@ -156,14 +180,15 @@ const Exclusive = (props: ExclusiveProps) => {
               </p>
               <div className="Exclusive__howToBuyButtons d-block d-md-flex">
                 <IconButton
-                  text="Whatsapp"
+                  text="Хочу купить"
                   icon="/img/ww.png"
                   element={1}
                   textColor="#ffffff"
-                  clickHandler={() => toSocialLink(1)}
+                  clickHandler={() => Config.goToWhattsApp()}
+                  // clickHandler={() => toSocialLink(1)}
                 />
                 <IconButton
-                  text="Instagram"
+                  text="Хочу купить"
                   icon="/img/wi.png"
                   element={1}
                   textColor="#ffffff"
