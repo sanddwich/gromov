@@ -45,7 +45,10 @@ class Block5 extends React.Component<Block5Props, Block5State> {
                       />
                     </Col>
                     <Col xl={9} xs={8} className="Block5__RightLineTitle">
-                      Диеты не помогли
+                      <div className="Block5__RightLineTitleCont">
+                        <p>Диеты не помогли</p>
+                        <p>Не могу себя сдерживать</p>
+                      </div>
                     </Col>
                   </Row>
                 </ScrollAnimation>
@@ -60,7 +63,10 @@ class Block5 extends React.Component<Block5Props, Block5State> {
                       />
                     </Col>
                     <Col xl={9} xs={8} className="Block5__RightLineTitle">
-                      Думаю, что у меня не получится
+                      <div className="Block5__RightLineTitleCont">
+                        <p>Думаю, что у меня не получится</p>
+                        <p>Начинаю, но бросаю</p>
+                      </div>
                     </Col>
                   </Row>
                 </ScrollAnimation>
@@ -75,7 +81,10 @@ class Block5 extends React.Component<Block5Props, Block5State> {
                       />
                     </Col>
                     <Col xl={9} xs={8} className="Block5__RightLineTitle">
-                      Худел(ла), но вес вернулся
+                      <div className="Block5__RightLineTitleCont">
+                        <p>Худел(ла), но вес вернулся</p>
+                        <p>Все знаю и не делаю</p>
+                      </div>
                     </Col>
                   </Row>
                 </ScrollAnimation>
