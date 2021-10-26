@@ -64,7 +64,12 @@ class Block7 extends React.Component<Block7Props, Block7State> {
 
                 <div className="Block7__RightEl">
                   <ScrollAnimation animateOnce={true} offset={150} delay={800} animateIn="animate__fadeInUp">
-                    <Button text="Начать действовать сейчас" buttonHandler={() => Config.goToWhattsApp()} />
+                    <Button text="Начать действовать сейчас" buttonHandler={() => {
+                        window.open(`https://api.whatsapp.com/send?phone=+79171874086&text=Здравствуйте.+Я+хочу+получить+хорошие+результаты,+сделать+свою+жизнь+лучше+и+более+качественной!
+                        +Надоело+постоянно+откладывать+все+на+завтра!
+                        +Я+хочу+начать+действовать+прямо+сейчас!
+                        +Вы+можете+мне+в+этом+помочь?`)
+                      }} />
                   </ScrollAnimation>
                 </div>
               </div>

@@ -90,7 +90,11 @@ class Block5 extends React.Component<Block5Props, Block5State> {
                 </ScrollAnimation>
                 <ScrollAnimation animateOnce={true} offset={150} delay={600} animateIn="animate__fadeInUp">
                   <Row className="Block5__button m-0 p-0 pb-3 pl-3 pr-3">
-                    <Button text="Хочу добиться результата" buttonHandler={() => Config.goToWhattsApp()} />
+                    <Button text="Хочу добиться результата" buttonHandler={() => {
+                        window.open(`https://api.whatsapp.com/send?phone=+79171874086&text=Здравствуйте.+Я+хочу+получить+хорошие+результаты+без+вреда+для+здоровья+и+улучшить+своё+качество+жизни!
+                        +При+этом+не+тратя+время+в+пустую+на+бесполезные+действия. 
+                        +Вы+можете+мне+в+этом+помочь?`)
+                      }} />
                   </Row>
                 </ScrollAnimation>
               </Container>

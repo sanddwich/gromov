@@ -184,7 +184,9 @@ const Exclusive = (props: ExclusiveProps) => {
                   icon="/img/ww.png"
                   element={1}
                   textColor="#ffffff"
-                  clickHandler={() => Config.goToWhattsApp()}
+                  clickHandler={() => {
+                    window.open(`https://api.whatsapp.com/send?phone=+79171874086&text=Здравствуйте!+Меня+интересует+персональное+ведение.+Расскажите,+что+оно+из+себя+представляет?`)
+                  }}
                   // clickHandler={() => toSocialLink(1)}
                 />
                 <IconButton

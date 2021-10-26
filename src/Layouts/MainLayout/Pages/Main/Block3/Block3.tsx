@@ -53,7 +53,14 @@ class Block3 extends React.Component<Block3Props, Block3State> {
                     </BottomShadowBlock>
                   </Row>
                   <Row className="Block3__button m-0 p-0 pb-3 pl-3 pr-3">
-                    <Button text="Решить проблему сейчас" buttonHandler={() => Config.goToWhattsApp()} />
+                    <Button
+                      text="Решить проблему сейчас"
+                      buttonHandler={() => {
+                        window.open(`https://api.whatsapp.com/send?phone=+79171874086&text=Здравствуйте.+Я+хочу+получить+хорошие+результаты,+сделать+свою+жизнь+лучше+и+качественнее!
+                        +Решить+проблемы+со+здоровьем+и+улучшить+внешний+вид.
+                        +Вы+можете+мне+в+этом+помочь?`)
+                      }}
+                    />
                   </Row>
                 </div>
               </ScrollAnimation>
