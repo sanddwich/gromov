@@ -33,33 +33,49 @@ class Block3 extends React.Component<Block3Props, Block3State> {
               <ScrollAnimation animateOnce={true} offset={150} delay={0} animateIn="animate__fadeInRight">
                 <div>
                   <Row className="m-0 p-0 pb-3 pl-3 pr-3">
-                    <BottomShadowBlock bgColor="#F45959" shadowColor="#DB3030" image="img/battery_icon3.png">
+                    <BottomShadowBlock
+                      bgColor="#F45959"
+                      shadowColor="#DB3030"
+                      image="img/battery_icon3.png"
+                      callWhatsapp={() => window.open(Config.messages[0])}
+                    >
                       Нет сил, энергии и мотивации
                     </BottomShadowBlock>
                   </Row>
                   <Row className="m-0 p-0 pb-3 pl-3 pr-3">
-                    <BottomShadowBlock bgColor="#F45959" shadowColor="#DB3030" image="img/girla_icon.png">
+                    <BottomShadowBlock
+                      bgColor="#F45959"
+                      shadowColor="#DB3030"
+                      image="img/girla_icon.png"
+                      callWhatsapp={() => window.open(Config.messages[1])}
+                    >
                       Плохое состояние здоровья
                     </BottomShadowBlock>
                   </Row>
                   <Row className="m-0 p-0 pb-3 pl-3 pr-3">
-                    <BottomShadowBlock bgColor="#F45959" shadowColor="#DB3030" image="img/puzan_icon.png">
+                    <BottomShadowBlock
+                      bgColor="#F45959"
+                      shadowColor="#DB3030"
+                      image="img/puzan_icon.png"
+                      callWhatsapp={() => window.open(Config.messages[2])}
+                    >
                       Лишний вес
                     </BottomShadowBlock>
                   </Row>
                   <Row className="m-0 p-0 pb-3 pl-3 pr-3">
-                    <BottomShadowBlock bgColor="#F45959" shadowColor="#DB3030" image="img/mirror_icon.png">
+                    <BottomShadowBlock
+                      bgColor="#F45959"
+                      shadowColor="#DB3030"
+                      image="img/mirror_icon.png"
+                      callWhatsapp={() => window.open(Config.messages[3])}
+                    >
                       Комплексы из-за внешнего вида
                     </BottomShadowBlock>
                   </Row>
                   <Row className="Block3__button m-0 p-0 pb-3 pl-3 pr-3">
                     <Button
                       text="Решить проблему сейчас"
-                      buttonHandler={() => {
-                        window.open(`https://api.whatsapp.com/send?phone=+79171874086&text=Здравствуйте.+Я+хочу+получить+хорошие+результаты,+сделать+свою+жизнь+лучше+и+качественнее!
-                        +Решить+проблемы+со+здоровьем+и+улучшить+внешний+вид.
-                        +Вы+можете+мне+в+этом+помочь?`)
-                      }}
+                      buttonHandler={() => window.open(Config.messages[11])}
                     />
                   </Row>
                 </div>

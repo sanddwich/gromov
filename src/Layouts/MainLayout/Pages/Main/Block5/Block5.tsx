@@ -35,7 +35,7 @@ class Block5 extends React.Component<Block5Props, Block5State> {
             <Col md={7} xs={12} className="Block5__Right d-flex align-items-center">
               <Container fluid className="Block5__RightCont">
                 <ScrollAnimation animateOnce={true} offset={150} delay={0} animateIn="animate__fadeInUp">
-                  <Row className="Block5__RightLine m-0 p-0">
+                  <Row className="Block5__RightLine m-0 p-0" onClick={() => window.open(Config.messages[4])}>
                     <Col xl={3} xs={4} className="Block5__RightLineImg">
                       <BottomShadowBlock
                         bgColor="#FF8585"
@@ -53,7 +53,7 @@ class Block5 extends React.Component<Block5Props, Block5State> {
                   </Row>
                 </ScrollAnimation>
                 <ScrollAnimation animateOnce={true} offset={150} delay={200} animateIn="animate__fadeInUp">
-                  <Row className="Block5__RightLine m-0 p-0">
+                  <Row className="Block5__RightLine m-0 p-0" onClick={() => window.open(Config.messages[5])}>
                     <Col xl={3} xs={4} className="Block5__RightLineImg">
                       <BottomShadowBlock
                         bgColor="#FF8585"
@@ -71,7 +71,7 @@ class Block5 extends React.Component<Block5Props, Block5State> {
                   </Row>
                 </ScrollAnimation>
                 <ScrollAnimation animateOnce={true} offset={150} delay={400} animateIn="animate__fadeInUp">
-                  <Row className="Block5__RightLine m-0 p-0">
+                  <Row className="Block5__RightLine m-0 p-0" onClick={() => window.open(Config.messages[6])}>
                     <Col xl={3} xs={4} className="Block5__RightLineImg">
                       <BottomShadowBlock
                         bgColor="#FF8585"
@@ -90,11 +90,7 @@ class Block5 extends React.Component<Block5Props, Block5State> {
                 </ScrollAnimation>
                 <ScrollAnimation animateOnce={true} offset={150} delay={600} animateIn="animate__fadeInUp">
                   <Row className="Block5__button m-0 p-0 pb-3 pl-3 pr-3">
-                    <Button text="Хочу добиться результата" buttonHandler={() => {
-                        window.open(`https://api.whatsapp.com/send?phone=+79171874086&text=Здравствуйте.+Я+хочу+получить+хорошие+результаты+без+вреда+для+здоровья+и+улучшить+своё+качество+жизни!
-                        +При+этом+не+тратя+время+в+пустую+на+бесполезные+действия. 
-                        +Вы+можете+мне+в+этом+помочь?`)
-                      }} />
+                    <Button text="Хочу добиться результата" buttonHandler={() => window.open(Config.messages[12])} />
                   </Row>
                 </ScrollAnimation>
               </Container>

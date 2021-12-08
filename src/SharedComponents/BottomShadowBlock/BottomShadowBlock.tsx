@@ -9,6 +9,7 @@ interface BottomShadowBlockProps {
   shadowColor: string
   width?: string
   height?: string
+  callWhatsapp?: () => void
 }
 
 interface BottomShadowBlockState {}
@@ -22,6 +23,7 @@ class BottomShadowBlock extends React.Component<BottomShadowBlockProps, BottomSh
         style={{
           width: this.props.width ? this.props.width : '',
         }}
+        onClick={() => this.props.callWhatsapp ? this.props.callWhatsapp() : null}
       >
         <Row
           className={`BottomShadowBlock__Button m-0 p-0 d-flex align-items-center ${

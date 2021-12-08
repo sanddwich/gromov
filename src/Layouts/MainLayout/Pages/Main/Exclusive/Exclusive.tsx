@@ -169,21 +169,19 @@ const Exclusive = (props: ExclusiveProps) => {
       <Container fluid className="Exclusive__howToBuy__cont">
         <Container className="Exclusive__howToBuy">
           <Row className="Exclusive__Row m-0">
-            <Col md={6} className="Exclusive__howToBuyRight d-block d-md-none">
-              <p>Стоимость комплексного ведения</p>
+            <Col md={12} className="Exclusive__howToBuyRight d-block">
+              <p>Стоимость персонального ведения</p>
               <h1>от 8 000 рублей</h1>
             </Col>
-            <Col md={6} className="Exclusive__howToBuyLeft">
-              <h1>как приобрести?</h1>
-              <p>
-                Выберите удобный канал связи и напишите <b>«Комплексное ведение»</b>
-              </p>
+            <Col md={12} className="Exclusive__howToBuyLeft">
+              
               <div className="Exclusive__howToBuyButtons d-block d-md-flex">
                 <IconButton
                   text="Хочу купить"
                   icon="/img/ww.png"
                   element={1}
                   textColor="#ffffff"
+                  bold
                   clickHandler={() => {
                     window.open(`https://api.whatsapp.com/send?phone=+79171874086&text=Здравствуйте!+Меня+интересует+персональное+ведение.+Расскажите,+что+оно+из+себя+представляет?`)
                   }}
@@ -194,14 +192,15 @@ const Exclusive = (props: ExclusiveProps) => {
                   icon="/img/wi.png"
                   element={1}
                   textColor="#ffffff"
+                  bold
                   clickHandler={() => toSocialLink(0)}
                 />
               </div>
             </Col>
-            <Col md={6} className="Exclusive__howToBuyRight d-none d-md-block">
+            {/* <Col md={6} className="Exclusive__howToBuyRight d-none d-md-block">
               <p>Стоимость комплексного ведения</p>
               <h1>от 8 000 рублей</h1>
-            </Col>
+            </Col> */}
           </Row>
         </Container>
       </Container>

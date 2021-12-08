@@ -27,7 +27,7 @@ interface OrderData {
 interface Link {
   name: string
   url: string
-  pass: string
+  // pass: string
 }
 
 class SuccessPay extends React.Component<SuccessPayProps, SuccessPayState> {
@@ -37,7 +37,7 @@ class SuccessPay extends React.Component<SuccessPayProps, SuccessPayState> {
       loading: true,
       defaultLink: {
         name: '',
-        pass: '',
+        // pass: '',
         url: '',
       },
     }
@@ -88,7 +88,7 @@ class SuccessPay extends React.Component<SuccessPayProps, SuccessPayState> {
             phone: payment.Receipt?.Phone,
             name: payment.Description,
             gromovMail: Config.gromovMail,
-            pass: link.pass,
+            // pass: link.pass,
             url: link.url,
             siteURL: Config.siteURL,
           }

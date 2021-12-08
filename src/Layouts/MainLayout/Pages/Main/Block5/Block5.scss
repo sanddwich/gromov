@@ -41,8 +41,13 @@ $imgHeight: 647px;
     color: #313131;
 
     .Block5__RightLineTitleCont {
+      cursor: pointer;
       p {
         margin-bottom: 0;
+      }
+
+      &:hover {
+        text-decoration: underline;
       }
     }
   }

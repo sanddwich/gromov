@@ -21,20 +21,96 @@ interface ConfigParams {
   promoCodes: PromoCodes[]
   quizLink: string
   goToWhattsApp: () => void
+  messages: string[]
 }
 
 interface Link {
   name: string
   url: string
-  pass: string
+  // pass: string
 }
 
 // const siteURL = 'http://localhost:3000'
 const siteURL = 'https://gromov.fit'
+const gromovPhone = '+79171874086'
 
 const Config: ConfigParams = {
+  messages: [
+    `https://api.whatsapp.com/send?phone=${gromovPhone}&text=Здравствуйте.
+    +У+меня+постоянная+слабость,+нет+сил+и+энергии.+Хочу+это+исправить!
+    +Получить+хорошие+результаты,+сделать+свою+жизнь+лучше+и+качественнее!
+    +Вы+можете+мне+в+этом+помочь?`,
+
+    `https://api.whatsapp.com/send?phone=${gromovPhone}&text=Здравствуйте.
+    +У+меня+есть+проблемы+со+здоровьем.+Я+хочу+их+максимально+нивелировать+или+решить,
+    +тем+самым+улучшив+своё+качество+жизни+и+улучшить+внешний+вид!
+    +Вы+можете+мне+в+этом+помочь?`,
+
+    `https://api.whatsapp.com/send?phone=${gromovPhone}&text=Здравствуйте.
+    +У+меня+есть+проблема+с+лишним+весом!+Я+хочу+это+исправить! 
+    +Иметь+подтянутую+фигуру,+сделать+свою+жизнь+лучше+и+качественнее!
+    +Вы+можете+мне+в+этом+помочь?`,
+
+    `https://api.whatsapp.com/send?phone=${gromovPhone}&text=Здравствуйте.
+    +Я+хочу+измениться+внешне,+иметь+красивую+и+подтянутую+фигуру, 
+    +сделать+свою+жизнь+лучше+и+качественнее!
+    +Вы+можете+мне+в+этом+помочь?`,
+
+    `https://api.whatsapp.com/send?phone=${gromovPhone}&text=Здравствуйте.
+    +Я+не+могу+наладить+своё+питание,+постоянно+срываюсь!+Хочу+это+исправить, 
+    +сделать+свою+жизнь+лучше+и+качественнее!
+    +Вы+можете+мне+в+этом+помочь?`,
+
+    `https://api.whatsapp.com/send?phone=${gromovPhone}&text=Здравствуйте.
+    +Я+хочу+получить+хорошие+результаты,+сделать+свою+жизнь+лучше+и+качественнее! 
+    +Но+я+постоянно+срываюсь+и+сомневаюсь,+что+у+меня+получится. 
+    +Вы+можете+мне+помочь+в+решении+этой+задачи?`,
+
+    `https://api.whatsapp.com/send?phone=${gromovPhone}&text=Здравствуйте.
+    +У+меня+уже+был+опыт+похудения,+но+по+той+или+иной+причине+вес+возвращался.+Не+хочу+больше+тратить+время+впустую! 
+    +Я+хочу+получить+хорошие+результаты+на+долгие+годы,+сделать+свою+жизнь+лучше+и+качественнее! 
+    +Вы+можете+мне+в+этом+помочь?`,
+
+    `https://api.whatsapp.com/send?phone=${gromovPhone}&text=Здравствуйте.
+    +У+меня+нет+возможности+регулярно+посещать+залы.+Но,+я+хочу+иметь+подтянутую+фигуру,+сделать+свою+жизнь+лучше+и+качественнее! 
+    +При+этом+не+тратя+время+впустую+на+бесполезные+действия.
+    +Вы+можете+мне+в+этом+помочь?`,
+
+    `https://api.whatsapp.com/send?phone=${gromovPhone}&text=Здравствуйте.
+    +Я+хочу+получить+хорошие+результаты+и+улучшить+своё+качество+жизни! 
+    +И+у+меня+совсем+нет+времени+заниматься+этим+самостоятельно.  
+    +Вы+можете+мне+помочь+в+решении+этой+задачи?`,
+
+    `https://api.whatsapp.com/send?phone=${gromovPhone}&text=Здравствуйте.
+    +Я+хочу+получить+хорошие+результаты,+сделать+свою+жизнь+лучше+и+качественнее! 
+    +Надоело+постоянно+откладывать+все+на+завтра!
+    +Мне+нужен+человек+который+будет+меня+подталкивать+к+действию!    
+    +Вы+можете+мне+в+этом+помочь?`,
+
+    `https://api.whatsapp.com/send?phone=${gromovPhone}&text=Здравствуйте.
+    +Я+хочу+улучшить+своё+качество+жизни!+Но+мне+лень+этим+заниматься+самостоятельно. 
+    +Мне+нужен+человек+который+сможет+меня+мотивировать+к+действию+для+достижения+желанных+результатов!
+    +Вы+можете+мне+в+этом+помочь?`,
+
+    `https://api.whatsapp.com/send?phone=${gromovPhone}&text=Здравствуйте
+    +Я+хочу+получить+хорошие+результаты,+сделать+свою+жизнь+лучше+и+качественнее! 
+    +Решить+проблемы+со+здоровьем+и+улучшить+свой+внешний+вид.
+    +Мне+нужен+человек+который+будет+меня+подталкивать+к+действию!`,
+
+    `https://api.whatsapp.com/send?phone=${gromovPhone}&text=Здравствуйте
+    +Я+хочу+получить+хорошие+результаты,+сделать+свою+жизнь+лучше+и+качественнее! 
+    +Надоело+постоянно+откладывать+все+на+завтра!
+    +Я+хочу+начать+действовать+прямо+сейчас!    
+    +Мне+нужен+человек+который+будет+меня+подталкивать+к+действию!`,
+  ],
+
   goToWhattsApp: () => {
-    window.open('https://api.whatsapp.com/send?phone=+79171874086&text=Здравствуйте%2C+у+меня+есть+вопрос+по+УСЛУГАМ+САЙТА')
+    window.open(
+      `https://api.whatsapp.com/send?phone=${gromovPhone}&text=Здравствуйте
+      +Я+хочу+получить+хорошие+результаты,+сделать+свою+жизнь+лучше+и+качественнее! 
+      +Решить+проблемы+со+здоровьем+и+улучшить+свой+внешний+вид.
+      +Мне+нужен+человек+который+будет+меня+подталкивать+к+действию!`
+    )
   },
   TerminalKey: '1613847439636DEMO',
   TerminalPassword: 'v1lv7nwkouwdrj23',
@@ -128,87 +204,157 @@ const Config: ConfigParams = {
   links: [
     {
       name: 'Мужская программа с акцентом на похудение, для тренажерного зала',
-      url: 'https://disk.yandex.ru/d/9b_xOpBS65Slew',
-      pass: 'Lkjuio985',
+      url: 'https://disk.yandex.ru/d/KMnoPft9g2Bljg',
     },
     {
       name: 'Мужская программа с акцентом на набор мышечной массы, для тренажерного зала',
-      url: 'https://disk.yandex.ru/d/rg5RS29npSBTUA',
-      pass: 'Sdfgwwe76',
+      url: 'https://disk.yandex.ru/d/hu35ALEZucqNDg',
     },
     {
       name: 'Мужская программа для дома & улицы с акцентом на похудение',
-      url: 'https://disk.yandex.ru/d/c0SVeQjmZWm6Vw',
-      pass: 'Mnbhgyt78',
+      url: 'https://disk.yandex.ru/d/odmAAqx_VnkKEg',
     },
     {
       name: 'Мужская программа для дома & улицы с акцентом на набор мышечной массы',
-      url: 'https://disk.yandex.ru/d/W_m74JGL7gD9mg',
-      pass: 'Dfghyt67',
+      url: 'https://disk.yandex.ru/d/52powf6XBdsftw',
     },
     {
       name: 'Женская программа с акцентом на похудение, для тренажерного зала',
-      url: 'https://disk.yandex.ru/d/9SEhmHCZYhRJsQ',
-      pass: 'Lkjhui876',
+      url: 'https://disk.yandex.ru/d/ZvgWQRGSSj14gw',
     },
     {
       name: 'Женская программа с акцентом на набор мышечной массы, для тренажерного зала',
-      url: 'https://disk.yandex.ru/d/f1YYOv1o77QA6g',
-      pass: 'Dfghytre345',
+      url: 'https://disk.yandex.ru/d/2i--0m0gE3_j5Q',
     },
     {
       name: 'Женская программа для дома & улицы с акцентом на похудение',
-      url: 'https://disk.yandex.ru/d/ceZ6VGHG-5gurQ',
-      pass: 'Asdfgtr65',
+      url: 'https://disk.yandex.ru/d/1dNNO3MlRa_zNg',
     },
     {
       name: 'Женская программа для дома & улицы с акцентом на набор мышечной массы',
-      url: 'https://disk.yandex.ru/d/agc4Q3pN66r9FA',
-      pass: 'Lkjuio98',
+      url: 'https://disk.yandex.ru/d/Mvj32YZHR0a4sQ',
     },
-    { name: 'Набор веса', url: 'https://disk.yandex.ru/d/LzbL_b3PxEQRAA', pass: 'Dfrtyhj765' },
-    { name: 'Cнижения веса', url: 'https://disk.yandex.ru/d/dcqEHy5YUmKGbw', pass: 'Lkiuyhj987' },
+    { name: 'Набор веса', url: 'https://disk.yandex.ru/d/qdvIVKZT4TppRg' },
+    { name: 'Cнижения веса', url: 'https://disk.yandex.ru/d/svA8ElOwRhGYkA' },
     {
       name: 'Комплексная Мужская программа с акцентом на похудение, для тренажерного зала',
-      url: 'https://disk.yandex.ru/d/we4V22LfvlFE0g',
-      pass: 'Jhgtyu765',
+      url: 'https://disk.yandex.ru/d/pqQI72bNQgySyA',
     },
     {
       name: 'Комплексная Мужская программа с акцентом на набор мышечной массы, для тренажерного зала',
-      url: 'https://disk.yandex.ru/d/GRyS5sVZHmALVg',
-      pass: 'Jkloiu789',
+      url: 'https://disk.yandex.ru/d/lFmWL5lo-X0acw',
     },
     {
       name: 'Комплексная Мужская программа для дома & улицы с акцентом на похудение',
-      url: 'https://disk.yandex.ru/d/B19JQPNgz9eBKA',
-      pass: 'Dfgtry765',
+      url: 'https://disk.yandex.ru/d/LAc8xBAWjLP3FQ',
     },
     {
       name: 'Комплексная Мужская программа для дома & улицы с акцентом на набор мышечной массы',
-      url: 'https://disk.yandex.ru/d/CuXdw49FhMy0kg',
-      pass: 'Vbnmjh678',
+      url: 'https://disk.yandex.ru/d/rE8jpCCfSotmyQ',
     },
     {
       name: 'Комплексная Женская программа с акцентом на похудение, для тренажерного зала',
-      url: 'https://disk.yandex.ru/d/oSvjwlg4PtqMKw',
-      pass: 'Jhgtyu765',
+      url: 'https://disk.yandex.ru/d/IvjJBL7PNJVbxw',
     },
     {
       name: 'Комплексная Женская программа с акцентом на набор мышечной массы, для тренажерного зала',
-      url: 'https://disk.yandex.ru/d/gQz6eFvszJhA9Q',
-      pass: 'Jkloiu789',
+      url: 'https://disk.yandex.ru/d/HBulEY0W0vVFmQ',
     },
     {
       name: 'Комплексная Женская программа для дома & улицы с акцентом на похудение',
-      url: 'https://disk.yandex.ru/d/rDH_6cZRT28YkA',
-      pass: 'Dfgtry765',
+      url: 'https://disk.yandex.ru/d/1kawngQCUNbbKA',
     },
     {
       name: 'Комплексная Женская программа для дома & улицы с акцентом на набор мышечной массы',
-      url: 'https://disk.yandex.ru/d/RM8qOxVGo7B7Ig',
-      pass: 'Vbnmjh678',
+      url: 'https://disk.yandex.ru/d/BxGjLrGjCOvkqw',
     },
   ],
+
+  // links: [
+  //   {
+  //     name: 'Мужская программа с акцентом на похудение, для тренажерного зала',
+  //     url: 'https://disk.yandex.ru/d/9b_xOpBS65Slew',
+  //     pass: 'Lkjuio985',
+  //   },
+  //   {
+  //     name: 'Мужская программа с акцентом на набор мышечной массы, для тренажерного зала',
+  //     url: 'https://disk.yandex.ru/d/rg5RS29npSBTUA',
+  //     pass: 'Sdfgwwe76',
+  //   },
+  //   {
+  //     name: 'Мужская программа для дома & улицы с акцентом на похудение',
+  //     url: 'https://disk.yandex.ru/d/c0SVeQjmZWm6Vw',
+  //     pass: 'Mnbhgyt78',
+  //   },
+  //   {
+  //     name: 'Мужская программа для дома & улицы с акцентом на набор мышечной массы',
+  //     url: 'https://disk.yandex.ru/d/W_m74JGL7gD9mg',
+  //     pass: 'Dfghyt67',
+  //   },
+  //   {
+  //     name: 'Женская программа с акцентом на похудение, для тренажерного зала',
+  //     url: 'https://disk.yandex.ru/d/9SEhmHCZYhRJsQ',
+  //     pass: 'Lkjhui876',
+  //   },
+  //   {
+  //     name: 'Женская программа с акцентом на набор мышечной массы, для тренажерного зала',
+  //     url: 'https://disk.yandex.ru/d/f1YYOv1o77QA6g',
+  //     pass: 'Dfghytre345',
+  //   },
+  //   {
+  //     name: 'Женская программа для дома & улицы с акцентом на похудение',
+  //     url: 'https://disk.yandex.ru/d/ceZ6VGHG-5gurQ',
+  //     pass: 'Asdfgtr65',
+  //   },
+  //   {
+  //     name: 'Женская программа для дома & улицы с акцентом на набор мышечной массы',
+  //     url: 'https://disk.yandex.ru/d/agc4Q3pN66r9FA',
+  //     pass: 'Lkjuio98',
+  //   },
+  //   { name: 'Набор веса', url: 'https://disk.yandex.ru/d/LzbL_b3PxEQRAA', pass: 'Dfrtyhj765' },
+  //   { name: 'Cнижения веса', url: 'https://disk.yandex.ru/d/dcqEHy5YUmKGbw', pass: 'Lkiuyhj987' },
+  //   {
+  //     name: 'Комплексная Мужская программа с акцентом на похудение, для тренажерного зала',
+  //     url: 'https://disk.yandex.ru/d/we4V22LfvlFE0g',
+  //     pass: 'Jhgtyu765',
+  //   },
+  //   {
+  //     name: 'Комплексная Мужская программа с акцентом на набор мышечной массы, для тренажерного зала',
+  //     url: 'https://disk.yandex.ru/d/GRyS5sVZHmALVg',
+  //     pass: 'Jkloiu789',
+  //   },
+  //   {
+  //     name: 'Комплексная Мужская программа для дома & улицы с акцентом на похудение',
+  //     url: 'https://disk.yandex.ru/d/B19JQPNgz9eBKA',
+  //     pass: 'Dfgtry765',
+  //   },
+  //   {
+  //     name: 'Комплексная Мужская программа для дома & улицы с акцентом на набор мышечной массы',
+  //     url: 'https://disk.yandex.ru/d/CuXdw49FhMy0kg',
+  //     pass: 'Vbnmjh678',
+  //   },
+  //   {
+  //     name: 'Комплексная Женская программа с акцентом на похудение, для тренажерного зала',
+  //     url: 'https://disk.yandex.ru/d/oSvjwlg4PtqMKw',
+  //     pass: 'Jhgtyu765',
+  //   },
+  //   {
+  //     name: 'Комплексная Женская программа с акцентом на набор мышечной массы, для тренажерного зала',
+  //     url: 'https://disk.yandex.ru/d/gQz6eFvszJhA9Q',
+  //     pass: 'Jkloiu789',
+  //   },
+  //   {
+  //     name: 'Комплексная Женская программа для дома & улицы с акцентом на похудение',
+  //     url: 'https://disk.yandex.ru/d/rDH_6cZRT28YkA',
+  //     pass: 'Dfgtry765',
+  //   },
+  //   {
+  //     name: 'Комплексная Женская программа для дома & улицы с акцентом на набор мышечной массы',
+  //     url: 'https://disk.yandex.ru/d/RM8qOxVGo7B7Ig',
+  //     pass: 'Vbnmjh678',
+  //   },
+  // ],
+
   // links: [
   //   {
   //     name: 'Мужская программа с акцентом на похудение, для тренажерного зала',

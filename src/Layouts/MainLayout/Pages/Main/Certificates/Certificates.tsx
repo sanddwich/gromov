@@ -20,6 +20,7 @@ class Certificates extends React.Component<CertificatesProps, CertificatesState>
     super(props)
     this.state = {
       certificatesHorizontal: [
+        '17.jpg',
         '3.jpg',
         '4.jpg',
         '5.jpg',
@@ -34,7 +35,18 @@ class Certificates extends React.Component<CertificatesProps, CertificatesState>
         '15.jpg',
         '16.jpg',
       ],
-      certificatesVertical: ['1.jpg', '2.jpg', '10.jpg'],
+      certificatesVertical: [
+        '1.png',
+        '4.png',
+        '5.png',
+        '6.png',
+        '7.png',
+        '8.png',
+        '9.png',
+        '1.jpg',
+        '2.jpg',
+        '10.jpg',
+      ],
     }
   }
 
