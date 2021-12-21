@@ -19,13 +19,13 @@ class Certificates extends React.Component<CertificatesProps, CertificatesState>
   constructor(props: CertificatesProps) {
     super(props)
     this.state = {
-      certificatesHorizontal: [
-        '9.jpg',
-        '11.jpg',
-        '12.jpg',
+      certificatesHorizontal: [        
         '17.jpg',
         '3.jpg',
         '4.jpg',
+        '9.jpg',
+        '11.jpg',
+        '12.jpg',
         '5.jpg',
         '6.jpg',
         '7.jpg',

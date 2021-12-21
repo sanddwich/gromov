@@ -40,7 +40,7 @@ const cardsContent = [
   },
 ]
 
-const messengers = ['https://www.instagram.com/victor__gromov/', 'https://api.whatsapp.com/send?phone=+79171874086']
+const messengers = ['https://www.instagram.com/victor__gromov/', 'https://api.whatsapp.com/send?phone=+79171874086', 'https://t.me/gromov_victor']
 
 const Exclusive = (props: ExclusiveProps) => {
   const toSocialLink = (element: number): void => {
@@ -189,11 +189,11 @@ const Exclusive = (props: ExclusiveProps) => {
                 />
                 <IconButton
                   text="Хочу купить"
-                  icon="/img/wi.png"
+                  icon="/img/telega.svg"
                   element={1}
                   textColor="#ffffff"
                   bold
-                  clickHandler={() => toSocialLink(0)}
+                  clickHandler={() => toSocialLink(2)}
                 />
               </div>
             </Col>

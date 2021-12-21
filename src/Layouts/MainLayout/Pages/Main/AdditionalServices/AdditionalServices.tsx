@@ -352,14 +352,14 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
 
           <Container fluid className="DoubleCard">
             <Row className="DoubleCard__Row m-0">
-              <Col lg={6} className="DoubleCard__Col p-0 d-flex align-items-center">
+              <Col xs={12} lg={6} className="DoubleCard__Col p-0 d-flex align-items-center justify-content-center">
                 <div className="DoubleCard__title">
                   <h1>«База: Тренировки и питание»</h1>
                   <h3>Комбо</h3>
-                  <p>Содержит в себе все из курсов «базовая тренировочная программа» и «базовое питание»</p>
+                  {/* <p>Содержит в себе все из курсов «базовая тренировочная программа» и «базовое питание»</p> */}
                 </div>
               </Col>
-              <Col lg={6} className="DoubleCard__Col">
+              <Col xs={12} lg={6} className="DoubleCard__Col">
                 <Container className="AdditionalServices__propsCont  p-0">
                   <Row className="AdditionalServices__sex m-0 d-flex justify-content-around">
                     <div
@@ -647,11 +647,11 @@ class AdditionalServices extends React.Component<AdditionalServicesProps, Additi
 
           <Container fluid className="DoubleCard">
             <Row className="DoubleCard__Row m-0" style={{backgroundColor: '#058DC7'}}>
-              <Col lg={6} className="DoubleCard__Col p-0 d-flex align-items-center">
+              <Col lg={6} className="DoubleCard__Col p-0 d-flex align-items-center justify-content-center">
                 <div className="DoubleCard__title">
                   <h1 style={{color: '#ffffff'}}>«Персонально: Тренировки и питание»</h1>
                   <h3 style={{color: '#ffffff'}}>Комбо</h3>
-                  <p style={{color: '#ffffff'}}>Содержит в себе все из курсов «базовая тренировочная программа» и «базовое питание»</p>
+                  {/* <p style={{color: '#ffffff'}}>Содержит в себе все из курсов «базовая тренировочная программа» и «базовое питание»</p> */}
                 </div>
               </Col>
               <Col lg={6} className="DoubleCard__Col">
