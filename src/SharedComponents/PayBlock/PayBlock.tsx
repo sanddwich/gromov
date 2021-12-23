@@ -412,7 +412,7 @@ class PayBlock extends React.Component<PayBlockProps, PayBlockState> {
           </Col>
           <Col xs={10} className="PayBlock__checkboxTitle">
             Я ознакомился с{' '}
-            <a href="#" target="_blank">
+            <a href={`${Config.siteURL}/dogovor.pdf`} target="_blank">
               политикой использования персональных данных
             </a>{' '}
             и с{' '}
